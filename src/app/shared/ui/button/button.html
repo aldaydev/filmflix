@@ -1,0 +1,17 @@
+<button
+    class="btn"
+    [class]="[type(), color(), size()]"
+    [disabled]="disabled()"
+    (click)="handleClick()"
+>
+    {{ label() }}
+    @if(icon()){
+        <img 
+            [src]="icon()?.src" 
+            alt="{{icon()?.alt}} icon" 
+            class="btn__icon"
+            [class.btn__icon--dark]="themeService.theme() === 'dark'"
+            [class.btn__icon--light]="themeService.theme() === 'light'"
+        >
+    }
+</button>

@@ -3,6 +3,8 @@
 ### feat/home-hero
 * Creando componente "hero" en la homePage
 * Trabajando el diseño del hero section
+* Creación del componente botón reutilizable
+* Creación del componente input reutilizable
 
 ### feat/header
 * Creando header fixed o sticky
