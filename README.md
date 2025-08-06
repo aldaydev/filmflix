@@ -1,6 +1,9 @@
 # Filmflix
 
-### cfeat/theme-mode
+### feat/header
+* Creando header fixed o sticky
+
+### feat/theme-mode
 * Creación del servicio themeService
 * Creación del componente toggleTheme y su hijo toggleThemeIcon
 * Funcionalidad de theme-mode inicial creada
