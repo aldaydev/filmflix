@@ -1,5 +1,9 @@
 # Filmflix
 
+### feat/home-hero
+* Creando componente "hero" en la homePage
+* Trabajando el diseño del hero section
+
 ### feat/header
 * Creando header fixed o sticky
 * Ajustando background en función al scroll / theme

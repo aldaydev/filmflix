@@ -6,6 +6,7 @@
     width: 100%;
     max-width: 100dvw;
     height: 75px;
+    z-index: 999;
 }
 
 header {

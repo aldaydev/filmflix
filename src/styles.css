@@ -26,17 +26,20 @@ html.light {
 /* ---------- GLOBAL STYLES ----------*/
 
 html {
+    width: 100dvw;
+    max-width: 100%;
     font-family: 'Work Sans', Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1;
     scroll-behavior: smooth;
     background-color: var(--theme-bg);
     color: var(--theme-text);
     -webkit-text-size-adjust: 100%;
     transition: color .3s ease-in-out, background .3s ease-in-out;
+    /* overflow-x: hidden; */
 }
 
-*
+*,
 *::after,
 *::before{
     margin: 0;
@@ -64,7 +67,8 @@ button, input, textarea, select {
 }
 
 h1 {
-    font-weight: 900;
+    font-weight: 800;
+    font-size: 3rem;
 }
 
 /* ---------- RESPONSIVE PADDING MEDIA QUERIES ---------- */
