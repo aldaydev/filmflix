@@ -1,5 +1,8 @@
 # Filmflix
 
+### cfeat/theme-mode
+* Creación del servicio 
+
 ### core
 * Configuración inicial del proyecto
 * Ajustes en angular.json
