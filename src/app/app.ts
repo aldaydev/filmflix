@@ -12,17 +12,5 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './app.css'
 })
 export class App {
-  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
-  protected theme = inject(ThemeService).theme();
-
-  constructor(){
-    if(this.isBrowser){
-      if(this.theme === 'dark'){
-        document.documentElement.classList.add('light');
-      }else{
-        document.documentElement.classList.remove('light');
-      }
-    }
-  }
-
+  protected themeService = inject(ThemeService);
 }
