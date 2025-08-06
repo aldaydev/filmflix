@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ThemeService } from 'app/services/theme-service/theme-service';
-import { Button } from "app/components/button/button";
 
 @Component({
   selector: 'app-home-hero',
-  imports: [Button],
+  imports: [],
   templateUrl: './home-hero.html',
   styleUrl: './home-hero.css',
   changeDetection: ChangeDetectionStrategy.OnPush

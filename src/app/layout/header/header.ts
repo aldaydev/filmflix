@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ToggleTheme } from "../toggle-theme/toggle-theme";
 import { RouterModule } from '@angular/router';
 import { HeaderThemeBg } from 'app/directives';
+import { ToggleTheme } from 'app/shared/ui/toggle-theme/toggle-theme';
 
 @Component({
   selector: 'app-header',
