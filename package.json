@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:filmflix": "node dist/filmflix/server/server.mjs",
     "server": "nodemon --watch dist/filmflix/server --exec \"node dist/filmflix/server/server.mjs\"",
-    "dev": "ng build && npm run serve:ssr:dev"
+    "dev": "ng build && npm run serve:ssr:filmflix"
   },
   "prettier": {
     "overrides": [

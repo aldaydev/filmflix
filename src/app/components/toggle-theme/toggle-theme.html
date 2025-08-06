@@ -1,1 +1,6 @@
-<app-toggle-icon [theme]="themeService.theme()"/>
+<button
+    (click)="themeService.toggleTheme()"
+    class="toogleTheme__button"
+>
+    <app-toggle-icon [theme]="themeService.theme()"/>
+</button>

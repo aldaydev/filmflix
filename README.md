@@ -3,6 +3,7 @@
 ### cfeat/theme-mode
 * Creación del servicio themeService
 * Creación del componente toggleTheme y su hijo toggleThemeIcon
+* Funcionalidad de theme-mode inicial creada
 
 ### core
 * Configuración inicial del proyecto

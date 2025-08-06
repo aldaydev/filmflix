@@ -7,7 +7,7 @@ import { effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 export class ThemeService {
   private preferedUserTheme : boolean = false;
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
-  public theme = signal<'dark' | 'light'>('light');
+  public theme = signal<'dark' | 'light'>('dark');
 
   constructor(){
     if(this.isBrowser){
@@ -19,6 +19,8 @@ export class ThemeService {
       }else{
         document.documentElement.classList.remove('light');
       }
+      // const isLight = document.documentElement.classList.contains('light');
+      // this.theme.set(isLight ? 'light' : 'dark');
 
       effect(() => {
         const mode = this.theme();

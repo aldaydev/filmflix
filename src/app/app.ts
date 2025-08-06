@@ -1,14 +1,12 @@
-import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./components/header/header";
 import { Footer } from "./components/footer/footer";
 import { ThemeService } from './services/theme-service/theme-service';
-import { isPlatformBrowser } from '@angular/common';
-import { ToggleTheme } from "./components/toggle-theme/toggle-theme";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, ToggleTheme],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,3 +1,8 @@
+:host{
+    display: flex;
+}
+
 .iconColor{
     fill: var(--theme-text);
+    transition: fill 3s ease-in-out;
 }
