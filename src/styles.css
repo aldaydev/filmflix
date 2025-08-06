@@ -54,3 +54,8 @@ button, input, textarea, select {
 h1 {
     font-weight: 900;
 }
+
+html.light {
+    background-color: #000;
+    color: #fff;
+}
