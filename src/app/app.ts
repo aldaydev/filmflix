@@ -4,10 +4,11 @@ import { Header } from "./components/header/header";
 import { Footer } from "./components/footer/footer";
 import { ThemeService } from './services/theme-service/theme-service';
 import { isPlatformBrowser } from '@angular/common';
+import { ToggleTheme } from "./components/toggle-theme/toggle-theme";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer],
+  imports: [RouterOutlet, Header, Footer, ToggleTheme],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

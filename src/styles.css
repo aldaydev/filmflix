@@ -1,12 +1,20 @@
 /* ---------- GLOBAL VARIABLES ----------*/
 
 :root {
-    --color-prim: #E50914;
-    --color-prim-dark: #C11119;
-    --dark-bg: #000000;
-    --dark-color: white;
-    --light-bg: white;
-    --light-color: #000000;
+    --color-primary: #E50914;
+    --color-primary-dark: #C11119;
+}
+
+/* Tema oscuro por defecto */
+:root {
+    --theme-bg: #000;
+    --theme-text: white;
+}
+
+/* Si el usuario tiene modo claro (lo sobrescribes) */
+html.light {
+    --theme-bg: white;
+    --theme-text: #000;
 }
 
 /* ---------- GLOBAL STYLES ----------*/
@@ -16,8 +24,8 @@ html {
     font-size: 16px;
     line-height: 1.5;
     scroll-behavior: smooth;
-    background-color: var(--dark-bg);
-    color: var(--dark-color);
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
 }
 
 *
@@ -55,9 +63,4 @@ button, input, textarea, select {
 
 h1 {
     font-weight: 900;
-}
-
-html.light {
-    background-color: var(--light-bg);
-    color: var(--light-color);
 }

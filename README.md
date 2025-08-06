@@ -1,7 +1,8 @@
 # Filmflix
 
 ### cfeat/theme-mode
-* Creación del servicio 
+* Creación del servicio themeService
+* Creación del componente toggleTheme y su hijo toggleThemeIcon
 
 ### core
 * Configuración inicial del proyecto
