@@ -1,0 +1,5 @@
+{
+    "watch": ["dist/filmflix/server"],
+    "ext": "js,mjs,json",
+    "exec": "node dist/filmflix/server/server.mjs"
+}

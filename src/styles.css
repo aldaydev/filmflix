@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* ---------- VARIABLES GLOBALES ----------*/
+
+:root {
+    --color-prim: #E50914;
+    --color-prim-light: #f17279;
+    --dark-bg: #000000;
+    --dark-color: white;
+    --light-bg: white;
+    --light-color: #000000;
+}

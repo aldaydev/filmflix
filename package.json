@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:filmflix": "node dist/filmflix/server/server.mjs"
+    "serve:ssr:filmflix": "node dist/filmflix/server/server.mjs",
+    "server": "nodemon --watch dist/filmflix/server --exec \"node dist/filmflix/server/server.mjs\"",
+    "dev": "ng build && npm run serve:ssr:dev"
   },
   "prettier": {
     "overrides": [
@@ -46,6 +48,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "nodemon": "^3.1.10",
     "typescript": "~5.8.2"
   }
 }
