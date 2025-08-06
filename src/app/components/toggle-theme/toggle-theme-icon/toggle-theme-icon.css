@@ -1,8 +1,37 @@
 :host{
     display: flex;
+    transition: scale .3s ease-in-out;
 }
 
 .iconColor{
     fill: var(--theme-text);
-    transition: fill 3s ease-in-out;
+    transition: fill .3s 2s ease-in-out;
+}
+
+.lightIconColor{
+    animation: changeColorToLight .3s ease-in-out .5s both;
+}
+
+.darkIconColor{
+    animation: changeColorToLight .3s ease-in-out .5s reverse both;
+}
+
+@keyframes changeColorToLight {
+    from{
+        fill: #ffffff;
+    }to{
+        fill: #000000;
+    }   
+}
+
+.firstRenderAnimation{
+    animation: firstRenderAnimation 1s 1s ease-in-out both !important;
+}
+
+@keyframes firstRenderAnimation {
+    from{
+        fill: transparent !important;
+    }to{
+        fill: var(--theme-text);
+    }   
 }

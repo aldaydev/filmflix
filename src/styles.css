@@ -12,12 +12,14 @@
 /* Tema oscuro por defecto */
 :root {
     --theme-bg: #000;
+    --theme-bg-trans: #000000b7;
     --theme-text: white;
 }
 
 /* Si el usuario tiene modo claro (lo sobrescribes) */
 html.light {
     --theme-bg: white;
+    --theme-bg-trans: #ffffffa8;
     --theme-text: #000;
 }
 

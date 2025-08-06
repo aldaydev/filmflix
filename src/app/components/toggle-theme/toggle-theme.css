@@ -8,13 +8,14 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
     /* border: 2px solid var(--theme-text);
     border-radius: 10px; */
     padding: 5px;
 }
 
 .toogleTheme__button:hover app-toggle-icon{
-    scale: 1.1;
+    scale: 1.2;
 }
 
 

@@ -2,6 +2,7 @@
 
 ### feat/header
 * Creando header fixed o sticky
+* Ajustando background en función al scroll / theme
 
 ### feat/theme-mode
 * Creación del servicio themeService
