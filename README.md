@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/home-carousel
+* Creación del componente reutilizable "filmCarousel"
+
 ### feat/home-whatsnew
 * Creación del componente "whats-new" en la homePage
 * Creación de estilos y componrtamiento responsive.
