@@ -6,18 +6,22 @@
 
 .homeWhatsNew__card{
     
-    padding: 40px 20px;
+    padding: 40px 20px 30px 20px;
     position: relative;
 
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 25px;
 
     border-radius: 10px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.815);
+    /* background-color: black; */
     z-index: 10;
 
     transition: scale .3s ease-out;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.349);
 }
 
 .homeWhatsNew__card:before{
@@ -67,6 +71,12 @@
     color: white;
 }
 
+.homeWhatsNew__data{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
 .homeWhatsNew__infoTitle{
     line-height: 1.2;
     font-size: 1.4rem;
@@ -74,4 +84,39 @@
 
 .homeWhatsNew__buttonContainer{
     width: fit-content;
+}
+
+@media screen and (min-width: 600px) {
+    .homeWhatsNew__card{
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 40px;
+        padding: 40px 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .homeWhatsNew__card{
+    
+        padding: 15px 50px;
+    }
+
+    .homeWhatsNew__buttonContainer{
+        display: flex;
+        align-items: center;
+    }
+
+    .homeWhatsNew__popcornContainer{
+        max-width: 60px;
+        position: static;
+        display: flex;
+        align-items: center;
+    }
+
+    .homeWhatsNew__info{
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1.4rem;
+    }
 }

@@ -1,17 +1,19 @@
 <section class="home_homeWhatsNew">
     <article class="homeWhatsNew__card">
 
-        <div class="homeWhatsNew__popcornContainer">
-            <img 
-                src="assets/images/home/popcorn_illustration.svg" 
-                alt="Pop Corn Illustration"
-                class="homeWhatsNew__popcornIllustration"
-            >
-        </div>
-
         <div class="homeWhatsNew__info">
-            <h3 class="homeWhatsNew__infoTitle">¡Ya disponibles los próximos estrenos!</h3>
-            <p class="homeWhatsNew__infoText">Mantente al día de las películas que saldrán próximamente</p>
+            <div class="homeWhatsNew__popcornContainer">
+                <img 
+                    src="assets/images/home/popcorn_illustration.svg" 
+                    alt="Pop Corn Illustration"
+                    class="homeWhatsNew__popcornIllustration"
+                >
+            </div>
+            <div class="homeWhatsNew__data">
+                <h3 class="homeWhatsNew__infoTitle">¡Ya disponibles los próximos estrenos!</h3>
+                <p class="homeWhatsNew__infoText">Mantente al día de las películas que saldrán próximamente</p>
+            </div>
+            
         </div>
         
         <div class="homeWhatsNew__buttonContainer">
@@ -19,7 +21,7 @@
                 [type]="'solid'" 
                 [size]="'small'"
                 [color]="'secondary'"
-                [label]="'Ir a estrenos'"
+                [label]="'IR A ESTRENOS'"
                 (click)="null"
             />
         </div>

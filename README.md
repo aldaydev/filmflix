@@ -2,6 +2,7 @@
 
 ### feat/home-whatsnew
 * Creación del componente "whats-new" en la homePage
+* Creación de estilos y componrtamiento responsive.
 
 ### feat/home-hero
 * Creando componente "hero" en la homePage
