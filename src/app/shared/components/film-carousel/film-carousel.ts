@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { PopularFilmsService } from 'app/services/tmdb/popular-films-service';
 
 @Component({
   selector: 'app-film-carousel',
@@ -7,6 +8,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './film-carousel.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FilmCarousel {
+export class FilmCarousel implements OnInit {
+
+  popularFilmService = inject(PopularFilmsService);
+
+  ngOnInit(): void {
+    this.popularFilmService.getPopularFilms().subscribe((data) => {
+      console.log(data);
+    });
+  }
 
 }

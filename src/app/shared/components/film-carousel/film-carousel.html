@@ -1,1 +1,9 @@
-<p>film-carousel works!</p>
+@let films = popularFilmService.popularFilms();
+
+<section>
+    @if (films) {
+        @for (film of films.results; track film.id) {
+            <h1>{{film.title}}</h1>
+        }
+    }
+</section>
