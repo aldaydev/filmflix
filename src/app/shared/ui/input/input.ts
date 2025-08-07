@@ -13,7 +13,7 @@ export class Input {
 
   type = input<'text'>('text');
   label = input<string>('Label');
-  size = input<'small' | 'big'>('small');
+  size = input<'small' | 'big'>('big');
   placeholder = input<string | null> ("");
   disabled = input<boolean>(false);
 }

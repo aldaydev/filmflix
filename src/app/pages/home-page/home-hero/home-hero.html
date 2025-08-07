@@ -1,7 +1,7 @@
 <header class="home__homeHero">
     <section class="homeHero__welcome">
         <div class="welcome__container">
-            <h1 class="welcome__title">Todas tus películas favoritas presentes y futuras</h1>
+            <h1 class="welcome__title">Todas tus <span>películas</span> favoritas presentes y futuras</h1>
             <p class="welcome__subtitle">¿Buscas una película en concreto?</p>
             <p class="welcome__description">Utiliza nuestro buscador global o visita la sección de películas para buscar
                 con filtros avanzados</p>
@@ -23,14 +23,22 @@
                 />
             </div>
             
-            <!-- <app-button 
-                [type]="'outline'" 
-                [size]="'small'"
-                [color]="'primary'" 
-                [label]="'Buscar'"
-                [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"
-                (click)="null"
-            /> -->
+            <div class="testingButtons">
+                <app-input
+                    [type]="'text'"
+                    [label]="'¿Qué película quieres buscar?'"
+                    [size]="'small'"
+                />
+                <app-button 
+                    [type]="'outline'" 
+                    [size]="'small'"
+                    [color]="'primary'" 
+                    [label]="'Buscar'"
+                    [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"
+                    (click)="null"
+                />
+            </div>
+            
         </div>
     </section>
     <img src="assets/images/home/home_bg_large.webp" alt="Fondo películas" class="homeHero__bgImage" />

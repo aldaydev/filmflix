@@ -1,8 +1,7 @@
-<label class="customInput__label">
+<label class="customInput__label" [class.small]="size() === 'small'">
     <input 
         type="text" 
         [attr.placeholder]="placeholder()"
-        [class]="size()"
         [class.light]="themeService.theme() === 'light'"
         class="customInput"
     >

@@ -51,6 +51,11 @@
 
 .welcome__title{
     margin-bottom: 2.2rem;
+    text-wrap: balance;
+}
+
+.welcome__title span {
+    color: var(--color-primary);
 }
 
 .welcome__subtitle{

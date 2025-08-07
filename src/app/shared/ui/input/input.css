@@ -14,7 +14,7 @@
 
 .customInput__labelText{
     position: absolute;
-    top: 13px;
+    top: 17px;
     left: 17px;
     text-wrap: nowrap;
     color: var(--theme-text);
@@ -27,13 +27,23 @@
     transition: all .3s ease-in-out;
 }
 
+.customInput__label.small .customInput__labelText{
+    font-size: 1rem;
+    top: 13px;
+}
+
 .customInput:focus + .customInput__labelText,
 .customInput:not(:placeholder-shown) + .customInput__labelText{
     opacity: 1;
-    color: var(--color-primary);
+    color: var(--theme-text);
     top: -20px;
     left: 12px;
     font-size: 1rem;
+}
+
+.customInput__label.small .customInput:focus + .customInput__labelText,
+.customInput__label.small .customInput:not(:placeholder-shown) + .customInput__labelText{
+    font-size: .9rem;
 }
 
 .customInput.light:focus + .customInput__labelText,
@@ -45,7 +55,14 @@
     font-size: 1rem;
 }
 
+.customInput__label.small .customInput.light:focus + .customInput__labelText,
+.customInput__label.small .customInput.light:not(:placeholder-shown) + .customInput__labelText{
+    font-size: .9rem;
+}
 
+.customInput__label.small .customInput{
+    font-size: 1rem;
+}
 
 .customInput{
     min-width: 200px;
@@ -59,9 +76,24 @@
     border: 1px solid var(--color-primary);
     outline: none;
     color: var(--theme-text);
-    transition: background .5s ease-in-out, color .5s ease-in-out;
+    transition: background .5s ease-in-out, color .5s ease-in-out, border .3s ease-in-out;
+}
+
+.customInput:focus{
+    border: 2px solid var(--theme-text);
 }
 
 .customInput::placeholder{
     color: var(--theme-text);
+}
+
+@media screen and (max-width: 800px) {
+    .customInput__labelText{
+        font-size: 1.1rem;
+        top: 19px;
+    }
+
+    .customInput{
+        font-size: 1.1rem;
+    }
 }
