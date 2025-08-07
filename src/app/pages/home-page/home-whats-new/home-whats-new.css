@@ -1,0 +1,77 @@
+.home_homeWhatsNew{
+    padding: 0 var(--res-padding);
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.homeWhatsNew__card{
+    
+    padding: 40px 20px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    border-radius: 10px;
+    background-color: black;
+    z-index: 10;
+
+    transition: scale .3s ease-out;
+}
+
+.homeWhatsNew__card:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(91deg, var(--color-gradient-purple) 0%, var(--color-gradient-blue) 99.51%);
+    border-radius: 10px;
+    z-index: -10;
+    opacity: .5;
+
+    transition: opacity .3s ease-out;
+}
+
+.homeWhatsNew__card:hover{
+    scale: 1.02;
+}
+
+.homeWhatsNew__card:hover:before{
+    opacity: .7;
+}
+
+/* ---------- POPCORN ILLUSTRATION ---------- */
+
+.homeWhatsNew__popcornContainer{
+    max-width: 55px;
+
+    position: absolute;
+    top: -33px;
+    z-index: 100;
+}
+
+.homeWhatsNew__popcornIllustration{
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- INFO SECTION ---------- */
+
+.homeWhatsNew__info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: white;
+}
+
+.homeWhatsNew__infoTitle{
+    line-height: 1.2;
+    font-size: 1.4rem;
+}
+
+.homeWhatsNew__buttonContainer{
+    width: fit-content;
+}

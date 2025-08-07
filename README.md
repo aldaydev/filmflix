@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/home-whatsnew
+* Creación del componente "whats-new" en la homePage
+
 ### feat/home-hero
 * Creando componente "hero" en la homePage
 * Trabajando el diseño del hero section

@@ -57,6 +57,17 @@
     background-color: var(--color-primary-dark);
 }
 
+/* Solid Secondary */
+
+.btn.solid.secondary {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.btn.solid.secondary:hover {
+    background-color: var(--color-secondary-dark);
+}
+
 /* Outline none */
 .btn.outline {
     background-color: transparent;

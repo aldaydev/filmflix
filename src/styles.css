@@ -4,6 +4,12 @@
     --color-primary: #E50914;
     --color-primary-dark: #C11119;
 
+    --color-secondary: #414258;
+    --color-secondary-dark: #2d2f4b;
+
+    --color-gradient-blue: #161d52;
+    --color-gradient-purple: #482566;
+
     --default-transition: .3s ease-in-out;
 
     --res-padding: 20px;
