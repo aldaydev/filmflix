@@ -4,6 +4,7 @@
     max-width: 100%;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
 .homeHero__bgImage{
@@ -20,8 +21,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--theme-bg);
-    opacity: 0.6;
+    background-color: var(--theme-bg-trans);
+    /* opacity: 0.6; */
     z-index: 10;
     transition: background .5s ease-in-out;
 }
@@ -51,37 +52,85 @@
 
 .welcome__title{
     margin-bottom: 2.2rem;
-    text-wrap: balance;
 }
 
 .welcome__title span {
     color: var(--color-primary);
+    text-shadow: 0 0 10px black;
 }
 
 .welcome__subtitle{
-    font-size: 1.8rem;
-    font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .welcome__description{
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
     margin-bottom: 1rem;
     text-wrap: pretty;
 }
 
 
-.testingButtons__container{
+.testingButtons{
     width: 100%;
     max-width: 700px;
     margin-top: 30px;
-}
-
-.testingButtons{
     display: flex;
     justify-content: center;
     column-gap: 10px;
     row-gap: 10px;
     margin-bottom: 30px;
+}
+
+.homeHero__heroSeparator{
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.heroSeparator__figure--back{
+    height: 70px;
+    width: 110%;
+    background-color: var(--theme-bg);
+
+    position: absolute;
+    bottom: -10px;
+
+    /* clip-path: ellipse(100% 100% at 50% 100%); */
+    border-top: solid .2rem red;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    /* transform: rotate(90deg); */
+    z-index: 60;
+
+    transition: background .5s ease-in-out;
+}
+
+/* .heroSeparator__figure--front{
+    height: 80px;
+    width: 100%;
+    background-color: #E50915;
+
+    position: absolute;
+    bottom: -7px;
+
+    border-top-left-radius: 121% 210px;
+    border-top-right-radius: 121% 210px;
+    z-index: 50;
+} */
+
+
+
+@media screen and (min-width: 800px) {
+    .welcome__description {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .welcome__description {
+        font-size: 1.5rem;
+    }
 }

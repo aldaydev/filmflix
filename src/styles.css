@@ -12,7 +12,7 @@
 /* Tema oscuro por defecto */
 :root {
     --theme-bg: #000;
-    --theme-bg-trans: #000000b7;
+    --theme-bg-trans: #0000009d;
     --theme-text: white;
 }
 
@@ -66,9 +66,44 @@ button, input, textarea, select {
     font-size: inherit;
 }
 
-h1 {
+/* h1 {
     font-weight: 800;
     font-size: 3rem;
+} */
+
+/* ---------- APP TITLES ---------- */
+
+h1 {
+    font-weight: 800;
+    text-wrap: balance;
+    font-size: 1.9rem;
+}
+
+h2 {
+    text-wrap: balance;
+    font-size: 1.2rem;
+}
+
+/* ---------- RESPONSIVE APP TITLES ---------- */
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
 }
 
 /* ---------- RESPONSIVE PADDING MEDIA QUERIES ---------- */
