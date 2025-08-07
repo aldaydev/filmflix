@@ -2,6 +2,7 @@
 
 ### feat/home-carousel
 * Creación del componente reutilizable "filmCarousel"
+* Creación del servicio "popularFilmsService"
 
 ### feat/home-whatsnew
 * Creación del componente "whats-new" en la homePage
