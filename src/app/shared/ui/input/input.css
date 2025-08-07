@@ -6,6 +6,7 @@
 
 .customInput__label{
     width: 100%;
+    /* min-width: 320px; */
     display: flex;
     justify-content: center;
     position: relative;
@@ -15,10 +16,10 @@
     position: absolute;
     top: 13px;
     left: 17px;
-    
-    color: rgba(255, 255, 255, 0.644);
-    font-weight: 400;
-    
+    text-wrap: nowrap;
+    color: var(--theme-text);
+    font-weight: 600;
+    opacity: .7;
     font-size: 1.2rem;
     pointer-events: none;
     z-index: 10;
@@ -26,8 +27,19 @@
     transition: all .3s ease-in-out;
 }
 
-.customInput:focus + .customInput__labelText{
+.customInput:focus + .customInput__labelText,
+.customInput:not(:placeholder-shown) + .customInput__labelText{
+    opacity: 1;
     color: var(--color-primary);
+    top: -20px;
+    left: 12px;
+    font-size: 1rem;
+}
+
+.customInput.light:focus + .customInput__labelText,
+.customInput.light:not(:placeholder-shown) + .customInput__labelText{
+    opacity: 1;
+    color: var(--theme-text);
     top: -20px;
     left: 12px;
     font-size: 1rem;
@@ -36,16 +48,20 @@
 
 
 .customInput{
+    min-width: 200px;
     width: 100%;
+    min-width: min-content;
+    text-wrap: nowrap;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
     font-size: 1.2rem;
     background-color: var(--theme-bg-trans);
     border: 1px solid var(--color-primary);
     outline: none;
-    color: white;
+    color: var(--theme-text);
+    transition: background .5s ease-in-out, color .5s ease-in-out;
 }
 
 .customInput::placeholder{
-    color: rgba(255, 255, 255, 0.644);
+    color: var(--theme-text);
 }

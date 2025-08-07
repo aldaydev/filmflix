@@ -8,6 +8,11 @@
         </div>
         <div class="testingButtons__container">
             <div class="testingButtons">
+                <app-input
+                    [type]="'text'"
+                    [label]="'¿Qué película quieres buscar?'"
+                    [size]="'big'"
+                />
                 <app-button 
                     [type]="'solid'" 
                     [size]="'big'"
@@ -15,11 +20,6 @@
                     [label]="'Buscar'"
                     [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"
                     (click)="null"
-                />
-                <app-input
-                    [type]="'text'"
-                    [label]="'¿Qué película quieres buscar?'"
-                    [size]="'big'"
                 />
             </div>
             

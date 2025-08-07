@@ -3,6 +3,7 @@
         type="text" 
         [attr.placeholder]="placeholder()"
         [class]="size()"
+        [class.light]="themeService.theme() === 'light'"
         class="customInput"
     >
     <span class="customInput__labelText">

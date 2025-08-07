@@ -75,8 +75,8 @@
 
 .testingButtons{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
     margin-bottom: 30px;
 }
