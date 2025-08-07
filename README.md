@@ -5,6 +5,7 @@
 * Trabajando el diseño del hero section
 * Creación del componente botón reutilizable
 * Creación del componente input reutilizable
+* Creación del separador inferior curvo del "hero" 
 
 ### feat/header
 * Creando header fixed o sticky

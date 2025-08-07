@@ -22,7 +22,7 @@ header {
 
 .header__brandText {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--color-primary);
 }
 
@@ -62,4 +62,10 @@ header.bgGradientDark::after {
 
 header.bgSolid{
     background-color: var(--theme-bg);
+}
+
+@media screen and (min-width: 800px) {
+    .header__brandText {
+    font-size: 2rem;
+}
 }
