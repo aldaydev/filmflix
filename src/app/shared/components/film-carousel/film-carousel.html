@@ -1,8 +1,8 @@
-@let films = popularFilmService.popularFilms();
+@let films = filmList();
 
 <section>
     @if (films) {
-        @for (film of films.results; track film.id) {
+        @for (film of films; track film.id) {
             <h1>{{film.title}}</h1>
         }
     }
