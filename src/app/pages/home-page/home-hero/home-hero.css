@@ -66,3 +66,17 @@
     text-wrap: pretty;
 }
 
+
+.testingButtons__container{
+    width: 100%;
+    max-width: 700px;
+    margin-top: 30px;
+}
+
+.testingButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}

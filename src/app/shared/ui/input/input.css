@@ -1,0 +1,51 @@
+:host{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.customInput__label{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.customInput__labelText{
+    position: absolute;
+    top: 13px;
+    left: 17px;
+    
+    color: rgba(255, 255, 255, 0.644);
+    font-weight: 400;
+    
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 10;
+
+    transition: all .3s ease-in-out;
+}
+
+.customInput:focus + .customInput__labelText{
+    color: var(--color-primary);
+    top: -20px;
+    left: 12px;
+    font-size: 1rem;
+}
+
+
+
+.customInput{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 1.2rem;
+    background-color: var(--theme-bg-trans);
+    border: 1px solid var(--color-primary);
+    outline: none;
+    color: white;
+}
+
+.customInput::placeholder{
+    color: rgba(255, 255, 255, 0.644);
+}
