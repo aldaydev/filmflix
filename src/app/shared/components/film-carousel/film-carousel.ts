@@ -10,10 +10,11 @@ import {
 import { Film } from 'app/models/film.model';
 import { PosterUrlPipe } from 'app/pipes/poster-url-pipe-pipe';
 import { FilmCarouselArrow } from './film-carousel-arrow/film-carousel-arrow';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-film-carousel',
-  imports: [PosterUrlPipe, FilmCarouselArrow],
+  imports: [PosterUrlPipe, FilmCarouselArrow, RouterModule],
   templateUrl: './film-carousel.html',
   styleUrl: './film-carousel.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

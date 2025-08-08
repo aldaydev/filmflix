@@ -3,6 +3,8 @@
 ### feat/home-carousel
 * Creación del componente reutilizable "filmCarousel"
 * Creación del servicio "popularFilmsService"
+* Estilos, lógica y enrutamiento de "filmCarousel"
+* Creacín inicial de la página "film/:id" para checkear
 
 ### feat/home-whatsnew
 * Creación del componente "whats-new" en la homePage

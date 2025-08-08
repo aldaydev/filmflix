@@ -31,6 +31,7 @@
                     @let number = i +1;
                     <a 
                         class="filmCarousel__posterContainer" #posterContainer
+                        [routerLink]="['/film', film.id]"
                     >
                         <img 
                             [src]="film.poster_path | posterUrl"

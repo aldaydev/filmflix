@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HomeHero } from "./home-hero/home-hero";
 import { HomeWhatsNew } from "./home-whats-new/home-whats-new";
-import { HomeCarousel } from "../home/home-carousel/home-carousel";
+import { HomeCarousel } from "./home-carousel/home-carousel";
 
 @Component({
   selector: 'app-home',
