@@ -1,7 +1,12 @@
-<div class="infoCard__container">
+<div class="infoCard__outerContainer">
+    
     <div class="infoCard__textContainer">
-        <h3 class="infoContainer__title">{{title()}}</h3>
-        <p class="infoContainer__text">{{text()}}</p>
+        <h3 class="infoCard__title">{{title()}}</h3>
+        <p class="infoCard__text">{{text()}}</p>
     </div>
-    <img [src]="'assets/'" [alt]=""/>
+
+    <div class="infoCard__iconContainer">
+        <img [src]="iconPath()" [alt]="iconName() + 'icon'" class="infoCard__icon"/>
+    </div>
+    
 </div>

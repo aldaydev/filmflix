@@ -1,0 +1,73 @@
+.infoCard__outerContainer{
+    
+    padding: 40px 20px 40px 20px;
+    position: relative;
+
+    /* margin: 45px 0; */
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 25px;
+
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.815);
+    z-index: 10;
+
+    transition: scale .3s ease-out;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.349);
+    filter: drop-shadow(0 0 4px var(--theme-text-trans));
+}
+
+.infoCard__outerContainer:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(91deg, var(--color-gradient-purple) 0%, var(--color-gradient-blue) 99.51%);
+    border-radius: 10px;
+    z-index: -10;
+    opacity: .5;
+
+    transition: opacity .3s ease-out;
+}
+
+.infoCard__textContainer{
+    /* padding: 20px 15px 15px 20px; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    color: white;
+}
+
+.infoCard__text{
+    line-height: 1.2;
+}
+
+.infoCard__iconContainer{
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    filter: drop-shadow(0 0 5px black)
+}
+
+.infoCard__icon{
+    width: 45px;
+}
+
+@media screen and (min-width: 1360px) {
+    .infoCard__outerContainer{
+        padding: 40px 20px 80px 20px;
+    }
+
+    .infoCard__iconContainer{
+    top: 78%;
+    right: 20px;
+    filter: drop-shadow(0 0 5px black)
+}
+}

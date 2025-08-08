@@ -22,6 +22,8 @@
     transition: scale .3s ease-out;
 
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.349);
+    /* box-shadow: 0 0 4px 0px var(--theme-text-trans); */
+    filter: drop-shadow(0 0 3px var(--theme-text-trans));
 }
 
 .homeWhatsNew__card:before{
