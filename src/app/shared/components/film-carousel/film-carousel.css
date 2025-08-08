@@ -1,6 +1,6 @@
 .filmCarousel__outerContainer{
-    /* background-color: var(--thme-bg); */
-    background-color: aqua;
+    background-color: var(--thme-bg);
+    /* background-color: aqua; */
     padding: 0 var(--res-padding);
     width: 100%;
     height: 350px;
@@ -9,7 +9,8 @@
 }
 
 .filmCarousel__buttonContainer{
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
+    background-color: var(--theme-bg);
     position: absolute;
     top: 0;
     width: calc(var(--res-padding) + 30px);
@@ -17,6 +18,8 @@
 
     display: flex;
     z-index: 20;
+
+    transition: opacity .3s ease-in-out, left .3s ease-in-out;
 }
 
 .filmCarousel__buttonContainer--left{
@@ -25,14 +28,29 @@
 }
 
 .filmCarousel__buttonContainer--left{
-    left: 0;
+    padding-right: 25px;
     justify-content: end;
 
     opacity: 0;
     left: -50px;
+
+    background: linear-gradient(to left, transparent 0%, var(--theme-bg) 10%);
+}
+
+.filmCarousel__buttonContainer--left.show{
+    opacity: 1;
+    left: 0;
 }
 
 .filmCarousel__buttonContainer--right{
+    padding-left: 25px;
+    right: 15px;
+    opacity: 1;
+
+    background: linear-gradient(to right, transparent 0%, var(--theme-bg) 10%);
+}
+
+.filmCarousel__buttonContainer--right.show{
     right: 0;
     justify-content: start;
 
@@ -41,21 +59,29 @@
 }
 
 .filmCarousel__slideButton{
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--color-secondary-dark);
     border: none;
 
     height: 50%;
-    margin: auto 0;
+    /* margin: auto 0; */
 
     border-radius: 15px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
+    transition: background .3s ease-in-out;
 }
 
+.filmCarousel__slideButton:hover{
+    background-color: var(--color-secondary);
+}
+
+
 .filmCarousel__innerContainer{
-    background-color: antiquewhite;
+    background-color: var(--theme-bg);
     width: 100%;
     height: 100%;
     overflow: hidden;
