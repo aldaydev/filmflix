@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/home-faq
+* Creación del componente homeFaq
+
 ### feat/home-features
 * Creación del componente homeFeatures
 * Creación del componente homeInfoCard
