@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { Film, PopularFilms } from 'app/models/film.model';
+import { PopularFilms } from 'app/models/film.model';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 

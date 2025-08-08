@@ -20,6 +20,7 @@
     --theme-bg: #000;
     --theme-bg-trans: #0000009d;
     --theme-text: white;
+    --theme-text-trans: #ffffff83;
 }
 
 /* Si el usuario tiene modo claro (lo sobrescribes) */
@@ -27,6 +28,7 @@ html.light {
     --theme-bg: white;
     --theme-bg-trans: #ffffffa8;
     --theme-text: #000;
+    --theme-text-trans: #0000008a;
 }
 
 /* ---------- GLOBAL STYLES ----------*/
@@ -56,6 +58,11 @@ html {
 p, h1, h2, h3, h4, h5, h6, body {
     margin: 0;
     padding: 0;
+}
+
+body{
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 ul, ol {

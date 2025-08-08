@@ -5,3 +5,8 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
+main{
+    width: 100%;
+    max-width: 100%;
+}

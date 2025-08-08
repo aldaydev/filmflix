@@ -1,9 +1,72 @@
 @let films = filmList();
 
-<section>
-    @if (films) {
-        @for (film of films; track film.id) {
-            <h1>{{film.title}}</h1>
-        }
-    }
-</section>
+<div class="filmCarousel__outerContainer">
+
+    <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--left">
+        <button class="filmCarousel__slideButton filmCarousel__slideButton--left">
+            <app-film-carousel-arrow [position]="'left'" />
+        </button>
+    </div>
+
+    <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--right">
+        <button class="filmCarousel__slideButton filmCarousel__slideButton--right">
+            <app-film-carousel-arrow [position]="'right'" />
+        </button>
+    </div>
+
+    <div class="filmCarousel__innerContainer">
+
+        <div>
+            
+        </div>
+        <div class="filmCarousel__posterListContainer">
+            @if (films) {
+                @for (film of films; track film.id; let i = $index) {
+                    @let number = i +1;
+                    <div class="filmCarousel__posterContainer">
+                        <img 
+                            [src]="film.poster_path | posterUrl"
+                            [alt]="'Poster de ' + film.title"
+                            class="filmCarousel__poster"
+                        />
+                        <span class="filmCarousel__filmPosition" [attr.data-content]="number">{{number}}</span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <!-- <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--left">
+            <button class="filmCarousel__slideButton filmCarousel__slideButton--left">
+                <app-film-carousel-arrow [position]="'left'"/>
+            </button>
+        </div>
+    
+
+    <div class="filmCarousel__innerContainer">
+
+        <div class="filmCarousel__posterListContainer">
+            @if (films) {
+                @for (film of films; track film.id; let i = $index) {
+                    @let number = i +1;
+                    <div class="filmCarousel__posterContainer">
+                        <img 
+                            [src]="film.poster_path | posterUrl"
+                            [alt]="'Poster de ' + film.title"
+                            class="filmCarousel__poster"
+                        />
+                        <span class="filmCarousel__filmPosition" [attr.data-content]="number">{{number}}</span>
+                    </div>
+                }
+            }
+        </div>
+        
+        
+        
+    </div>
+    <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--right">
+            <button class="filmCarousel__slideButton filmCarousel__slideButton--right">
+                <app-film-carousel-arrow [position]="'right'"/>
+            </button>
+        </div> -->
+</div>

@@ -1,0 +1,104 @@
+.filmCarousel__outerContainer{
+    /* background-color: var(--thme-bg); */
+    background-color: aqua;
+    padding: 0 var(--res-padding);
+    width: 100%;
+    height: 350px;
+
+    position: relative;
+}
+
+.filmCarousel__buttonContainer{
+    background-color: blueviolet;
+    position: absolute;
+    top: 0;
+    width: calc(var(--res-padding) + 30px);
+    height: 100%;
+
+    display: flex;
+    z-index: 20;
+}
+
+.filmCarousel__buttonContainer--left{
+    left: 0;
+    justify-content: end;
+}
+
+.filmCarousel__buttonContainer--left{
+    left: 0;
+    justify-content: end;
+
+    opacity: 0;
+    left: -50px;
+}
+
+.filmCarousel__buttonContainer--right{
+    right: 0;
+    justify-content: start;
+
+    opacity: 0;
+    right: -50px;
+}
+
+.filmCarousel__slideButton{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+
+    height: 50%;
+    margin: auto 0;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filmCarousel__innerContainer{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.filmCarousel__posterListContainer{
+    /* margin: 0 55px; */
+    position: absolute;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(10, 1fr);
+    align-items: center;
+}
+
+.filmCarousel__posterContainer{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    filter: drop-shadow(0px 0px 8px var(--theme-text-trans));
+}
+
+.filmCarousel__poster{
+    padding: 0 20px;
+    height: 300px;
+}
+
+.filmCarousel__filmPosition{
+    position: absolute;
+    top: 1.5rem;
+    left: 5px;
+
+    font-size: 5.2rem;
+    font-weight:700;
+    color: rgb(65, 65, 65);
+    -webkit-text-stroke: 0.25rem rgb(255, 255, 255);
+    
+}
+
+.filmCarousel__filmPosition:before{
+    content: attr(data-content);
+    -webkit-text-fill-color: rgb(0, 0, 0);
+    -webkit-text-stroke: 0;
+    position: absolute;
+}

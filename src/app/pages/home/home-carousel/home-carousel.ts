@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { Film, PopularFilms } from 'app/models/film.model';
 import { PopularFilmsService } from 'app/services/tmdb/popular-films-service';
 import { FilmCarousel } from 'app/shared/components/film-carousel/film-carousel';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-home-carousel',
@@ -12,11 +13,16 @@ import { FilmCarousel } from 'app/shared/components/film-carousel/film-carousel'
 })
 export class HomeCarousel {
   popularFilmService = inject(PopularFilmsService);
-  popularFilmList = signal<Film[] | null>(null)
+  popularFilmList = signal<Film[] | null>(null);
 
   ngOnInit(): void {
-    this.popularFilmService.getPopularFilms().subscribe((data: PopularFilms) => {
-      this.popularFilmList.set(data.results);
-    });
+    this.popularFilmService.getPopularFilms()
+      .pipe(
+        map(data => data.results.slice(0, 10))
+      )
+      .subscribe((films) => {
+        this.popularFilmList.set(films);
+        console.log(films);
+      });
   }
 }

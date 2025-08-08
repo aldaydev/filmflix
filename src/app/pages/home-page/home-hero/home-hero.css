@@ -95,7 +95,7 @@
 
 .heroSeparator__figure--back{
     height: 70px;
-    width: 110%;
+    width: 100%;
     background-color: var(--theme-bg);
     /* background: linear-gradient(to bottom, var(--theme-bg-trans) 0%, var(--theme-bg) 50%); */
     position: absolute;
