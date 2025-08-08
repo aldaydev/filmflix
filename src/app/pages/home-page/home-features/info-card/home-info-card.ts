@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-info-card',
+  selector: 'app-home-info-card',
   imports: [],
-  templateUrl: './info-card.html',
-  styleUrl: './info-card.css',
+  templateUrl: './home-info-card.html',
+  styleUrl: './home-info-card.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class InfoCard {
+export class homeInfoCard {
 
   title = input('');
   text = input('');

@@ -2,6 +2,8 @@
 
 ### feat/home-features
 * Creación del componente homeFeatures
+* Creación del componente homeInfoCard
+* Trabajando estilos y responsive
 
 ### feat/home-carousel
 * Creación del componente reutilizable "filmCarousel"
