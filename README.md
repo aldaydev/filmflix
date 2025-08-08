@@ -5,6 +5,7 @@
 * Creación del servicio "popularFilmsService"
 * Estilos, lógica y enrutamiento de "filmCarousel"
 * Creacín inicial de la página "film/:id" para checkear
+* Ajustes finales en el componente filmCarousel
 
 ### feat/home-whatsnew
 * Creación del componente "whats-new" en la homePage
