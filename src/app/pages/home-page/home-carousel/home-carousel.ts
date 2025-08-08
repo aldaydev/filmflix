@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { Film, PopularFilms } from 'app/models/film.model';
+import { Film } from 'app/models/film.model';
 import { PopularFilmsService } from 'app/services/tmdb/popular-films-service';
 import { FilmCarousel } from 'app/shared/components/film-carousel/film-carousel';
 import { map } from 'rxjs';
@@ -22,7 +22,6 @@ export class HomeCarousel {
       )
       .subscribe((films) => {
         this.popularFilmList.set(films);
-        console.log(films);
       });
   }
 }

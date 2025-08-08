@@ -2,3 +2,14 @@
     max-width: 100%;
     width: 100dvw;
 }
+
+.homeCarousel__container{
+    margin: 70px 0;
+}
+
+.homeCarousel__title{
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 0 var(--res-padding);
+    margin-bottom: 1.5rem;
+}

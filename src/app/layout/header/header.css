@@ -7,6 +7,8 @@
     max-width: 100dvw;
     height: 75px;
     z-index: 999;
+
+    background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%);
 }
 
 header {
@@ -26,7 +28,7 @@ header {
     color: var(--color-primary);
 }
 
-header::before {
+/* header::before {
     content: '';
     position: absolute;
     top: 0;
@@ -36,7 +38,7 @@ header::before {
     background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%);
     z-index: -1;
     opacity: 0;
-}
+} */
 
 header::after {
     content: '';

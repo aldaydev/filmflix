@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { PopularFilms } from 'app/models/film.model';
+import { Film, PopularFilms } from 'app/models/film.model';
 import { environment } from 'environments/environment';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,4 +19,11 @@ export class PopularFilmsService {
       },
     });
   }
+
+  async getPopularIds(): Promise<string[]> {
+    const response = await firstValueFrom(this.getPopularFilms());
+    return response.results.slice(0, 5).map((film: Film) => film.id.toString());
+  }
+
+
 }
