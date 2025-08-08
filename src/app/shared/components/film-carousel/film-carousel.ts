@@ -20,7 +20,7 @@ import { FilmCarouselArrow } from './film-carousel-arrow/film-carousel-arrow';
 })
 export class FilmCarousel {
   @ViewChild('innerContainer') innerContainer!: ElementRef<HTMLDivElement>;
-  @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLAnchorElement>;
 
   filmList = input<Film[] | null>(null);
 

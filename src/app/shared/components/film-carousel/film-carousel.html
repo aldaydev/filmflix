@@ -1,8 +1,11 @@
 @let films = filmList();
 
-<div class="filmCarousel__outerContainer">
+<div class="filmCarousel__outerContainer" [class.onStart]="onStart()" [class.onEnd]="onEnd()">
 
-    <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--left" [class]="onStart() ? 'hide' : 'show'">
+    <div 
+        class="filmCarousel__buttonContainer filmCarousel__buttonContainer--left" 
+        [class]="onStart() ? 'hide' : 'show'"
+    >
         <button 
             class="filmCarousel__slideButton filmCarousel__slideButton--left"
             (click)="slideRight()"
@@ -26,16 +29,16 @@
             @if (films) {
                 @for (film of films; track film.id; let i = $index) {
                     @let number = i +1;
-                    <div 
+                    <a 
                         class="filmCarousel__posterContainer" #posterContainer
                     >
                         <img 
                             [src]="film.poster_path | posterUrl"
                             [alt]="'Poster de ' + film.title"
-                            class="filmCarousel__poster"
+                            class="filmCarousel__posterImg"
                         />
-                        <span class="filmCarousel__filmPosition" [attr.data-content]="number">{{number}}</span>
-                    </div>
+                        <span class="filmCarousel__filmRate" [attr.data-content]="number">{{number}}</span>
+                    </a>
                 }
             }
         </div>

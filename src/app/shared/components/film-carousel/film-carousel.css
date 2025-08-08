@@ -8,6 +8,16 @@
     height: 350px;
 
     position: relative;
+
+    transition: background .3s ease-in-out, padding .2s ease-in-out;
+}
+
+.filmCarousel__outerContainer.onStart{
+    padding-left: var(--res-padding);
+}
+
+.filmCarousel__outerContainer.onEnd{
+    padding-right: var(--res-padding);
 }
 
 /* ---------- SLIDE BUTTONS ----------*/
@@ -26,7 +36,7 @@
     justify-content: center;
     z-index: 20;
 
-    transition: opacity .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out;
+    transition: opacity .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out, background .3s ease-in-out;
 }
 
 .filmCarousel__buttonContainer--left{
@@ -36,7 +46,7 @@
     opacity: 0;
     left: -50px;
 
-    background: linear-gradient(to left, transparent 0%, var(--theme-bg) 10%);
+    /* background: linear-gradient(to left, transparent 0%, var(--theme-bg) 10%); */
 
     /* opacity: 1;
     left: 0; */
@@ -63,7 +73,7 @@
     opacity: 1;
     right: 0;
 
-    background: linear-gradient(to right, transparent 0%, var(--theme-bg) 10%);
+    /* background: linear-gradient(to right, transparent 0%, var(--theme-bg) 10%); */
     
 }
 
@@ -94,6 +104,7 @@
 .filmCarousel__innerContainer{
     /* background-color: red; */
     background-color: var(--theme-bg);
+    transition: background .3s ease-in-out;
     width: 100%;
     height: 100%;
     /* overflow: hidden; */
@@ -125,40 +136,72 @@
     position: relative;
 
     filter: drop-shadow(0px 0px 8px var(--theme-text-trans));
+
+    cursor: pointer;
+    transition: scale .2s ease-in-out;
 }
 
-.filmCarousel__poster{
-    padding: 0 20px;
-    height: 300px;
+.filmCarousel__posterContainer:hover{
+    scale: 1.04;
 }
 
-.filmCarousel__filmPosition{
+.filmCarousel__posterImg{
+    /* padding: 0 25px; */
+    padding: 0 12px;
+    height: 180px;
+    /* height: 280px; */
+}
+
+.filmCarousel__filmRate{
     position: absolute;
     top: 1.5rem;
     left: 5px;
 
     font-size: 5.2rem;
+    font-size: 4.2rem;
     font-weight:700;
     color: rgb(65, 65, 65);
     -webkit-text-stroke: 0.25rem rgb(255, 255, 255);
     
 }
 
-.filmCarousel__filmPosition:before{
+.filmCarousel__filmRate:before{
     content: attr(data-content);
     -webkit-text-fill-color: rgb(0, 0, 0);
     -webkit-text-stroke: 0;
     position: absolute;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 600px) {
+    .filmCarousel__posterImg{
+        padding: 0 20px;
+        height: 230px;
+    }
+
+    .filmCarousel__filmRate{
+        font-size: 5.2rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .filmCarousel__posterImg{
+        padding: 0 25px;
+        height: 280px;
+    }
+
+    .filmCarousel__filmRate{
+        font-size: 5.4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
 
     .filmCarousel__buttonContainer--left{
         justify-content: end;
     }
 
     .filmCarousel__slideButton--left{
-        margin-right: 40px;
+        margin-right: 30px;
     }
 
     .filmCarousel__buttonContainer--right{
@@ -166,7 +209,7 @@
     }
 
     .filmCarousel__slideButton--right{
-        margin-left: 40px;
+        margin-left: 30px;
     }
 
 }
