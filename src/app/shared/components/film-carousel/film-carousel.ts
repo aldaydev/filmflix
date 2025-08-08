@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  HostListener,
   input,
   signal,
   ViewChild,
@@ -18,39 +19,38 @@ import { FilmCarouselArrow } from './film-carousel-arrow/film-carousel-arrow';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilmCarousel {
+  @ViewChild('innerContainer') innerContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLDivElement>;
+
   filmList = input<Film[] | null>(null);
 
   onStart = signal(true);
   onEnd = signal(false);
 
-  @ViewChild('innerContainer')
-  innerContainer!: ElementRef<HTMLDivElement>;
+  scroll : number = 0;
 
-  @ViewChild('carouselButtonLeft')
-  carouselButtonLeft!: ElementRef<HTMLDivElement>;
+  @HostListener('window:resize')
+  onResize() {
+    this.calculateScroll();
+  }
+
+  calculateScroll() {
+    const innerContainerWidth = this.innerContainer.nativeElement.clientWidth;
+    const posterWidth = this.posterContainer.nativeElement.clientWidth;
+    this.scroll = Math.floor((innerContainerWidth / posterWidth))* posterWidth;
+  }
 
   slideLeft() {
+    if(this.scroll === 0) this.calculateScroll();
+
     const el = this.innerContainer.nativeElement;
     const maxScrollLeft = el.scrollWidth - el.clientWidth;
+    console.log(maxScrollLeft);
 
     this.innerContainer.nativeElement.scrollBy({
-      left: 500,
+      left: this.scroll,
       behavior: 'smooth',
     });
-
-    // this.innerContainer.nativeElement.addEventListener(
-    //   'scroll',
-    //   () => {
-    //     if (el.scrollLeft > 0) {
-    //       this.onStart.set(false);
-    //       console.log('adsadasdasd')
-    //     } 
-    //     if (el.scrollLeft +1 >= maxScrollLeft){
-    //       console.log('3424234324')
-    //       this.onEnd.set(true);
-    //     } 
-    //   }
-    // );
 
     let timeout: any;
 
@@ -59,22 +59,25 @@ export class FilmCarousel {
       timeout = setTimeout(() => {
         if (el.scrollLeft > 0) {
           this.onStart.set(false);
-          console.log('adsadasdasd')
-        } 
-        if (el.scrollLeft +1 >= maxScrollLeft){
-          console.log('3424234324')
+          console.log('adsadasdasd');
+        }
+        if (el.scrollLeft + 1 >= maxScrollLeft) {
+          console.log('3424234324');
           this.onEnd.set(true);
-        } 
+        }
       }, 100);
     });
   }
 
   slideRight() {
+
+    if(this.scroll === 0) this.calculateScroll();
+
     const el = this.innerContainer.nativeElement;
     const maxScrollLeft = el.scrollWidth - el.clientWidth;
 
     this.innerContainer.nativeElement.scrollBy({
-      left: -500,
+      left: -this.scroll,
       behavior: 'smooth',
     });
 

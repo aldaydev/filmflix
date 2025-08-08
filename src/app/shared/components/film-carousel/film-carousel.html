@@ -11,7 +11,7 @@
         </button>
     </div>
 
-    <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--right" [class]="onEnd() ? 'show' : 'hide'">
+    <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--right" [class]="onEnd() ? 'hide' : 'show'">
         <button  
             class="filmCarousel__slideButton filmCarousel__slideButton--right"
             (click)="slideLeft()"
@@ -22,12 +22,12 @@
 
     <div #innerContainer class="filmCarousel__innerContainer">
 
-        <div class="filmCarousel__posterListContainer">
+        <div class="filmCarousel__posterListContainer" >
             @if (films) {
                 @for (film of films; track film.id; let i = $index) {
                     @let number = i +1;
                     <div 
-                        class="filmCarousel__posterContainer"
+                        class="filmCarousel__posterContainer" #posterContainer
                     >
                         <img 
                             [src]="film.poster_path | posterUrl"
