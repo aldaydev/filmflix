@@ -1,0 +1,13 @@
+.homeFaq__container{
+    padding: 35px var(--res-padding);
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.homeFaq__title{
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}

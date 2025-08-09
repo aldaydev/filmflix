@@ -1,6 +1,5 @@
 .faqExpansor__outerContainer{
-    padding: 0 var(--res-padding);
-
+    /* padding: 0 var(--res-padding); */
 }
 
 .faqExpansor__titleContainer{
@@ -24,12 +23,12 @@
     background-color: #414141;
 }
 
-.faqExpansor__titleContainer:focus + .faqExpansor__descriptionContainer{
-    background-color: aqua;
+.faqExpansor__titleContainer:focus {
+    background-color: #414141;
 }
-.faqExpansor__titleContainer:not(:focus) + .faqExpansor__descriptionContainer{
+/* .faqExpansor__titleContainer:not(:focus) + .faqExpansor__descriptionContainer{
     background-color: rgb(146, 192, 40);
-}
+} */
 
 
 
@@ -43,11 +42,19 @@
 }
 
 .faqExpansor__descriptionContainer{
-    /* height: 0;
-    overflow: hidden; */
+    height: 0;
+    overflow: hidden;
     background-color: #2D2D2D;
     margin-top: 3px;
-    padding: 24px;
     font-size: 1.2rem;
     line-height: 1.2;
+
+    display: block;
+    align-items: center;
+
+    transition: height .3s ease-in-out;
 }
+
+.faqExpansor__description{
+    padding: 24px;
+}   

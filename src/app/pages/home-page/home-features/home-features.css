@@ -4,7 +4,9 @@
 }
 
 .homeFeatures__container{
-    padding: 70px var(--res-padding);
+    padding: 0 var(--res-padding);
+    padding-top: 70px;
+    padding-bottom: 35px;
 }
 
 .homeFeatures__title{

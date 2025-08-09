@@ -1,5 +1,9 @@
-<section class="homeFaq__outerContainer">
+<section class="homeFaq__container">
     
+    <h2 class="homeFaq__title">
+        Funcionalidades principales
+    </h2>
+
     @for (faq of faqs(); track faq.id; let i = $index) {
         <app-faq-expander
             [title]="faq.title"

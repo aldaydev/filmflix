@@ -1,14 +1,28 @@
+
 <li class="faqExpansor__outerContainer">
 
-    <button class="faqExpansor__titleContainer" (click)="onClick()">
+    <button 
+        class="faqExpansor__titleContainer" 
+        (click)="onClick()"
+    >
         <h3 class="faqExpansor__title">{{title()}}</h3>
         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff">
             <path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/>
         </svg>
     </button>
     
-    <div class="faqExpansor__descriptionContainer">
+    <div 
+        class="faqExpansor__descriptionContainer" 
+        #expandableItem
+        [style.height]="isOpen ? expandableHeight() + 'px' : '0'"
+        
+    >
         <p class="faqExpansor__description">{{description()}}</p>
     </div>
 
 </li>
+
+<!-- [style.height]="expandableHeight() + 'px'"
+        [style.overflow]="!isOpen ? 'visible' : 'hidden'"
+        [style.transition]="'height 0.3s ease, padding-top .3s ease'" -->
+
