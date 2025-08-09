@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/film-service
+* Creación del servicio FilmService
+
 ### feat/home-faq
 * Creación del componente homeFaq
 * Creación del componente faqExpansor
