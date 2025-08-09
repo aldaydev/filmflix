@@ -4,6 +4,7 @@
     <button 
         class="faqExpansor__titleContainer" 
         (click)="onClick()"
+        [class.isOpen]="isOpen"
     >
         <h3 class="faqExpansor__title">{{title()}}</h3>
         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff">
@@ -17,7 +18,7 @@
         [style.height]="isOpen ? expandableHeight() + 'px' : '0'"
         
     >
-        <p class="faqExpansor__description">{{description()}}</p>
+        <p class="faqExpansor__description" [innerHTML]="description()"></p>
     </div>
 
 </li>

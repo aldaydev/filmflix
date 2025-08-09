@@ -3,6 +3,7 @@
 :root {
     --color-primary: #E50914;
     --color-primary-dark: #C11119;
+    --color-primary-light: #f55a62;
 
     --color-secondary: #414258;
     --color-secondary-dark: #2d2f4b;
@@ -149,4 +150,13 @@ h2 {
     :root{
         --res-padding: 22.125rem;
     }
+}
+
+a.inlineLink{
+    color: var(--color-primary);
+    transition: color .2s ease-in-out;
+}
+
+a.inlineLink:hover{
+    color: var(--color-primary-light);
 }

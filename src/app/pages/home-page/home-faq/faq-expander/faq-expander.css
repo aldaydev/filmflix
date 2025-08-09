@@ -23,12 +23,10 @@
     background-color: #414141;
 }
 
-.faqExpansor__titleContainer:focus {
+
+.faqExpansor__titleContainer.isOpen{
     background-color: #414141;
 }
-/* .faqExpansor__titleContainer:not(:focus) + .faqExpansor__descriptionContainer{
-    background-color: rgb(146, 192, 40);
-} */
 
 
 
@@ -58,3 +56,8 @@
 .faqExpansor__description{
     padding: 24px;
 }   
+
+a.inlineLink{
+    color: var(--color-gradient-purple);
+    background-color: aqua;
+}
