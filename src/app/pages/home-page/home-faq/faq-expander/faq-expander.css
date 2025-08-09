@@ -28,11 +28,14 @@
     background-color: #414141;
 }
 
-
+.faqExpansor__titleContainer.isOpen svg{
+    transform: rotate(180deg);
+}
 
 .faqExpansor__titleContainer svg{
     width: 38px;
     transform: rotate(45deg);
+    transition: transform .3s ease-in-out;
 }
 
 .faqExpansor__title{
@@ -43,6 +46,7 @@
     height: 0;
     overflow: hidden;
     background-color: #2D2D2D;
+    color: white;
     margin-top: 3px;
     font-size: 1.2rem;
     line-height: 1.2;
@@ -56,8 +60,3 @@
 .faqExpansor__description{
     padding: 24px;
 }   
-
-a.inlineLink{
-    color: var(--color-gradient-purple);
-    background-color: aqua;
-}
