@@ -19,6 +19,11 @@
 
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.349);
     filter: drop-shadow(0 0 4px var(--theme-text-trans));
+
+}
+
+.infoCard__outerContainer:hover {
+    scale: 1.02;
 }
 
 .infoCard__outerContainer:before{
@@ -35,6 +40,8 @@
 
     transition: opacity .3s ease-out;
 }
+
+
 
 .infoCard__textContainer{
     /* padding: 20px 15px 15px 20px; */

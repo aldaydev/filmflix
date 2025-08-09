@@ -1,0 +1,53 @@
+.faqExpansor__outerContainer{
+    padding: 0 var(--res-padding);
+
+}
+
+.faqExpansor__titleContainer{
+    background-color: #2D2D2D;
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 20px;
+    font-size: .9rem;
+    text-align: start;
+    text-wrap: balance;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    transition: background .3s ease-in-out;
+}
+
+.faqExpansor__titleContainer:hover{
+    background-color: #414141;
+}
+
+.faqExpansor__titleContainer:focus + .faqExpansor__descriptionContainer{
+    background-color: aqua;
+}
+.faqExpansor__titleContainer:not(:focus) + .faqExpansor__descriptionContainer{
+    background-color: rgb(146, 192, 40);
+}
+
+
+
+.faqExpansor__titleContainer svg{
+    width: 38px;
+    transform: rotate(45deg);
+}
+
+.faqExpansor__title{
+    font-weight: 600;
+}
+
+.faqExpansor__descriptionContainer{
+    /* height: 0;
+    overflow: hidden; */
+    background-color: #2D2D2D;
+    margin-top: 3px;
+    padding: 24px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}

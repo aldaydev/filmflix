@@ -2,6 +2,7 @@
 
 ### feat/home-faq
 * Creación del componente homeFaq
+* Creación del componente faqExpansor
 
 ### feat/home-features
 * Creación del componente homeFeatures

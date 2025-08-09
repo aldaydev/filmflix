@@ -1,0 +1,12 @@
+<section class="homeFaq__outerContainer">
+    
+    @for (faq of faqs(); track faq.id; let i = $index) {
+        <app-faq-expander
+            [title]="faq.title"
+            [description]="faq.description"
+            [isOpen]="faq.isOpen"
+            (toggle)="toggle(i)"
+        />
+    }
+    
+</section>

@@ -15,18 +15,10 @@
 
 .homeFeatures__cardsContainer{
     margin-top: 40px;
-
-    /* display: flex;
-    flex-direction: column;
-    row-gap: 50px; */
-
     display: grid;
     row-gap: 50px;
 }
 
-/* .homeFeatures__cardsContainer app-info-card{
-    flex: 1;
-} */
 
 @media screen and (min-width: 800px) {
 
@@ -43,7 +35,7 @@
     .homeFeatures__cardsContainer{
         grid-template-columns: repeat(4, 1fr);
         column-gap: 30px;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
 
 }

@@ -65,7 +65,7 @@ body{
     overflow-x: hidden;
 }
 
-ul, ol {
+ul, ol, li {
     list-style: none;
 }
 
