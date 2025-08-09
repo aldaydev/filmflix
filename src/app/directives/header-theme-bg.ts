@@ -21,7 +21,6 @@ export class HeaderThemeBg {
     if (this.isBrowser) {
       effect(() => {
         this.themeService.theme();
-        console.log('Debería hacerse');
         this.onWindowScroll();
       });
     }

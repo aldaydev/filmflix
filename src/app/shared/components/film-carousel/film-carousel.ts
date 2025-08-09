@@ -7,8 +7,7 @@ import {
   signal,
   ViewChild,
 } from '@angular/core';
-import { PopularFilm } from 'app/models/popular-film.model';
-import { PosterUrlPipe } from 'app/pipes/poster-url-pipe-pipe';
+import { PosterUrlPipe } from 'app/pipes/poster-url-pipe';
 import { FilmCarouselArrow } from './film-carousel-arrow/film-carousel-arrow';
 import { RouterModule } from '@angular/router';
 import { CarouselFilmData } from 'app/models/film-carousel.model';

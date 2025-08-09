@@ -6,7 +6,7 @@ import { environment } from 'environments/environment';
 })
 export class PosterUrlPipe implements PipeTransform {
 
-  transform(poster_path: string, size: string = 'w342'): string {
+  transform(poster_path: string | null, size: string = 'w342'): string {
     if(!poster_path){
       return "assets/images/no-poster_path.png"
     }else{

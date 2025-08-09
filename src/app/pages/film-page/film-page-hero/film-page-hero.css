@@ -1,0 +1,16 @@
+.filmPage__filmHero{
+    height: 100dvh;
+    width: 100%;
+
+    background-color: var(--theme-bg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    padding: 70px var(--res-padding);
+}
+
+.filmHero__bgImage{
+    width: 100%;
+}

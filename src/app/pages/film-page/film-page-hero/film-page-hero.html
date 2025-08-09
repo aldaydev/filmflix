@@ -1,0 +1,18 @@
+
+@let film = filmDetails();
+@if(film){
+    <header 
+        class="filmPage__filmHero"
+        [style.background-image]="'url(' + (film.backdrop_path | filmBgUrl) + ')'"
+    >
+        <!-- @if (film.backdrop_path) {
+            <img 
+                [src]="film.backdrop_path | filmBgUrl" 
+                [alt]="'Imagen de fondo de ' + film.title"
+                class="filmHero__bgImage"
+            >
+        } -->
+        
+    </header>
+}
+
