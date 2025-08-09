@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { Film, PopularFilms } from 'app/models/film.model';
+import { tmdbHeaders } from 'app/core/tmdb-headers';
+import { PopularFilm, PopularFilms } from 'app/models/popular-film.model';
 import { environment } from 'environments/environment';
 import { firstValueFrom, Observable } from 'rxjs';
 
@@ -14,15 +15,13 @@ export class PopularFilmsService {
 
   getPopularFilms(): Observable<PopularFilms> {
     return this.http.get<PopularFilms>(this.url, {
-      headers: {
-        Authorization: `Bearer ${environment.tmdbToken}`,
-      },
+      headers: tmdbHeaders,
     });
   }
 
   async getPopularIds(): Promise<string[]> {
     const response = await firstValueFrom(this.getPopularFilms());
-    return response.results.slice(0, 5).map((film: Film) => film.id.toString());
+    return response.results.slice(0, 5).map((film: PopularFilm) => film.id.toString());
   }
 
 

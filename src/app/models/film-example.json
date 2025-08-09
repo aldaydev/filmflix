@@ -1,0 +1,924 @@
+{
+    "adult": false,
+    "backdrop_path": "/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
+    "belongs_to_collection": null,
+    "budget": 63000000,
+    "genres": [
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 53,
+            "name": "Suspense"
+        }
+    ],
+    "homepage": "",
+    "id": 550,
+    "imdb_id": "tt0137523",
+    "origin_country": [
+        "US"
+    ],
+    "original_language": "en",
+    "original_title": "Fight Club",
+    "overview": "Un joven sin ilusiones lucha contra su insomnio, consecuencia quizás de su hastío por su gris y rutinaria vida. En un viaje en avión conoce a Tyler Durden, un carismático vendedor de jabón que sostiene una filosofía muy particular: el perfeccionismo es cosa de gentes débiles; en cambio, la autodestrucción es lo único que hace que realmente la vida merezca la pena. Ambos deciden entonces formar un club secreto de lucha donde descargar sus frustaciones y su ira que tendrá un éxito arrollador.",
+    "popularity": 21.4001,
+    "poster_path": "/sgTAWJFaB2kBvdQxRGabYFiQqEK.jpg",
+    "production_companies": [
+        {
+            "id": 711,
+            "logo_path": "/tEiIH5QesdheJmDAqQwvtN60727.png",
+            "name": "Fox 2000 Pictures",
+            "origin_country": "US"
+        },
+        {
+            "id": 508,
+            "logo_path": "/4sGWXoboEkWPphI6es6rTmqkCBh.png",
+            "name": "Regency Enterprises",
+            "origin_country": "US"
+        },
+        {
+            "id": 4700,
+            "logo_path": "/A32wmjrs9Psf4zw0uaixF0GXfxq.png",
+            "name": "Linson Entertainment",
+            "origin_country": "US"
+        },
+        {
+            "id": 25,
+            "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+            "name": "20th Century Fox",
+            "origin_country": "US"
+        },
+        {
+            "id": 20555,
+            "logo_path": "/hD8yEGUBlHOcfHYbujp71vD8gZp.png",
+            "name": "Taurus Film",
+            "origin_country": "DE"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "DE",
+            "name": "Germany"
+        },
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "1999-10-15",
+    "revenue": 100853753,
+    "runtime": 139,
+    "spoken_languages": [
+        {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "Caos, travesuras y jabón",
+    "title": "El Club de la Lucha",
+    "video": false,
+    "vote_average": 8.437,
+    "vote_count": 30571,
+    "videos": {
+        "results": [
+            {
+                "iso_639_1": "es",
+                "iso_3166_1": "ES",
+                "name": "Trailer El Club de la Lucha - Español",
+                "key": "aIo4Adm96EA",
+                "published_at": "2014-02-03T20:13:44.000Z",
+                "site": "YouTube",
+                "size": 480,
+                "type": "Trailer",
+                "official": false,
+                "id": "54c2317e925141315a005ca0"
+            }
+        ]
+    },
+    "similar": {
+        "page": 1,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "/bnnCfeVP5n0VlBKSVJePZe0ag9x.jpg",
+                "genre_ids": [
+                    18
+                ],
+                "id": 262094,
+                "original_language": "nl",
+                "original_title": "De Loteling",
+                "overview": "",
+                "popularity": 0.2317,
+                "poster_path": "/1D9VnAjh3wcQDGUzcgqfKkYzGbu.jpg",
+                "release_date": "1974-02-08",
+                "title": "De Loteling",
+                "video": false,
+                "vote_average": 5.125,
+                "vote_count": 8
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/AgYfxAgvxa6plnTCdBIJ4gssMjr.jpg",
+                "genre_ids": [
+                    28,
+                    18
+                ],
+                "id": 262122,
+                "original_language": "ja",
+                "original_title": "暗殺者",
+                "overview": "",
+                "popularity": 0.1913,
+                "poster_path": "/lsIpcdrWS1nFJpiPwEGHBsvVx5j.jpg",
+                "release_date": "1996-08-01",
+                "title": "暗殺者",
+                "video": false,
+                "vote_average": 0.0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    18
+                ],
+                "id": 262129,
+                "original_language": "fr",
+                "original_title": "Leviathan",
+                "overview": "",
+                "popularity": 0.2235,
+                "poster_path": "/p2RkRqNaid8ISzmtFRR8onawXh9.jpg",
+                "release_date": "1962-04-13",
+                "title": "Leviathan",
+                "video": false,
+                "vote_average": 4.6,
+                "vote_count": 4
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/btYbHyBiuNJpGgGYmrLKQpfYCIh.jpg",
+                "genre_ids": [
+                    27,
+                    18
+                ],
+                "id": 262187,
+                "original_language": "de",
+                "original_title": "Jonathan",
+                "overview": "",
+                "popularity": 0.3127,
+                "poster_path": "/hp423Zmd5CfU79dYTQImOiGHbv4.jpg",
+                "release_date": "1970-05-15",
+                "title": "Jonathan",
+                "video": false,
+                "vote_average": 5.6,
+                "vote_count": 14
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/2cI0rmMgoZOqP78iQDZwQASkKT3.jpg",
+                "genre_ids": [
+                    37,
+                    18,
+                    35
+                ],
+                "id": 440161,
+                "original_language": "en",
+                "original_title": "The Sisters Brothers",
+                "overview": "1850. Los hermanos Charlie y Eli Sisters viven en un mundo salvaje y hostil, en plena fiebre del oro. Tienen las manos manchadas de sangre, tanto de criminales como de personas inocentes. No tienen escrúpulos a la hora de matar. Es su trabajo. Charlie, el hermano pequeño, nació para matar. Eli, sin embargo, sueña con llevar una vida normal. Ambos son contratados por el Comodoro para encontrar y matar a Hermann Kermit Warm, un buscador de oro. De Oregón a California arranca una caza despiadada, un viaje que pondrá a prueba el demencial vínculo entre los dos hermanos.",
+                "popularity": 2.4155,
+                "poster_path": "/v8wlFbdZZZ1oSyVE8Vbl7MdNNSJ.jpg",
+                "release_date": "2018-09-19",
+                "title": "Los hermanos Sisters",
+                "video": false,
+                "vote_average": 6.829,
+                "vote_count": 1980
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/kJaRWmy1BGq3pHyE94LOTteiHer.jpg",
+                "genre_ids": [
+                    28,
+                    18,
+                    9648,
+                    53
+                ],
+                "id": 2501,
+                "original_language": "en",
+                "original_title": "The Bourne Identity",
+                "overview": "Un hombre amnésico es rescatado por la tripulación de un barco pesquero italiano cuando flota a la deriva en el mar. Carece de identidad y de pasado, pero posee unas serie de talentos extraordinarios en artes lingüísticas, marciales y de autodefensa que sugieren una profesión de riesgo. Confuso y desorientado, emprende una frenética búsqueda para descubrir quién es y por qué su vida ha tomado un giro tan peligroso.",
+                "popularity": 7.7659,
+                "poster_path": "/yYH7sqMQ1NJNd6scW44D1WjBmAw.jpg",
+                "release_date": "2002-06-14",
+                "title": "The Bourne Identity: El caso Bourne",
+                "video": false,
+                "vote_average": 7.468,
+                "vote_count": 9593
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/xTl1KkHSnMIYnYMukoAQUOewcrY.jpg",
+                "genre_ids": [
+                    28,
+                    18,
+                    53
+                ],
+                "id": 2502,
+                "original_language": "en",
+                "original_title": "The Bourne Supremacy",
+                "overview": "Jason Bourne pensaba que había dejado atrás su pasado dos años antes. Durante ese tiempo, atormentado por un pasado que no consigue recordar, Bourne y Marie se trasladan de una ciudad a otra, viviendo de manera anónima y clandestina. Tratan de huir de una amenaza que creen percibir en la mirada de cualquier extraño, en cada llamada telefónica \"equivocada\". Cuando un agente aparece por la tranquila villa en la que se alojan, la pareja huye precipitadamente. Pero el juego del ratón y el gato ha vuelto a comenzar, obligando a entrar en acción a Bourne para enfrentarse a un grupo de implacables asesinos profesionales.",
+                "popularity": 5.8995,
+                "poster_path": "/kTFFwQHdaTUb5MJmB8KBGO7lh7N.jpg",
+                "release_date": "2004-07-23",
+                "title": "El mito de Bourne",
+                "video": false,
+                "vote_average": 7.323,
+                "vote_count": 7754
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/qiBILuWhv7ipF0pxiEqIJdkQzj8.jpg",
+                "genre_ids": [
+                    28,
+                    18,
+                    9648,
+                    53
+                ],
+                "id": 2503,
+                "original_language": "en",
+                "original_title": "The Bourne Ultimatum",
+                "overview": "Jason Bourne sigue investigando quién es y qué hay realmente detrás del programa secreto de la CIA llamado Treadstone. Ahora un reportero británico de \"The Guardian\" le pone sobre una nueva pista con el nombre de Blackbriar. Bourne dará con él en Londres, en un intento de encajar las últimas piezas de ese pasado que él aún intenta recuperar.",
+                "popularity": 6.0349,
+                "poster_path": "/ifuhCKw2DZ3ROlz7oSFxtJnznR7.jpg",
+                "release_date": "2007-08-03",
+                "title": "El ultimátum de Bourne",
+                "video": false,
+                "vote_average": 7.429,
+                "vote_count": 7942
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/5NSTd8UFpLK57h8Ji5oYdgklKsg.jpg",
+                "genre_ids": [
+                    18,
+                    53
+                ],
+                "id": 2516,
+                "original_language": "en",
+                "original_title": "Our Mother's House",
+                "overview": "Cuando muere su madre tras una larga enfermedad, los siete hermanos Hook la entierran en el jardín, pues temen ser separados y enviados a distintos orfanatos.",
+                "popularity": 0.492,
+                "poster_path": "/yjuMUamEYfIJtbiMcIUbJDxWHE0.jpg",
+                "release_date": "1967-09-14",
+                "title": "A las nueve cada noche",
+                "video": false,
+                "vote_average": 7.1,
+                "vote_count": 43
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/m4gGt73A0bEMPRS4eiIrRuDk5KW.jpg",
+                "genre_ids": [
+                    10749,
+                    18,
+                    36
+                ],
+                "id": 2528,
+                "original_language": "fr",
+                "original_title": "Madame Bovary",
+                "overview": "Adaptación de la novela homónima de Gustave Flaubert. Emma Bovary es la insatisfecha mujer de un médico rural que ansía pertenecer a la alta sociedad francesa. Sus ambiciones y un apasionado affaire con un joven aristócrata la conducirán a una situación de trágicas consecuencias. La musa de Chabrol, Isabelle Huppert, encarna a la fatal heroína.",
+                "popularity": 1.3589,
+                "poster_path": "/dx6jfbLExSEK1DzbWTSShfuLJeD.jpg",
+                "release_date": "1991-03-03",
+                "title": "Madame Bovary",
+                "video": false,
+                "vote_average": 6.293,
+                "vote_count": 138
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/8BsZeEl8gArwpYIBXyJ2WdreF8I.jpg",
+                "genre_ids": [
+                    18,
+                    878,
+                    53
+                ],
+                "id": 2577,
+                "original_language": "en",
+                "original_title": "Code 46",
+                "overview": "Una visión futurista de Shangai que presenta una sociedad en la que los recuerdos pueden ser borrados y los peligros pueden predecirse. William (Tim Robbins), enviado a Shangai para investigar un fraude en la compañía de seguros Sphinx, tiene un virus que le permite leer la mente de los demás. Maria (Samantha Morton), que trabaja en Sphinx creando \"papelles\", documentos indispensables para que la gente pueda hacer cualquier cosa, es la persona que está cometiendo el fraude, vendiendo \"papelles\" falsos a las personas que Sphinx no admite como asegurados.",
+                "popularity": 1.441,
+                "poster_path": "/6mmYU5rXYItslLMiqM2LxeoCJnO.jpg",
+                "release_date": "2003-09-02",
+                "title": "Código 46",
+                "video": false,
+                "vote_average": 6.205,
+                "vote_count": 368
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/fvBshQMwOnYZdUXySGMdT6LiqsI.jpg",
+                "genre_ids": [
+                    28,
+                    53
+                ],
+                "id": 2636,
+                "original_language": "en",
+                "original_title": "The Specialist",
+                "overview": "Un experto en explosivos, antiguo miembro de la CIA, es contratado por una hermosa y misteriosa mujer con objeto de acabar con un grupo de mafiosos que asesinaron a sus padres cuando ella era una niña.",
+                "popularity": 4.0707,
+                "poster_path": "/kBdd0fHLKKe79En5DqdPmSzQo9c.jpg",
+                "release_date": "1994-10-07",
+                "title": "El especialista",
+                "video": false,
+                "vote_average": 5.935,
+                "vote_count": 1346
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/zQM01PhOwJY9ePnWPQ8L0YeKf8c.jpg",
+                "genre_ids": [
+                    18,
+                    27,
+                    9648
+                ],
+                "id": 2637,
+                "original_language": "en",
+                "original_title": "The Mothman Prophecies",
+                "overview": "Basada en hechos reales, la película examina una serie de acontecimientos inexplicables a través de los ojos –y la mente– de un hombre. Richard Gere, Laura Linney, Will Patton y Debra Messing interpretan este thriller lleno de suspense que cuenta la historia de un hombre que llega al extremo de investigar las misteriosas circunstancias que rodearon la muerte de su esposa y cómo éstas podrían estar conectadas con los extraños fenómenos que ocurren en un pueblo situado a cuatrocientas millas.",
+                "popularity": 2.3651,
+                "poster_path": "/poYhzoLWvxDGCsSfGBLjc90VN1e.jpg",
+                "release_date": "2002-01-25",
+                "title": "Mothman, la última profecía",
+                "video": false,
+                "vote_average": 6.2,
+                "vote_count": 1168
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/8sf7q8OlZLl7OVhTdYjz1vsFr5v.jpg",
+                "genre_ids": [
+                    14,
+                    35,
+                    18
+                ],
+                "id": 2657,
+                "original_language": "en",
+                "original_title": "Pleasantville",
+                "overview": "Norteamérica, años cincuenta.David (Tobey Maguire) y su hermana Jennifer (Reese Witherspoon) son teletransportados mágicamente al mundo ficticio de una serie clásica de la televisión en blanco y negro. Allí convivirán con los personajes de la serie, donde todo es demasiado perfecto, hasta que puedan volver a la realidad, apreciando nuevos valores gracias a esa comunidad buena y tranquila a la vez que también influyendo mucho en ese mundo, llevando el color a sus vidas.",
+                "popularity": 3.2583,
+                "poster_path": "/bQd3vwPBv8dVw0gwNFj3HJJBNY2.jpg",
+                "release_date": "1998-09-17",
+                "title": "Pleasantville",
+                "video": false,
+                "vote_average": 7.262,
+                "vote_count": 1757
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/yBLYxVE61QnLGiGvsyLxdshmkiw.jpg",
+                "genre_ids": [
+                    80,
+                    18
+                ],
+                "id": 2742,
+                "original_language": "en",
+                "original_title": "Naked Lunch",
+                "overview": "Después del trágico accidente sufrido por su mujer, un escritor que cae en la adicción a ciertas drogas, empieza a sufrir horribles alucinaciones que lo transportan a un mundo de pesadilla absolutamente kafkiano.",
+                "popularity": 1.9906,
+                "poster_path": "/HzpDsHbgJWqBlmN5bpnHAhCDMF.jpg",
+                "release_date": "1991-12-27",
+                "title": "El almuerzo desnudo",
+                "video": false,
+                "vote_average": 7.0,
+                "vote_count": 1127
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/1RTj0n0XYrfMoBURxhRVigs9Ld6.jpg",
+                "genre_ids": [
+                    18,
+                    37
+                ],
+                "id": 262495,
+                "original_language": "es",
+                "original_title": "La vuelta del Coyote",
+                "overview": "A mediados del siglo XIX, California, territorio mejicano, se convierte en parte de los Estados Unidos. Ante la posibilidad de verse desposeído de sus tierras por las nuevas autoridades, don César de Echagüe, un hidalgo español, pide ayuda a su hijo César, un caprichoso e insufrible petimetre.",
+                "popularity": 0.1451,
+                "poster_path": "/9yn2Bg49EK74J26JShrfoiVCNPr.jpg",
+                "release_date": "1998-07-21",
+                "title": "La vuelta del Coyote",
+                "video": false,
+                "vote_average": 5.0,
+                "vote_count": 1
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/8YNNyQiPZlF9qv5EGOUK20mnXVk.jpg",
+                "genre_ids": [
+                    28,
+                    878,
+                    53
+                ],
+                "id": 262500,
+                "original_language": "en",
+                "original_title": "Insurgent",
+                "overview": "Tris (Shailene Woodley) y Cuatro (Theo James) son ahora fugitivos que son perseguidos por Jeanine (Kate Winslet), la líder de los eruditos. Tris deberá averiguar lo que su familia se sacrificó para proteger mientras los eruditos harán cualquier cosa para detenerlos. Atormentada por las elecciones de su pasado pero desesperada por proteger a los que ama, Tris, junto a Cuatro, se enfrentarán a un reto tras otro para desbloquear la verdad de su pasado y el futuro de su mundo. Secuela de \"Divergente\" (2014).",
+                "popularity": 7.6556,
+                "poster_path": "/auUoVDnrPTtfn9zqQ5KKUvjwRZN.jpg",
+                "release_date": "2015-03-18",
+                "title": "La serie Divergente: Insurgente",
+                "video": false,
+                "vote_average": 6.4,
+                "vote_count": 10167
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/mdNae6nOlJ7iKxFgsWSAgxU9shS.jpg",
+                "genre_ids": [
+                    12,
+                    14,
+                    18,
+                    27,
+                    10749,
+                    878,
+                    53
+                ],
+                "id": 2981,
+                "original_language": "en",
+                "original_title": "The Lost World",
+                "overview": "Sir Arthur Conan Doyle (1859-1930), además de Sherlock Holmes, creó otro héroe de ficción, el profesor George Edward Challenger, cuya aventura más conocida es la de \"El mundo perdido\", obra publicada en 1912. Harry O. Hoyt y Willis O'Brien efectuaron una temprana adaptación al cine con gran éxito de taquilla apoyado por un temprano merchandising: rompecabezas, muñecos, libros e incluso una canción compuesta por Rudolf Friml.",
+                "popularity": 1.3877,
+                "poster_path": "/411VnWtYJdEFKiaGqJOeTmBv8th.jpg",
+                "release_date": "1925-02-02",
+                "title": "El mundo perdido",
+                "video": false,
+                "vote_average": 6.7,
+                "vote_count": 150
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/iJCJ1ThBmuYtJyi3rgQWl56qVXt.jpg",
+                "genre_ids": [
+                    12,
+                    35,
+                    27,
+                    53
+                ],
+                "id": 2989,
+                "original_language": "en",
+                "original_title": "Roar",
+                "overview": "Hank el zoólogo y sus mejores amigos comparten una hermosa casa junto a un lago africano. Pero nadie viene a visitarlos, porque los amigos de Hank corretean por todas partes y son grandes, peludos y con aspecto hambriento: leones, tigres, leopardos, pumas, jaguares... Su vida placentera se torcerá cuando su familia decide dejar los Estados Unidos y trasladarse a vivir con él.",
+                "popularity": 1.2551,
+                "poster_path": "/2W432TNjQJRs9sc3TcMyRmrHZ0x.jpg",
+                "release_date": "1981-10-30",
+                "title": "El Gran Rugido",
+                "video": false,
+                "vote_average": 5.926,
+                "vote_count": 122
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/yhfHeIsR5Ki02b5SqBuLqAsLDCk.jpg",
+                "genre_ids": [
+                    80,
+                    18,
+                    9648
+                ],
+                "id": 3009,
+                "original_language": "en",
+                "original_title": "Le Procès",
+                "overview": "Un hombre se despierta por la mañana,  y se encuentra con que la policía ha entrado en su habitación y lo arresta, tras acusarlo de haber cometido un crimen.",
+                "popularity": 3.0045,
+                "poster_path": "/pDrgwk6ybYkOsnZQCthyd4U6vmb.jpg",
+                "release_date": "1962-08-25",
+                "title": "El proceso",
+                "video": false,
+                "vote_average": 7.431,
+                "vote_count": 523
+            }
+        ],
+        "total_pages": 15108,
+        "total_results": 302153
+    },
+    "recommendations": {
+        "page": 1,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+                "id": 680,
+                "title": "Pulp Fiction",
+                "original_title": "Pulp Fiction",
+                "overview": "Jules y Vincent, dos asesinos a sueldo con muy pocas luces, trabajan para Marsellus Wallace. Vincent le confiesa a Jules que Marsellus le ha pedido que cuide de Mia, su mujer. Jules le recomienda prudencia porque es muy peligroso sobrepasarse con la novia del jefe. Cuando llega la hora de trabajar, ambos deben ponerse manos a la obra. Su misión: recuperar un misterioso maletín.",
+                "poster_path": "/hNcQAuquJxTxl2fJFs1R42DrWcf.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    53,
+                    80,
+                    35,
+                    18
+                ],
+                "popularity": 18.2276,
+                "release_date": "1994-09-10",
+                "video": false,
+                "vote_average": 8.487,
+                "vote_count": 28939
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/p1PLSI5Nw2krGxD7X4ulul1tDAk.jpg",
+                "id": 807,
+                "title": "Seven",
+                "original_title": "Se7en",
+                "overview": "El teniente Somerset, del departamento de homicidios, está a punto de jubilarse y ser reemplazado por el ambicioso y brillante detective David Mills. Ambos tendrán que colaborar en la resolución de una serie de asesinatos cometidos por un psicópata que toma como base la relación de los siete pecados capitales: gula, pereza, soberbia, avaricia, envidia, lujuria e ira. Los cuerpos de las víctimas, sobre los que el asesino se ensaña de manera impúdica, se convertirán para los policías en un enigma que les obligará a viajar al horror y la barbarie más absoluta.",
+                "poster_path": "/uVPcVz4b2hnSGrXYLdIGRXwcivs.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    80,
+                    9648,
+                    53
+                ],
+                "popularity": 20.5294,
+                "release_date": "1995-09-22",
+                "video": false,
+                "vote_average": 8.376,
+                "vote_count": 21941
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+                "id": 13,
+                "title": "Forrest Gump",
+                "original_title": "Forrest Gump",
+                "overview": "Forrest Gump es un chico con deficiencias mentales no muy profundas y con alguna incapacidad motora que, a pesar de todo, llegará a convertirse, entre otras cosas, en un héroe durante la Guerra del Vietnam. Su persistencia y bondad le llevarán a conseguir una gran fortuna, ser objeto del clamor popular y a codearse con las más altas esferas sociales y políticas del país. Siempre sin olvidar a Jenny, su gran amor desde que era niño.",
+                "poster_path": "/oiqKEhEfxl9knzWXvWecJKN3aj6.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    35,
+                    18,
+                    10749
+                ],
+                "popularity": 18.665,
+                "release_date": "1994-06-23",
+                "video": false,
+                "vote_average": 8.467,
+                "vote_count": 28483
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/4GPCnwvTbsDleH5QIOyDLMsK8a2.jpg",
+                "id": 59967,
+                "title": "Looper",
+                "original_title": "Looper",
+                "overview": "Como en 2072 los asesinatos están terminantemente prohibidos, las víctimas son enviadas a través de una máquina del tiempo al pasado (2042), donde los Loopers, un grupo de asesinos a sueldo, se encargan de eliminarlas y deshacerse rápidamente de sus cuerpos. El problema surge cuando Joe (Gordon-Levitt), uno de los Loopers, recibe desde el futuro un encargo muy especial: eliminarse a sí mismo (Bruce Willis).",
+                "poster_path": "/t6ogdhdjP9KDCLJR9i4HG3bplQL.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    28,
+                    53,
+                    878
+                ],
+                "popularity": 6.2009,
+                "release_date": "2012-09-26",
+                "video": false,
+                "vote_average": 6.894,
+                "vote_count": 10435
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/8K9qHeM6G6QjQN0C5XKFGvK5lzM.jpg",
+                "id": 603,
+                "title": "Matrix",
+                "original_title": "The Matrix",
+                "overview": "Thomas Anderson lleva una doble vida: por el día es programador en una importante empresa de software, y por la noche un hacker informático llamado Neo. Su vida no volverá a ser igual cuando unos misteriosos personajes le inviten a descubrir la respuesta a la pregunta que no le deja dormir: ¿qué es Matrix?",
+                "poster_path": "/plYYSxZ9Wdq4thyVSkhJjbjYtVG.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    28,
+                    878
+                ],
+                "popularity": 18.5809,
+                "release_date": "1999-03-31",
+                "video": false,
+                "vote_average": 8.23,
+                "vote_count": 26640
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/uA8eSNAUUUyfHNIrG4h0zHxzt9W.jpg",
+                "id": 510,
+                "title": "Alguien voló sobre el nido del cuco",
+                "original_title": "One Flew Over the Cuckoo's Nest",
+                "overview": "Randle McMurphy (Jack Nicholson), un violador de espíritu libre, que vive contracorriente, es recluido en un hospital psiquiátrico. La inflexible disciplina del centro acentúa su contagiosa tendencia al desorden, que acabará desencadenando una guerra entre los pacientes y el personal de la clínica con la fría y severa enfermera Ratched (Louise Fletcher) a la cabeza. La suerte de cada paciente del pabellón está en juego.",
+                "poster_path": "/lBYmCynNEPt7HVaJvuXgfHvLhbJ.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    18
+                ],
+                "popularity": 8.2581,
+                "release_date": "1975-11-19",
+                "video": false,
+                "vote_average": 8.4,
+                "vote_count": 10888
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/7Wev9JMo6R5XAfz2KDvXb7oPMmy.jpg",
+                "id": 77,
+                "title": "Memento",
+                "original_title": "Memento",
+                "overview": "Leonard Shelby sigue la pista del hombre que violó y asesinó a su mujer. Sin embargo, la dificultad de localizar al asesino de su esposa se ve agravada por el hecho de que padece una forma rara e intratable de pérdida de memoria a corto plazo. Aunque puede recordar detalles de la vida antes de su accidente, Leonard no puede recordar qué ha pasado hace quince minutos, adónde va o por qué.",
+                "poster_path": "/neHrQLVfT3KPqvv30pNPyRb6chQ.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    9648,
+                    53
+                ],
+                "popularity": 8.0555,
+                "release_date": "2000-10-11",
+                "video": false,
+                "vote_average": 8.177,
+                "vote_count": 15435
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/x2RS3uTcsJJ9IfjNPcgDmukoEcQ.jpg",
+                "id": 120,
+                "title": "El señor de los anillos: La comunidad del anillo",
+                "original_title": "The Lord of the Rings: The Fellowship of the Ring",
+                "overview": "En la Tierra Media, el Señor Oscuro Saurón creó los Grandes Anillos de Poder, forjados por los herreros Elfos. Tres para los reyes Elfos, siete para los Señores Enanos, y nueve para los Hombres Mortales. Secretamente, Saurón también forjó un anillo maestro, el Anillo Único, que contiene en sí el poder para esclavizar a toda la Tierra Media. Con la ayuda de un grupo de amigos y de valientes aliados, Frodo emprende un peligroso viaje con la misión de destruir el Anillo Único. Pero el Señor Oscuro Sauron, quien creara el Anillo, envía a sus servidores para perseguir al grupo. Si Sauron lograra recuperar el Anillo, sería el final de la Tierra Media.",
+                "poster_path": "/9xtH1RmAzQ0rrMBNUMXstb2s3er.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    12,
+                    14,
+                    28
+                ],
+                "popularity": 21.846,
+                "release_date": "2001-12-18",
+                "video": false,
+                "vote_average": 8.424,
+                "vote_count": 26232
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/uvitbjFU4JqvMwIkMWHp69bmUzG.jpg",
+                "id": 598,
+                "title": "Ciudad de Dios",
+                "original_title": "Cidade de Deus",
+                "overview": "Basada en hechos reales, cuenta la historia del crecimiento del crimen organizado en los suburbios de la ciudad de Río de Janeiro, desde finales de los años sesenta hasta el comienzo de los ochenta, cuando el tráfico de drogas y la violencia impusieron su ley entre la miseria de las favelas.“Buscapé” tiene 11 años y es sólo un niño más en Cidade de Deus, un suburbio de Río de Janeiro. Tímido y delicado, observa a los niños duros de su barrio, sus robos, sus peleas, sus enfrentamientos diarios con la policía. Ya sabe lo que quiere ser si consigue sobrevivir: fotógrafo. “Dadinho”, un niño de su misma edad, se traslada al barrio. Sueña con ser el criminal más peligroso de Río de Janeiro y empieza su aprendizaje haciendo recados para los delincuentes locales. Dos vidas paralelas en Cidade de Deus.",
+                "poster_path": "/zYjngc6yGUO1IEuAwk0yAhg8CKh.jpg",
+                "media_type": "movie",
+                "original_language": "pt",
+                "genre_ids": [
+                    18,
+                    80
+                ],
+                "popularity": 7.3232,
+                "release_date": "2002-08-30",
+                "video": false,
+                "vote_average": 8.429,
+                "vote_count": 7739
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/6qHI1IYj7QlLSCwHRzkL62X175s.jpg",
+                "id": 73,
+                "title": "American History X",
+                "original_title": "American History X",
+                "overview": "Derek (Edward Norton) es un joven californiano que se convierte en el líder de una banda de neonazis tras el asesinato de su padre. Su hermano pequeño, Danny, le admira y sigue sus pasos de odio y violencia. Cuando Derek mata a dos ladrones negros, es condenado a tres años de cárcel, donde cambia su forma de pensar al conocer a otros presos. Al salir, intenta alejar a Danny del racismo y la delincuencia, pero se encuentra con la resistencia de sus antiguos compañeros y las consecuencias de su pasado.",
+                "poster_path": "/h2cDqHvnZkycBJKoF7WhcQ2MX1V.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    18
+                ],
+                "popularity": 5.7012,
+                "release_date": "1998-07-01",
+                "video": false,
+                "vote_average": 8.336,
+                "vote_count": 11967
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/gqby0RhyehP3uRrzmdyUZ0CgPPe.jpg",
+                "id": 27205,
+                "title": "Origen",
+                "original_title": "Inception",
+                "overview": "Dom Cobb es un ladrón hábil, el mejor de todos, especializado en el peligroso arte de extracción: el robo de secretos valiosos desde las profundidades del subconsciente durante el estado de sueño cuando la mente está más vulnerable. Esta habilidad excepcional de Cobb le ha hecho un jugador codiciado en el traicionero nuevo mundo de espionaje corporativo, pero al mismo tiempo, le ha convertido en un fugitivo internacional y ha tenido que sacrificar todo que le importaba. Ahora a Cobb se le ofrece una oportunidad para redimirse. Con un último trabajo podría recuperar su vida anterior, pero solamente si logra lo imposible.",
+                "poster_path": "/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    28,
+                    878,
+                    12
+                ],
+                "popularity": 28.5709,
+                "release_date": "2010-07-15",
+                "video": false,
+                "vote_average": 8.369,
+                "vote_count": 37756
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/k7GM13qRYSour3lk90Dq1EwdpoW.jpg",
+                "id": 2649,
+                "title": "The Game",
+                "original_title": "The Game",
+                "overview": "Nicholas Van Orton es un perspicaz e influyente hombre de negocios acostumbrado a controlar absolutamente todas las facetas de su existencia. Sin embargo, su perfecta vida sufre un dramático cambio cuando su hermano Conrad le hace un original regalo de cumpleaños que pronto tendrá consecuencias devastadoras. Se trata del acceso a una misteriosa y nueva forma de entretenimiento en la que todo puede perderse, y con una sola regla: no hay reglas.",
+                "poster_path": "/us1lgJerKgrDqfGyMMwM9m9UIMj.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    18,
+                    53,
+                    9648
+                ],
+                "popularity": 5.1254,
+                "release_date": "1997-09-12",
+                "video": false,
+                "vote_average": 7.567,
+                "vote_count": 6905
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/7S7PE3vK9Eh5uzCYBDGk5qTJeYW.jpg",
+                "id": 629,
+                "title": "Sospechosos habituales",
+                "original_title": "The Usual Suspects",
+                "overview": "Dave Kujan (Chazz Palminteri), un agente especial que trabaja para el servicio de aduanas de EEUU, está investigando las consecuencias de un incendio a bordo de un barco en el puerto de San Pedro de Los Ángeles, con un balance de 27 víctimas mortales -todas aparentemente asesinadas-. La única fuente de información de Kujan es Roger Kint (Kevin Spacey), un estafador lisiado que sobrevivió al incendio. En comisaría, Kint cuenta que todo comenzó 6 semanas atrás en Nueva York, cuando 5 delincuentes, 5 \"sospechosos habituales\", fueron detenidos para una rueda de reconocimiento referente al robo de un camión de armas...",
+                "poster_path": "/zI2ESVtVBJTo68aWuwCku78q4dZ.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    18,
+                    80,
+                    53
+                ],
+                "popularity": 9.6616,
+                "release_date": "1995-07-19",
+                "video": false,
+                "vote_average": 8.173,
+                "vote_count": 10790
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/kgjvZgs6cV2v5bigzzzWqJ9EMGs.jpg",
+                "id": 1891,
+                "title": "El imperio contraataca",
+                "original_title": "The Empire Strikes Back",
+                "overview": "Tras un ataque sorpresa de las tropas imperiales a las bases camufladas de la alianza rebelde, Luke Skywalker, en compañía de R2D2, parte hacia el planeta Dagobah en busca de Yoda, el último maestro Jedi, para que le enseñe los secretos de la Fuerza. Mientras, Han Solo, la princesa Leia, Chewbacca, y C3PO esquivan a las fuerzas imperiales y piden refugio al antiguo propietario del Halcón Milenario, Lando Calrissian, en la ciudad minera de Bespin, donde les prepara una trampa urdida por Darth Vader.",
+                "poster_path": "/eU7KcNAOeZj9PBIcGUMSsuJz8qj.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    12,
+                    28,
+                    878
+                ],
+                "popularity": 7.3153,
+                "release_date": "1980-05-20",
+                "video": false,
+                "vote_average": 8.395,
+                "vote_count": 17581
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/wUc83y8kXNdRK66o0HU5X8eBri4.jpg",
+                "id": 627,
+                "title": "Trainspotting",
+                "original_title": "Trainspotting",
+                "overview": "Mark Renton es un joven escocés adicto a la heroína, al igual que el resto de sus amigos Todos ellos viven en un mundo aparte, al margen de la realidad. Dentro del grupo hay un violento y alcohólico psicópata, un drogadicto desesperado, un mujeriego con un conocimiento enciclopédico de Sean Connery y un entusiasta de las caminatas y de Iggy Pop.",
+                "poster_path": "/vTIEMXPoWQsRsUmnapvZb0QjWu6.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    18,
+                    80
+                ],
+                "popularity": 6.8356,
+                "release_date": "1996-02-23",
+                "video": false,
+                "vote_average": 7.961,
+                "vote_count": 9960
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/n2eUT4zQA2yYcKOgAFidgOyiFoH.jpg",
+                "id": 68718,
+                "title": "Django desencadenado",
+                "original_title": "Django Unchained",
+                "overview": "Dos años antes de estallar la Guerra Civil (1861-1865), Schultz, un cazarrecompensas alemán que le sigue la pista a unos asesinos, le promete al esclavo Django dejarlo en libertad si le ayuda a atraparlos. Terminado con éxito el trabajo, Django prefiere seguir al lado del alemán y ayudarle a capturar a los delincuentes más buscados del Sur. Se convierte así en un experto cazador de recompensas, pero su único objetivo es rescatar a su esposa Broomhilda, a la que perdió por culpa del tráfico de esclavos. La búsqueda llevará a Django y a Schultz hasta Calvin Candie, el malvado propietario de la plantación \"Candyland\". La presencia de ambos en los alrededores de la propiedad, despierta las sospechas de Stephen, el esclavo de confianza de Candie.",
+                "poster_path": "/fIxAE6BKfAzhPRYm7DdldBaYu5T.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    18,
+                    37
+                ],
+                "popularity": 9.5303,
+                "release_date": "2012-12-25",
+                "video": false,
+                "vote_average": 8.2,
+                "vote_count": 26957
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
+                "id": 122,
+                "title": "El señor de los anillos: El retorno del rey",
+                "original_title": "The Lord of the Rings: The Return of the King",
+                "overview": "Las fuerzas de Saruman han sido destruidas, y su fortaleza sitiada. Ha llegado el momento de que se decida el destino de la Tierra Media, y por primera vez en mucho tiempo, parece que hay una pequeña esperanza. La atención del señor oscuro Sauron se centra ahora en Gondor, el último reducto de los hombres, y del cual Aragorn tendrá que reclamar el trono para ocupar su puesto de rey. Pero las fuerzas de Sauron ya se preparan para lanzar el último y definitivo ataque contra el reino de Gondor, la batalla que decidirá el destino de todos. Mientras tanto, Frodo y Sam continuan su camino hacia Mordor, a la espera de que Sauron no repare en que dos pequeños Hobbits se acercan cada día más al final de su camino, el Monte del Destino.",
+                "poster_path": "/mWuFbQrXyLk2kMBKF9TUPtDwuPx.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    12,
+                    14,
+                    28
+                ],
+                "popularity": 19.5483,
+                "release_date": "2003-12-17",
+                "video": false,
+                "vote_average": 8.489,
+                "vote_count": 25320
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/3TimUBrXMVblpnTsyg4HssGVbBv.jpg",
+                "id": 431,
+                "title": "Cube",
+                "original_title": "Cube",
+                "overview": "Seis personas, desconocidas entre sí, despiertan un día y se encuentran atrapadas en una prisión extraña y surrealista, en un laberinto con un sin fin de habitaciones cúbicas dotadas de trampas mortales. Entre ellos hay un policía, un ladrón profesional, un prodigioso estudiante de matemáticas y un joven autista. Esta mezcla caprichosa de personalidades no está exenta de perversión. Ninguno de ellos sabe porqué o cómo ha llegado hasta allí, porqué está preso, pero enseguida surgirá la obsesión en este grupo por huir, por planificar una salida de tan horrible cárcel. Mientras tanto, varias preguntas sin respuestas: ¿quién ha podido crear este diabólico laberinto y por qué? ¿quién les ha encerrado en él y con qué objetivo?.",
+                "poster_path": "/ngM6WtSC1bzcST3QzbCiDYsxo7E.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    53,
+                    878,
+                    9648
+                ],
+                "popularity": 3.8649,
+                "release_date": "1998-07-11",
+                "video": false,
+                "vote_average": 6.808,
+                "vote_count": 4935
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/zfbjgQE1uSd9wiPTX4VzsLi0rGG.jpg",
+                "id": 278,
+                "title": "Cadena perpetua",
+                "original_title": "The Shawshank Redemption",
+                "overview": "Acusado del asesinato de su mujer, Andrew Dufresne, tras ser condenado a cadena perpetua, es enviado a la prisión de Shawshank. Con el paso de los años conseguirá ganarse la confianza del director del centro y el respeto de sus compañeros presidiarios, especialmente de Red, el jefe de la mafia de los sobornos.",
+                "poster_path": "/uRRTV7p6l2ivtODWJVVAMRrwTn2.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    18,
+                    80
+                ],
+                "popularity": 31.4154,
+                "release_date": "1994-09-23",
+                "video": false,
+                "vote_average": 8.712,
+                "vote_count": 28659
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/c7VbRPlev1bRfKvTxr98erw5T7B.jpg",
+                "id": 585,
+                "title": "Monstruos, S.A.",
+                "original_title": "Monsters, Inc.",
+                "overview": "Monsters Inc. es la mayor empresa de miedo del mundo, y James P. Sullivan es uno de sus mejores empleados. Asustar a los niños no es un trabajo fácil, ya que todos creen que los niños son tóxicos y no pueden tener contacto con ellos. Pero un día una niña se cuela sin querer en la empresa, provocando el caos.",
+                "poster_path": "/g3SgHEb5ej2MioGfYLrZVshF909.jpg",
+                "media_type": "movie",
+                "original_language": "en",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751
+                ],
+                "popularity": 17.6123,
+                "release_date": "2001-11-01",
+                "video": false,
+                "vote_average": 7.846,
+                "vote_count": 19014
+            }
+        ],
+        "total_pages": 2,
+        "total_results": 40
+    }
+}
+

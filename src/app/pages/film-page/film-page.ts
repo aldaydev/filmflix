@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FilmDetails } from 'app/models/film-details.model';
+import { FilmService } from 'app/services/tmdb/film-service';
 
 @Component({
   selector: 'app-film-page',
@@ -11,10 +13,17 @@ import { ActivatedRoute } from '@angular/router';
 export class FilmPage implements OnInit{
 
   filmId = signal<string | null>("");
-
+  filmService = inject(FilmService);
   route = inject(ActivatedRoute);
+  filmDetails = signal<FilmDetails | null>(null);
 
   ngOnInit() {
-    this.filmId.set(this.route.snapshot.paramMap.get('id'));
+    const paramId = this.route.snapshot.paramMap.get('id');
+    this.filmId.set(paramId);
+
+    this.filmService.getFilmById(Number(paramId))
+      .subscribe((data) => {
+        this.filmDetails.set(data);
+      })
   }
 }

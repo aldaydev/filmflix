@@ -7,10 +7,11 @@ import {
   signal,
   ViewChild,
 } from '@angular/core';
-import { Film } from 'app/models/film.model';
+import { PopularFilm } from 'app/models/popular-film.model';
 import { PosterUrlPipe } from 'app/pipes/poster-url-pipe-pipe';
 import { FilmCarouselArrow } from './film-carousel-arrow/film-carousel-arrow';
 import { RouterModule } from '@angular/router';
+import { CarouselFilmData } from 'app/models/film-carousel.model';
 
 @Component({
   selector: 'app-film-carousel',
@@ -23,7 +24,7 @@ export class FilmCarousel {
   @ViewChild('innerContainer') innerContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLAnchorElement>;
 
-  filmList = input<Film[] | null>(null);
+  filmList = input<CarouselFilmData[] | null>(null);
 
   onStart = signal(true);
   onEnd = signal(false);
