@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/film-similar
+* Creación del componente/carousel de películas similares
+
 ### feat/film-hero
 * Trabajando sobre el componente film-page-hero
 * Creando el componente five-stars-rate y star-rate
