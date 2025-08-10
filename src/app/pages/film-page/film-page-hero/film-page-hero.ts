@@ -17,7 +17,7 @@ export class FilmPageHero implements AfterViewInit{
 
   ngAfterViewInit () {
     console.log(this.filmDetails())
-
+    
   }
 
 }
