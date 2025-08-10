@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Input } from "app/shared/ui/input/input";
 import { Button } from "app/shared/ui/button/button";
 
@@ -10,5 +10,5 @@ import { Button } from "app/shared/ui/button/button";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchByTitle {
-
+  isOpen = input(false);
 }

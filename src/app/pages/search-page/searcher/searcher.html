@@ -1,14 +1,16 @@
+
 <header class="searchFilms__searcher" #searcherExpander [style.height]="searchExpanderHeight() + 'px'">
     <button 
         class="searcher__expander" 
         (click)="toggleSearchExpander()"
     >   
+        
         <div class="searcher__info">
-            <span class="searcher__indicator"></span>
-            <p class="searcher__resume">Buscando por: </p>
+            @if(hasOptions()){<span class="searcher__indicator"></span>}
+            <p class="searcher__resume">{{!hasOptions() ? 'Sin parámentros' : hasOptions()}}</p>
         </div>
         
-        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff">
+        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff" [class.isOpen]="isOpen()">
             <path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/>
         </svg>
 

@@ -44,6 +44,11 @@
 
 .searcher__expander svg{
     transform: rotate(45deg);
+    transition: transform .3s ease-in-out;
+}
+
+.searcher__expander svg.isOpen{
+    transform: rotate(-90deg);
 }
 
 .searcher__info{

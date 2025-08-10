@@ -14,6 +14,7 @@ export class Searcher implements AfterViewInit{
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   isOpen = signal(false);
+  hasOptions = signal<'Nombre' | 'Filtros' | null>(null);
 
   @ViewChild('searcherExpander') searcherExpander!: ElementRef<HTMLButtonElement>;
   searchExpanderHeight = signal(50);
