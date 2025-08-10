@@ -6,10 +6,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--theme-bg-trans);
-
+    background-color: var(--theme-bg-trans-darker);
 
     animation: modalSlide .3s ease-in-out both;
+
+    z-index: 50;
 }
 
 @keyframes modalSlide {
@@ -23,12 +24,18 @@
 .modalContainer{
     margin-top: 20px;
     
-    background-color: var(--theme-bg);
-    box-shadow: 0 0 5px var(--theme-text);
+    /* background-color: var(--theme-bg-trans-darker); */
+    /* box-shadow: 0 0 5px var(--theme-text); */
     width: 100%;
     height: 100%;
 
     position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 }
 
 .closeButton{
@@ -37,13 +44,42 @@
     background-color: transparent;
     border: none;
 
-    position: absolute;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: end;
+
+    margin-bottom: 20px;
+
+    /* position: absolute;
     top: 4px;
-    right: 4px;
+    right: 4px; */
 
     cursor: pointer;
 }
 
 .closeButton path{
     fill: var(--theme-text);
+}
+
+.videoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 25px;
+
+    margin-bottom: 100px;
+}
+
+.videoContainer iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.videoName{
+    font-size: 1.4rem;
+    line-height: 1.1;
+    text-align: center;
 }

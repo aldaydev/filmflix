@@ -78,7 +78,7 @@
         <app-film-videos-modal 
             [isOpen]="videosModalOpened()"
             (closeModal)="closeVideosModal()"
-            [videos]="film.videos.results"
+            [videoData]="film.videos.results[0]"
         />
     }
     

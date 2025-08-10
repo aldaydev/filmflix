@@ -3,13 +3,21 @@
         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff"><path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/></svg>
     </button>
 
-    <section class="videos">
-        @for (video of videos(); track $index) {
-            <p>{{video.name}}</p>
-        }
-    </section>
+    @let video = videoData();
+    @if(video && safeUrl()){
+        <section class="videoContainer">
+            <iframe 
+                [src]="safeUrl()" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+            <h3 class="videoName">{{video.name}}</h3>
+        </section>
+    }
+    
 
 </div>
-
-<p>film-videos-modal works!</p>
 

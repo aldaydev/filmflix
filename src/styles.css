@@ -20,6 +20,7 @@
 :root {
     --theme-bg: #000;
     --theme-bg-trans: #0000009d;
+    --theme-bg-trans-darker: #000000de;
     --theme-text: white;
     --theme-text-trans: #ffffff83;
 }
@@ -28,6 +29,7 @@
 html.light {
     --theme-bg: white;
     --theme-bg-trans: #ffffffbe;
+    --theme-bg-trans-darker: #ffffffe8;
     --theme-text: #000;
     --theme-text-trans: #0000008a;
 }
