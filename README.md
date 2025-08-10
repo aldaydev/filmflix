@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/film-videos
+* Creación del componente film-videos
+
 ### feat/film-similar
 * Creación del componente/carousel de películas similares
 * Ajustes y mejoras en el componente reutilizable del carousel
