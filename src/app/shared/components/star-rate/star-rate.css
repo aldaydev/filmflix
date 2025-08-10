@@ -10,14 +10,6 @@
     width: 100%;
     z-index: -10;
 
-    /* Color de fondo que quieres "rellenar" */
-    /* background: linear-gradient(90deg,
-    #E50914 0%,       
-    #E50914 40%,      
-    transparent 40%,           
-    transparent 100%
-    ); */
-
     /* Aquí aplicamos la máscara SVG */
     mask-image: url("../../../../assets/icons/star_fill_icon.svg");
     mask-repeat: no-repeat;
@@ -29,4 +21,8 @@
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
+}
+
+.star-outline .blackStroke{
+    stroke: var(--theme-text);
 }

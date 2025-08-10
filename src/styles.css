@@ -27,7 +27,7 @@
 /* Si el usuario tiene modo claro (lo sobrescribes) */
 html.light {
     --theme-bg: white;
-    --theme-bg-trans: #ffffffa8;
+    --theme-bg-trans: #ffffffb2;
     --theme-text: #000;
     --theme-text-trans: #0000008a;
 }

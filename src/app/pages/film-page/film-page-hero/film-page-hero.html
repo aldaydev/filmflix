@@ -7,14 +7,49 @@
     >
 
         <section class="filmHero__filmData">
-            <h1 class="filmData__title">{{film.title}}</h1>
+
+            <hgroup class="filmData__titles">
+                <h1 class="filmData__title">{{film.title}}</h1>
+                @if(film.tagline){
+                    <h2 class="filmData__subtitle">{{film.tagline}}</h2>
+                }
+            </hgroup>
+            
+
             <article class="filmData__infoContainer">
                 <div class="filmData__rateContainer">
-                    <h3>{{film.vote_average | roundRate}}</h3>
                     <app-five-stars-rate [vote_average]="film.vote_average | roundRate"/>
-                    
+                    <h3 class="filmData__rateText">{{film.vote_average | roundRate}}</h3>
                 </div>
+
+                <div class="filmData__timesContainer">
+                    <h4 class="filmData__duration">{{film.runtime}} mins</h4>
+                    <p>{{film.release_date.slice(0, 7)}}</p>
+                </div>
+                
+
+                <p class="filmData__overview">{{film.overview}}</p>
+
+                <ul class="filmData__genresContainer">
+                    @for (genre of film.genres; track $index) {
+                        <li class="filmData__genre">{{genre.name}}</li>
+                    }
+                </ul>
+
             </article>
+
+            @if(film.videos.results.length > 0){
+                <article class="filmData__linksContainer">
+                    <app-button
+                        size="big"
+                        label="VER VÍDEOS"
+                        [handleClick]="null"
+                        [icon]="{src: 'assets/icons/watch_icon_white.svg', alt: 'videos'}"
+                    />
+                </article>
+            }
+            
+
         </section>
 
     </header>
