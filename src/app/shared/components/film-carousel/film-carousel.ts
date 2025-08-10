@@ -4,7 +4,9 @@ import {
   effect,
   ElementRef,
   HostListener,
+  inject,
   input,
+  PLATFORM_ID,
   signal,
   ViewChild,
 } from '@angular/core';
@@ -12,6 +14,7 @@ import { PosterUrlPipe } from 'app/pipes/poster-url-pipe';
 import { FilmCarouselArrow } from './film-carousel-arrow/film-carousel-arrow';
 import { RouterModule } from '@angular/router';
 import { CarouselFilmData } from 'app/models/film-carousel.model';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-film-carousel',
@@ -23,6 +26,8 @@ import { CarouselFilmData } from 'app/models/film-carousel.model';
 export class FilmCarousel {
   @ViewChild('innerContainer') innerContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLAnchorElement>;
+
+  isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   filmList = input<CarouselFilmData[] | null>(null);
   hasNumber = input<boolean>(false);
@@ -41,7 +46,7 @@ export class FilmCarousel {
 
   constructor() {
     effect(() => {
-      if(this.filmList()) {
+      if(this.isBrowser && this.filmList()) {
         this.scrollToStart();
       }
     })

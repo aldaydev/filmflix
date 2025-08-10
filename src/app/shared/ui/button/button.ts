@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, input, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, Input, output } from '@angular/core';
 import { ThemeService } from 'app/services/theme-service/theme-service';
 
 interface ButtonIcon {
@@ -22,6 +22,6 @@ export class Button {
   color = input<'primary' | 'secondary' | 'none'>('primary');
   label = input<string> ('botón');
   disabled = input<boolean>(false)
-  handleClick = input(null);
+  handleClick = output<void>();
   icon = input<ButtonIcon | null>();
 }

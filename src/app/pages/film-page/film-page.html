@@ -38,8 +38,11 @@
 
     @if(film.videos.results.length > 0){
     <article class="filmData__linksContainer">
-        <app-button size="big" label="VER VÍDEOS" [handleClick]="null"
-            [icon]="{src: 'assets/icons/watch_icon_white.svg', alt: 'videos'}" />
+        <app-button 
+            size="big" label="VER VÍDEOS" 
+            (handleClick)="openVideosModal()"
+            [icon]="{src: 'assets/icons/watch_icon_white.svg', alt: 'videos'}" 
+        />
     </article>
     }
 
@@ -71,5 +74,13 @@
         />
     </form>
 
+    @if (videosModalOpened() && film.videos.results.length > 0) {
+        <app-film-videos-modal 
+            [isOpen]="videosModalOpened()"
+            (closeModal)="closeVideosModal()"
+            [videos]="film.videos.results"
+        />
+    }
+    
 </section>
 }
