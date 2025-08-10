@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   ElementRef,
   HostListener,
   input,
@@ -38,6 +39,26 @@ export class FilmCarousel {
     this.calculateScroll();
   }
 
+  constructor() {
+    effect(() => {
+      if(this.filmList()) {
+        this.scrollToStart();
+      }
+    })
+  }
+
+  scrollToStart() {
+    if (this.innerContainer) {
+      this.innerContainer.nativeElement.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+      this.onStart.set(true);
+      this.onEnd.set(false);
+      this.scroll = 0;
+    }
+  }
+
   showTitle(title : string) {
     this.titleToShow.set(title);
   }
@@ -57,7 +78,6 @@ export class FilmCarousel {
 
     const el = this.innerContainer.nativeElement;
     const maxScrollLeft = el.scrollWidth - el.clientWidth;
-    console.log(maxScrollLeft);
 
     this.innerContainer.nativeElement.scrollBy({
       left: this.scroll,
@@ -71,10 +91,8 @@ export class FilmCarousel {
       timeout = setTimeout(() => {
         if (el.scrollLeft > 0) {
           this.onStart.set(false);
-          console.log('adsadasdasd');
         }
         if (el.scrollLeft + 1 >= maxScrollLeft) {
-          console.log('3424234324');
           this.onEnd.set(true);
         }
       }, 100);
@@ -100,11 +118,9 @@ export class FilmCarousel {
       timeout = setTimeout(() => {
         if (el.scrollLeft === 0) {
           this.onStart.set(true);
-          console.log('aaaaaaa');
         }
         if (el.scrollLeft < maxScrollLeft) {
           this.onEnd.set(false);
-          console.log('aaaaaaa');
         }
       }, 100);
     });

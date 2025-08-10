@@ -5,6 +5,7 @@
 * Ajustes y mejoras en el componente reutilizable del carousel
 * Fix: Actualización automática de los datos al navegar de una página de película a otra
 * Fix: Actualización de las estrellas al navegar de una página de película a otra
+* Creación del footer para buscar películas dentro de film-page
 
 ### feat/film-hero
 * Trabajando sobre el componente film-page-hero

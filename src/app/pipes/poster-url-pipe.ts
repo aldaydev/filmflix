@@ -8,7 +8,7 @@ export class PosterUrlPipe implements PipeTransform {
 
   transform(poster_path: string | null, size: string = 'w342'): string {
     if(!poster_path){
-      return "assets/images/no-poster_path.png"
+      return "assets/images/shared/no-poster.webp"
     }else{
       return `${environment.tmdbImageBaseUrl}${size}${poster_path}`
     }

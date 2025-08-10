@@ -49,6 +49,7 @@ export class FilmPage implements OnInit {
     if (paramId) {
       this.filmService.getFilmById(Number(paramId)).subscribe(data => {
         this.filmDetails.set(data);
+        console.log(data);
         const bgImage = this.getBgUrl(data.backdrop_path);
         this.bgImage.set(bgImage);
         this.similarFilms.set(this.filterSimilarFilms(data.similar));
