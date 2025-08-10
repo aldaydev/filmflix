@@ -1,7 +1,13 @@
 # Filmflix
 
+### feat/film-hero
+* Trabajando sobre el componente film-page-hero
+* Creando el componente five-stars-rate y star-rate
+
 ### feat/film-service
 * Creación del servicio FilmService
+* Trabajando en los tipos de las películas
+* Pruebas de recibir data en un componente
 
 ### feat/home-faq
 * Creación del componente homeFaq
