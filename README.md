@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/film-search
+* Creación del componente search-page
+
 ### feat/film-videos
 * Creación del componente film-videos (modal)
 * Creación de la lógica de abrir y cerrar el modal
