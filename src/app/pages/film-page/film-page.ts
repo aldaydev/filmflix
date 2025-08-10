@@ -16,10 +16,11 @@ import { environment } from 'environments/environment';
 import { FilmCarousel } from 'app/shared/components/film-carousel/film-carousel';
 import { CarouselFilmData } from 'app/models/film-carousel.model';
 import { Subscription } from 'rxjs';
+import { Input } from "app/shared/ui/input/input";
 
 @Component({
   selector: 'app-film-page',
-  imports: [RoundRatePipe, FiveStarsRate, Button, FilmCarousel],
+  imports: [RoundRatePipe, FiveStarsRate, Button, FilmCarousel, Input],
   templateUrl: './film-page.html',
   styleUrl: './film-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

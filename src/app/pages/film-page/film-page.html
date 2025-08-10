@@ -54,4 +54,22 @@
         [filmList]="similarFilms()"
     />
 </section>
+
+<section class="filmPage__moreActions">
+    <h2 class="moreActions__title">
+        ¿Buscas algo concreto?
+    </h2>
+
+    <form class="moreActions__searchForm">
+        <app-input
+            [label]="'¿Qué película quieres buscar?'"
+            size="small"
+        />
+        <app-button
+            label="Buscar"
+            [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"
+        />
+    </form>
+
+</section>
 }
