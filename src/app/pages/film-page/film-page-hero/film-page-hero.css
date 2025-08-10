@@ -20,7 +20,7 @@
     top: 0;
     left: 0;
     opacity: .7;
-    background: linear-gradient(to bottom, var(--theme-bg-trans) 5%, transparent 100%);
+    background: linear-gradient(to bottom, var(--theme-bg) 50%, transparent 100%);
     transition: background .3s ease-in-out;
     z-index: 0;
 }

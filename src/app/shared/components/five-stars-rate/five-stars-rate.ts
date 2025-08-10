@@ -21,8 +21,11 @@ export class FiveStarsRate implements OnInit {
       if(translateAverage >= 1){
         starsArr.push(100);
         translateAverage --;
-      }else{
+      }else if(translateAverage < 1 && translateAverage > 0){
         starsArr.push(Math.floor(translateAverage * 100));
+        translateAverage = 0;
+      }else {
+        starsArr.push(0);
       }
     }
 
