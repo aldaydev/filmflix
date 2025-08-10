@@ -3,6 +3,8 @@
 ### feat/film-hero
 * Trabajando sobre el componente film-page-hero
 * Creando el componente five-stars-rate y star-rate
+* Creando diseño superior de la página de película
+* Refactorización del código
 
 ### feat/film-service
 * Creación del servicio FilmService
