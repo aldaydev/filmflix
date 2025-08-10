@@ -38,7 +38,9 @@
                             [alt]="'Poster de ' + film.title"
                             class="filmCarousel__posterImg"
                         />
-                        <span class="filmCarousel__filmRate" [attr.data-content]="number">{{number}}</span>
+                        @if(hasNumber()){
+                            <span class="filmCarousel__filmRate" [attr.data-content]="number">{{number}}</span>
+                        }
                     </a>
                 }
             }

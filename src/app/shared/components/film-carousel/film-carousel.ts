@@ -24,6 +24,7 @@ export class FilmCarousel {
   @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLAnchorElement>;
 
   filmList = input<CarouselFilmData[] | null>(null);
+  hasNumber = input<boolean>(false);
 
   onStart = signal(true);
   onEnd = signal(false);

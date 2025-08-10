@@ -2,7 +2,9 @@
 
 @if(film){
 
-<section class="filmHero__filmData">
+<div class="filmPage__marginContainer">
+
+<section class="filmPage__filmData">
 
     <hgroup class="filmData__titles">
         <h1 class="filmData__title">{{film.title}}</h1>
@@ -19,7 +21,7 @@
         </div>
 
         <div class="filmData__timesContainer">
-            <h4 class="filmData__duration">Duración: {{film.runtime}} mins</h4>
+            <h4 class="filmData__duration">Duración: {{film.runtime}} min</h4>
             <p class="filmData__release">Estreno: {{film.release_date.slice(0, 7)}}</p>
         </div>
 
@@ -43,4 +45,10 @@
 
 </section>
 
+</div>
+<section class="filmPage__similarFilms">
+    <app-film-carousel
+        [filmList]="similarFilms()"
+    />
+</section>
 }

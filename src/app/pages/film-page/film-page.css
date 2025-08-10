@@ -10,7 +10,7 @@
     background-size: cover;
     background-attachment: fixed;
 
-    padding: 70px var(--res-padding);
+    padding-top: 70px;
     position: relative;
 }
 
@@ -43,7 +43,12 @@
     z-index: 0;
 }
 
-.filmHero__filmData{
+.filmPage__marginContainer{
+    padding: 0 var(--res-padding);
+}
+
+.filmPage__filmData{
+    
     padding-top: 25px;
     position: relative;
     z-index: 50;
