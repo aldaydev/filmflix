@@ -25,6 +25,8 @@ export class FilmPage implements OnInit{
     this.filmService.getFilmById(Number(paramId))
       .subscribe((data) => {
         this.filmDetails.set(data);
+        console.log('DATA', data);
+        console.log(data.similar);
       })
   }
 }

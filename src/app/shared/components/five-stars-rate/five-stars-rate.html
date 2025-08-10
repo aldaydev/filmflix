@@ -1,0 +1,9 @@
+
+
+<div class="five-stars-container">
+    @for (star of starsPercentage(); track $index) {
+        <div class="star-container">
+            <app-star-rate [starPercentage]="star"/>
+        </div>
+    }
+</div>

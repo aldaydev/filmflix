@@ -5,14 +5,18 @@
         class="filmPage__filmHero"
         [style.background-image]="'url(' + (film.backdrop_path | filmBgUrl) + ')'"
     >
-        <!-- @if (film.backdrop_path) {
-            <img 
-                [src]="film.backdrop_path | filmBgUrl" 
-                [alt]="'Imagen de fondo de ' + film.title"
-                class="filmHero__bgImage"
-            >
-        } -->
-        
+
+        <section class="filmHero__filmData">
+            <h1 class="filmData__title">{{film.title}}</h1>
+            <article class="filmData__infoContainer">
+                <div class="filmData__rateContainer">
+                    <h3>{{film.vote_average | roundRate}}</h3>
+                    <app-five-stars-rate [vote_average]="film.vote_average | roundRate"/>
+                    
+                </div>
+            </article>
+        </section>
+
     </header>
 }
 

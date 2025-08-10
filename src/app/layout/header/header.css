@@ -8,7 +8,7 @@
     height: 75px;
     z-index: 999;
 
-    background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%);
+    /* background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%); */
 }
 
 header {
@@ -28,24 +28,24 @@ header {
     color: var(--color-primary);
 }
 
-/* header::before {
+header::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 130%;
     width: 100%;
-    background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%);
+    background: linear-gradient(to bottom, var(--theme-bg-trans) 0%, transparent 100%);
     z-index: -1;
     opacity: 0;
-} */
+}
 
 header::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 120%;
     width: 100%;
     background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%);
     z-index: -1;

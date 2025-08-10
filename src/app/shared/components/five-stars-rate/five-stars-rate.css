@@ -1,0 +1,8 @@
+.five-stars-container{
+    display: flex;
+    column-gap: 5px;
+}
+
+.star-container{
+    width: 30px;
+}
