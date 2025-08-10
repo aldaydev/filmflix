@@ -23,6 +23,7 @@
     --theme-bg-trans-darker: #000000de;
     --theme-text: white;
     --theme-text-trans: #ffffff83;
+    --theme-text-trans-darker: #ffffffe8;
 }
 
 /* Si el usuario tiene modo claro (lo sobrescribes) */
@@ -32,6 +33,7 @@ html.light {
     --theme-bg-trans-darker: #ffffffe8;
     --theme-text: #000;
     --theme-text-trans: #0000008a;
+    --theme-text-trans-darker: #000000de;
 }
 
 /* ---------- GLOBAL STYLES ----------*/

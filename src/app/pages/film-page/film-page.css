@@ -1,5 +1,4 @@
 :host{
-    /* display: block; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,21 +16,6 @@
     position: relative;
 }
 
-/* .filmPage__filmHero{
-    height: 100%;
-    min-height: 100dvh;
-    width: 100%;
-
-    background-color: var(--theme-bg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-
-    padding: 70px var(--res-padding);
-    position: relative;
-} */
-
 :host::before{
     content: "";
     position: absolute;
@@ -40,7 +24,6 @@
     top: 0;
     left: 0;
     opacity: .7;
-    /* background: linear-gradient(to bottom, var(--theme-bg) 50%, transparent 100%); */
     background: var(--theme-bg);
     transition: background .3s ease-in-out;
     z-index: 0;

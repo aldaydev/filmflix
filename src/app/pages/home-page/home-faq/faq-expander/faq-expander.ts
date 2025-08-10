@@ -35,11 +35,8 @@ export class FaqExpander implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Mide el contenido con padding ya aplicado
     this.expandableHeight.set(this.expandableItem.nativeElement.offsetHeight);
   }
-
-  
 
   onClick() {
     this.toggle.emit();
