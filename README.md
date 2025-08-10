@@ -2,6 +2,9 @@
 
 ### feat/film-similar
 * Creación del componente/carousel de películas similares
+* Ajustes y mejoras en el componente reutilizable del carousel
+* Fix: Actualización automática de los datos al navegar de una página de película a otra
+* Fix: Actualización de las estrellas al navegar de una página de película a otra
 
 ### feat/film-hero
 * Trabajando sobre el componente film-page-hero

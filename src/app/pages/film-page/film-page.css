@@ -147,6 +147,17 @@
     width: fit-content;
 }
 
+.filmPage__similarFilms{
+    position: relative;
+    z-index: 50;
+    padding: 30px 0;
+}
+
+.similarFilms__title{
+    padding: 0 var(--res-padding);
+    margin-bottom: 15px;
+}
+
 @media screen and (min-width: 600px) {
     .filmData__genre{
         font-size: 1.1rem;

@@ -32,6 +32,8 @@
                     <a 
                         class="filmCarousel__posterContainer" #posterContainer
                         [routerLink]="['/film', film.id]"
+                        (mouseenter)="showTitle(film.title)"
+                        (mouseleave)="hideTitle()"
                     >
                         <img 
                             [src]="film.poster_path | posterUrl"
@@ -41,9 +43,17 @@
                         @if(hasNumber()){
                             <span class="filmCarousel__filmRate" [attr.data-content]="number">{{number}}</span>
                         }
+                        
                     </a>
                 }
             }
         </div>
     </div>
+    @if(titleToShow()){
+        <div class="filmCarousel__filmTitleContainer">
+            <span class="filmCarousel__filmTitle">{{titleToShow()}}</span>
+        </div>
+    }
+    
+    
 </div>

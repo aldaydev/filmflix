@@ -31,9 +31,19 @@ export class FilmCarousel {
 
   scroll : number = 0;
 
+  titleToShow = signal<string>("");
+
   @HostListener('window:resize')
   onResize() {
     this.calculateScroll();
+  }
+
+  showTitle(title : string) {
+    this.titleToShow.set(title);
+  }
+
+  hideTitle() {
+    this.titleToShow.set('');
   }
 
   calculateScroll() {
