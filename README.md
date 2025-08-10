@@ -3,7 +3,7 @@
 ### feat/film-videos
 * Creación del componente film-videos (modal)
 * Creación de la lógica de abrir y cerrar el modal
-
+* Creación del iframe para reproducir vídeos
 
 ### feat/film-similar
 * Creación del componente/carousel de películas similares

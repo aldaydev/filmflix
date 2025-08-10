@@ -6,14 +6,16 @@
     @let video = videoData();
     @if(video && safeUrl()){
         <section class="videoContainer">
-            <iframe 
-                [src]="safeUrl()" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
+            <div class="iframeContainer">
+                <iframe 
+                    [src]="safeUrl()" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
             <h3 class="videoName">{{video.name}}</h3>
         </section>
     }
