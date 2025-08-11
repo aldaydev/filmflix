@@ -2,20 +2,32 @@ import { effect, Injectable, signal } from '@angular/core';
 
 @Injectable()
 export class SearchStateService {
-  selectedGenres = signal<number[]>([]);
 
-  queryString = signal<string>("");
+  // ---------- Life Cycle ----------
 
   constructor() {
     effect(() => {
-      const genres = this.selectedGenres();
-      const query = this.queryString();
-
-      console.log(query);
-
+      this.selectedGenres();
       this.setQueryString();
+
+      if(!this.searchOptions() && this.selectedGenres().length > 0){
+        this.searchOptions.set(true);
+      }else if(this.selectedGenres().length === 0){
+        this.searchOptions.set(false);
+      }
+
+      console.log(this.queryString());
     })
   }
+
+  // ---------- Properties ----------
+
+  selectedGenres = signal<number[]>([]);
+  queryString = signal<string>("");
+  hasOptions = signal<'name' | 'filters' | null>(null);
+  searchOptions = signal<boolean>(false);
+  
+  // ---------- Methods ----------
 
   setSelectedGenres(genreId: number){
     const genres = this.selectedGenres();

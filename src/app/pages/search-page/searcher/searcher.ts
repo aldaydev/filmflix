@@ -1,7 +1,8 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, effect, ElementRef, HostListener, inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { SearchByTitle } from "./search-by-title/search-by-title";
 import { isPlatformBrowser } from '@angular/common';
 import { SearchByFilters } from "./search-by-filters/search-by-filters";
+import { SearchStateService } from '../search-state-service';
 
 @Component({
   selector: 'app-searcher',
@@ -12,38 +13,78 @@ import { SearchByFilters } from "./search-by-filters/search-by-filters";
 })
 export class Searcher implements AfterViewInit{
 
+  // ---------- Injects ----------
+
+  elRef = inject(ElementRef);
+  searchStateService = inject(SearchStateService);
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
+  // ---------- Properties ----------
+
   isOpen = signal(false);
-  hasOptions = signal<'Nombre' | 'Filtros' | null>(null);
+  // searchOptions = signal(false);
+
+  // constructor(){
+    
+  //   effect(() => {
+  //     this.searchStateService.searchOptions();
+  //     console.log('Ha cambiado');
+  //   })
+    
+    
+  // }
+
+  // ---------- Viewers ----------
 
   @ViewChild('searcherExpander') searcherExpander!: ElementRef<HTMLButtonElement>;
   searchExpanderHeight = signal(50);
+  private searchExpanderInitialHeight: number = 50;
+
+  // --------- Host Listeners ---------
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent){
+    if(this.isBrowser){
+      if (!this.elRef.nativeElement.contains(event.target)) {
+        this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+        this.isOpen.set(false);
+      }
+    }
+  }
 
   @HostListener('window:resize')
   onResize() {
     if(this.isBrowser){
-      this.searchExpanderHeight.set(this.searcherExpander.nativeElement.offsetHeight);
+      this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+      this.isOpen.set(false);
     }
   }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    if(this.isBrowser){
+      this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+      this.isOpen.set(false);
+    }
+  }
+
+  // --------- Life cycle ---------
 
   ngAfterViewInit() {
     if(this.isBrowser){
       this.searchExpanderHeight.set(this.searcherExpander.nativeElement.offsetHeight);
-      console.log(this.isOpen());
-      console.log(this.searchExpanderHeight());
     }
     
   }
 
+  // --------- Methods ---------
+
   toggleSearchExpander(){
     if(this.isOpen()){
-      console.log(50);
-      this.searchExpanderHeight.set(50);
+      this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
       this.isOpen.set(false);
     }else{
       this.searchExpanderHeight.set(this.searcherExpander.nativeElement.scrollHeight);
-      console.log(this.searcherExpander.nativeElement.scrollHeight);
       this.isOpen.set(true);
     }
   }
