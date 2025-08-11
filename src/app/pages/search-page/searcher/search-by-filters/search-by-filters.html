@@ -1,5 +1,6 @@
 @let genres = genreList();
 @let searchState = searchStateService;
+
 <form class="searchByFilters">
     <fieldset class="searchByFilters__genresFilter">
         <legend class="genresFilter__title">Por género: </legend>
@@ -19,7 +20,13 @@
     </fieldset>
     <fieldset class="searchByFilters__yearFilter">
         <legend>Por año: </legend>
-            <input type="number" class="yearFilter__yearCheckbox">
+            <input 
+                type="number" 
+                class="yearFilter__yearCheckbox"
+                #yearInput
+                [value]="searchState.selectedYear()"
+                (input)="searchState.setSelectedYear($event)"
+            >
         
     </fieldset>
     

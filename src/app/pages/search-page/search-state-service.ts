@@ -12,7 +12,7 @@ export class SearchStateService {
   // ---------- Properties ----------
 
   selectedGenreIds = signal<number[]>([]);
-  queryString = signal<string>("");
+  // selectedYear = signal<string>("");
 
   hasOptions = signal<boolean>(false);
   hasGenres = signal<boolean>(false);
@@ -21,43 +21,13 @@ export class SearchStateService {
 
   filmList = signal<FilmListItem[]>([]);
 
-  // ---------- Life Cycle ----------
-
-  // ngOnInit(): void {
-  //   effect(() => {
-  //     this.selectedGenres();
-  //     this.setQueryString();
-
-  //     // if(!this.searchOptions() && this.selectedGenres().length > 0){
-  //     //   this.searchOptions.set(true);
-  //     // }else if(this.selectedGenres().length === 0){
-  //     //   this.searchOptions.set(false);
-  //     // }
-
-  //     console.log(this.queryString());
-  //   })
-  // }
-
-  constructor(){
-    effect(() => {
-      this.selectedGenreIds();
-      this.setQueryString();
-
-      // if(!this.searchOptions() && this.selectedGenres().length > 0){
-      //   this.searchOptions.set(true);
-      // }else if(this.selectedGenres().length === 0){
-      //   this.searchOptions.set(false);
-      // }
-
-      console.log(this.queryString());
-    })
-  }
-  
   // ---------- Methods ----------
 
   searchByfilters() {
+    
+    const queryString = this.setQueryString();
     this.hasName = signal<boolean>(false);
-    this.searchByFiltersService.getFilmsByFilters(this.queryString()).subscribe((data) => {
+    this.searchByFiltersService.getFilmsByFilters(queryString).subscribe((data) => {
       
       this.selectedGenreIds().length > 0 ? this.hasOptions.set(true) : this.hasOptions.set(false);
 
@@ -79,26 +49,36 @@ export class SearchStateService {
     }
   }
 
-  setQueryString(){
+  selectedYear = signal("2025"); // signal que guarda el valor del input
+
+  setSelectedYear(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const value = input.value.slice(0, 4);
+    this.selectedYear.set(value);
+    input.value = value;
+  }
+
+  setQueryString() : string{
     let query = "";
 
     if(this.selectedGenreIds().length > 0){
+
       const genresQuery = this.selectedGenreIds().reduce((acc, curr, currIndex) => {
-        if(currIndex < this.selectedGenreIds().length -1){
-          acc += `${curr},`;
-        }else{
-          acc += curr;
-        }
+        currIndex < this.selectedGenreIds().length -1 ? acc += `${curr},` : acc += curr;
         return acc;
       }, "with_genres=");
 
-      query += genresQuery;
+      query += '&' + genresQuery;
+    }
+
+    if(this.selectedYear()){
+      console.log("Desde create query", this.selectedYear());
     }
 
     if(query){
-      this.queryString.set('&' + query);
+      return query;
     }else{
-      return;
+      return "";
     }
     
   }
