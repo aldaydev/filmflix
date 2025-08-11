@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { CarouselFilmData } from 'app/models/film-carousel.model';
-import { PopularFilm } from 'app/models/popular-film.model';
 import { PopularFilmsService } from 'app/services/tmdb/popular-films-service';
 import { FilmCarousel } from 'app/shared/components/film-carousel/film-carousel';
-import { title } from 'process';
 import { map } from 'rxjs';
 
 @Component({
@@ -35,13 +33,4 @@ export class HomeCarousel {
       });
   }
 
-  // ngOnInit(): void {
-  //   this.popularFilmService.getPopularFilms()
-  //     .pipe(
-  //       map(data => data.results.slice(0, 10))
-  //     )
-  //     .subscribe((films) => {
-  //       this.popularFilmList.set(films);
-  //     });
-  // }
 }

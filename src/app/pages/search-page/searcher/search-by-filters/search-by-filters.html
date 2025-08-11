@@ -11,13 +11,15 @@
                     class="genresFilter__genreCheckbox"
                     [id]="genre.id"
                     #genreCheckbox
-                    (change)="searchState.setSelectedGenres(genre.id)"
+                    (change)="searchState.setSelectedGenres(genre.id, genre.name)"
                 />
                 <span class="genresFilter__genreName">{{genre.name}}</span>
             </label>
         }
     </fieldset>
-    <app-button
-        label="Buscar"
-    />
+    
 </form>
+<app-button
+        label="Buscar"
+        (handleClick)="searchState.searchByfilters()"
+    />

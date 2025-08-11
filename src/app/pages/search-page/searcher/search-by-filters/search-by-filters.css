@@ -11,18 +11,24 @@
 .genresFilter__genreContainer{
     padding: 5px;
     border: 1px solid white;
+    background-color: transparent;
 
     position: relative;
+
+    transition: background .3s ease-in-out;
+    cursor: pointer;
+
 }
 
 .genresFilter__genreContainer:hover,
 .genresFilter__genreContainer:has(.genresFilter__genreCheckbox:checked) {
     background-color: white;
     color: black;
-    cursor: pointer;
 }
 
-
+.genresFilter__genreContainer:not(:has(.genresFilter__genreCheckbox:checked)){
+    background-color: transparent;
+}
 
 .genresFilter__genreCheckbox{
     position: absolute;

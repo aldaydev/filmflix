@@ -1,49 +1,85 @@
-import { effect, Injectable, signal } from '@angular/core';
+import { effect, inject, Injectable, OnInit, signal } from '@angular/core';
+import { FilmListItem } from 'app/models/popular-film.model';
+import { SearchByFiltersService } from 'app/services/tmdb/search-by-filters-service';
 
 @Injectable()
 export class SearchStateService {
 
+  // ---------- Injections ----------
+
+  searchByFiltersService = inject(SearchByFiltersService);
+
+  // ---------- Properties ----------
+
+  selectedGenreIds = signal<number[]>([]);
+  queryString = signal<string>("");
+
+  searchOptions = signal<'name' | 'genre' | 'year' | null>(null);
+
+  filmList = signal<FilmListItem[]>([]);
+
   // ---------- Life Cycle ----------
 
-  constructor() {
+  // ngOnInit(): void {
+  //   effect(() => {
+  //     this.selectedGenres();
+  //     this.setQueryString();
+
+  //     // if(!this.searchOptions() && this.selectedGenres().length > 0){
+  //     //   this.searchOptions.set(true);
+  //     // }else if(this.selectedGenres().length === 0){
+  //     //   this.searchOptions.set(false);
+  //     // }
+
+  //     console.log(this.queryString());
+  //   })
+  // }
+
+  constructor(){
     effect(() => {
-      this.selectedGenres();
+      this.selectedGenreIds();
       this.setQueryString();
 
-      if(!this.searchOptions() && this.selectedGenres().length > 0){
-        this.searchOptions.set(true);
-      }else if(this.selectedGenres().length === 0){
-        this.searchOptions.set(false);
-      }
+      // if(!this.searchOptions() && this.selectedGenres().length > 0){
+      //   this.searchOptions.set(true);
+      // }else if(this.selectedGenres().length === 0){
+      //   this.searchOptions.set(false);
+      // }
 
       console.log(this.queryString());
     })
   }
-
-  // ---------- Properties ----------
-
-  selectedGenres = signal<number[]>([]);
-  queryString = signal<string>("");
-  hasOptions = signal<'name' | 'filters' | null>(null);
-  searchOptions = signal<boolean>(false);
   
   // ---------- Methods ----------
 
-  setSelectedGenres(genreId: number){
-    const genres = this.selectedGenres();
-    if(genres.includes(genreId)){
-      this.selectedGenres.set(genres.filter(g => g !== genreId));
+  searchByfilters() {
+    
+    this.searchByFiltersService.getFilmsByFilters(this.queryString()).subscribe((data) => {
+      if(this.selectedGenreIds.length > 0) this.searchOptions.set('genre');
+      
+      this.filmList.set(data.results);
+      console.log(data.results);
+    })
+  }
+
+  setSelectedGenres(genreId: number, genreName: string){
+
+    const genreIds = this.selectedGenreIds();
+
+    if(genreIds.includes(genreId)){
+      this.selectedGenreIds.set(genreIds.filter(g => g !== genreId));
     }else{
-      this.selectedGenres.set([...genres, genreId]);
+      this.selectedGenreIds.set([...genreIds, genreId]);
+
     }
   }
 
   setQueryString(){
     let query = "";
 
-    if(this.selectedGenres().length > 0){
-      const genresQuery = this.selectedGenres().reduce((acc, curr, currIndex) => {
-        if(currIndex < this.selectedGenres().length -1){
+    if(this.selectedGenreIds().length > 0){
+      const genresQuery = this.selectedGenreIds().reduce((acc, curr, currIndex) => {
+        if(currIndex < this.selectedGenreIds().length -1){
           acc += `${curr},`;
         }else{
           acc += curr;
@@ -54,7 +90,12 @@ export class SearchStateService {
       query += genresQuery;
     }
 
-    this.queryString.set('?' + query);
+    if(query){
+      this.queryString.set('&' + query);
+    }else{
+      return;
+    }
+    
   }
 
 }

@@ -1,4 +1,4 @@
-export interface PopularFilm {
+export interface FilmListItem {
     adult: boolean;
     backdrop_path: string | null;
     genre_ids: number[];
@@ -15,9 +15,9 @@ export interface PopularFilm {
     vote_count: number;
 }
 
-export interface PopularFilms {
+export interface FilmListResponse {
     page: number;
-    results: PopularFilm[];
+    results: FilmListItem[];
     total_pages: number;
     total_results: number;
 }
