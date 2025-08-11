@@ -1,0 +1,32 @@
+.searchByFilters__genresFilter{
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.genresFilter__genreContainer{
+    padding: 5px;
+    border: 1px solid white;
+
+    position: relative;
+}
+
+.genresFilter__genreContainer:hover,
+.genresFilter__genreContainer:has(.genresFilter__genreCheckbox:checked) {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+.genresFilter__genreCheckbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}

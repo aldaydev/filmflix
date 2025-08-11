@@ -1,1 +1,20 @@
-<p>search-by-filters works!</p>
+@let genres = genreList();
+@let searchState = searchStateService;
+<form class="searchByFilters">
+    <fieldset class="searchByFilters__genresFilter">
+        <legend class="genresFilter__title">Por género: </legend>
+        @for (genre of genres; track $index) {
+            <label class="genresFilter__genreContainer">
+                <input 
+                    type="checkbox"
+                    [value]="genre"
+                    class="genresFilter__genreCheckbox"
+                    [id]="genre.toLowerCase()"
+                    #genreCheckbox
+                    (change)="searchState.setSelectedGenres(genre.toLowerCase())"
+                />
+                <span class="genresFilter__genreName">{{genre}}</span>
+            </label>
+        }
+    </fieldset>
+</form>
