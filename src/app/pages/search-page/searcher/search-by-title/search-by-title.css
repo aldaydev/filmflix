@@ -5,3 +5,11 @@
 
     padding: 15px 0;
 }
+
+@media screen and (min-width: 1024px) {
+    .searchByName{
+        max-width: 1024px;
+        flex-direction: row;
+        column-gap: 15px;
+    }
+}

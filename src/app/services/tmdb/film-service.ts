@@ -12,7 +12,7 @@ export class FilmService {
   
   private http = inject(HttpClient);
   private url: string = `${environment.tmdbBaseUrl}/movie/`;
-  private urlQueryParams = '?language=es-ES&append_to_response=videos,similar'
+  private urlQueryParams = '?language=es-ES&append_to_response=videos,similar';
 
   getFilmById (filmId: number): Observable<FilmDetails> {
     const url = `${this.url}/${filmId}${this.urlQueryParams}`;

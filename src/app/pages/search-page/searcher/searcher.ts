@@ -1,10 +1,11 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { SearchByTitle } from "./search-by-title/search-by-title";
 import { isPlatformBrowser } from '@angular/common';
+import { SearchByFilters } from "./search-by-filters/search-by-filters";
 
 @Component({
   selector: 'app-searcher',
-  imports: [SearchByTitle],
+  imports: [SearchByTitle, SearchByFilters],
   templateUrl: './searcher.html',
   styleUrl: './searcher.css',
   changeDetection: ChangeDetectionStrategy.OnPush
