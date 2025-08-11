@@ -1,4 +1,5 @@
 @let hasGenres = searchStateService.hasGenres();
+@let hasYear = searchStateService.hasYear();
 @let hasOptions = searchStateService.hasOptions();
 
 <header class="searchFilms__searcher" #searcherExpander [style.height]="searchExpanderHeight() + 'px'">
@@ -10,8 +11,13 @@
         <div class="searcher__info">
             @if(hasOptions){
                 <span class="searcher__indicator"></span>
+
                 @if(hasGenres){
                     <span class="searcher__resume">Género</span>
+                }
+                
+                @if(hasYear){
+                    <span class="searcher__resume">Año</span>
                 }
                 
             }@else {

@@ -12,7 +12,7 @@ export class SearchStateService {
   // ---------- Properties ----------
 
   selectedGenreIds = signal<number[]>([]);
-  // selectedYear = signal<string>("");
+  selectedYear = signal("");
 
   hasOptions = signal<boolean>(false);
   hasGenres = signal<boolean>(false);
@@ -29,9 +29,12 @@ export class SearchStateService {
     this.hasName = signal<boolean>(false);
     this.searchByFiltersService.getFilmsByFilters(queryString).subscribe((data) => {
       
-      this.selectedGenreIds().length > 0 ? this.hasOptions.set(true) : this.hasOptions.set(false);
+      this.selectedGenreIds().length > 0 || this.selectedYear()
+        ? this.hasOptions.set(true) 
+        : this.hasOptions.set(false);
 
       this.selectedGenreIds().length > 0 ? this.hasGenres.set(true) : this.hasGenres.set(false);
+      this.selectedYear() ? this.hasYear.set(true) : this.hasYear.set(false);
       
       this.filmList.set(data.results);
       console.log(data.results);
@@ -48,8 +51,6 @@ export class SearchStateService {
       this.selectedGenreIds.set([...genreIds, genreId]);
     }
   }
-
-  selectedYear = signal("2025"); // signal que guarda el valor del input
 
   setSelectedYear(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -73,6 +74,9 @@ export class SearchStateService {
 
     if(this.selectedYear()){
       console.log("Desde create query", this.selectedYear());
+      const yearQuery = `&primary_release_year=${this.selectedYear()}`;
+
+      query += yearQuery;
     }
 
     if(query){
