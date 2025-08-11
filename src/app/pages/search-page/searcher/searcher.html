@@ -1,5 +1,5 @@
-@let searchOptions = searchStateService.searchOptions();
-@let selectedGenreIds = searchStateService.selectedGenreIds().length > 0;
+@let hasGenres = searchStateService.hasGenres();
+@let hasOptions = searchStateService.hasOptions();
 
 <header class="searchFilms__searcher" #searcherExpander [style.height]="searchExpanderHeight() + 'px'">
     <button 
@@ -8,21 +8,15 @@
     >   
         
         <div class="searcher__info">
-            @if(searchOptions){
+            @if(hasOptions){
                 <span class="searcher__indicator"></span>
-                <!-- <span>Buscando por:</span> -->
-                @if(selectedGenreIds){
+                @if(hasGenres){
                     <span class="searcher__resume">Género</span>
                 }
                 
             }@else {
                 <span class="searcher__resume">Viendo listado completo</span>
             }
-            
-            
-                
-            
-            
         </div>
         
         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff" [class.isOpen]="isOpen()">

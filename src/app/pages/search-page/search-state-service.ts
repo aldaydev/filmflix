@@ -14,7 +14,10 @@ export class SearchStateService {
   selectedGenreIds = signal<number[]>([]);
   queryString = signal<string>("");
 
-  searchOptions = signal<'name' | 'genre' | 'year' | null>(null);
+  hasOptions = signal<boolean>(false);
+  hasGenres = signal<boolean>(false);
+  hasName = signal<boolean>(false);
+  hasYear = signal<boolean>(false);
 
   filmList = signal<FilmListItem[]>([]);
 
@@ -53,16 +56,19 @@ export class SearchStateService {
   // ---------- Methods ----------
 
   searchByfilters() {
-    
+    this.hasName = signal<boolean>(false);
     this.searchByFiltersService.getFilmsByFilters(this.queryString()).subscribe((data) => {
-      if(this.selectedGenreIds.length > 0) this.searchOptions.set('genre');
+      
+      this.selectedGenreIds().length > 0 ? this.hasOptions.set(true) : this.hasOptions.set(false);
+
+      this.selectedGenreIds().length > 0 ? this.hasGenres.set(true) : this.hasGenres.set(false);
       
       this.filmList.set(data.results);
       console.log(data.results);
     })
   }
 
-  setSelectedGenres(genreId: number, genreName: string){
+  setSelectedGenres(genreId: number){
 
     const genreIds = this.selectedGenreIds();
 
@@ -70,7 +76,6 @@ export class SearchStateService {
       this.selectedGenreIds.set(genreIds.filter(g => g !== genreId));
     }else{
       this.selectedGenreIds.set([...genreIds, genreId]);
-
     }
   }
 

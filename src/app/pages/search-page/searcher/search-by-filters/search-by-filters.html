@@ -11,15 +11,21 @@
                     class="genresFilter__genreCheckbox"
                     [id]="genre.id"
                     #genreCheckbox
-                    (change)="searchState.setSelectedGenres(genre.id, genre.name)"
+                    (change)="searchState.setSelectedGenres(genre.id)"
                 />
                 <span class="genresFilter__genreName">{{genre.name}}</span>
             </label>
         }
     </fieldset>
+    <fieldset class="searchByFilters__yearFilter">
+        <legend>Por año: </legend>
+            <input type="number" class="yearFilter__yearCheckbox">
+        
+    </fieldset>
+    
     
 </form>
 <app-button
         label="Buscar"
         (handleClick)="searchState.searchByfilters()"
-    />
+/>

@@ -1,4 +1,5 @@
-.searchByFilters__genresFilter{
+.searchByFilters__genresFilter,
+.searchByFilters__yearFilter{
     border: 1px solid white;
     border-radius: 7px;
     padding: 10px;
@@ -35,4 +36,13 @@
     top: 0;
     left: 0;
     visibility: hidden;
+}
+
+.yearFilter__yearCheckbox{
+    background-color: var(--theme-bg-trans);
+    border: 1px solid var(--color-primary);
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 7px;
+    color: var(--theme-text);
 }
