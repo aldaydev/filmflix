@@ -7,13 +7,13 @@
             <label class="genresFilter__genreContainer">
                 <input 
                     type="checkbox"
-                    [value]="genre"
+                    [value]="genre.id"
                     class="genresFilter__genreCheckbox"
-                    [id]="genre.toLowerCase()"
+                    [id]="genre.id"
                     #genreCheckbox
-                    (change)="searchState.setSelectedGenres(genre.toLowerCase())"
+                    (change)="searchState.setSelectedGenres(genre.id)"
                 />
-                <span class="genresFilter__genreName">{{genre}}</span>
+                <span class="genresFilter__genreName">{{genre.name}}</span>
             </label>
         }
     </fieldset>
