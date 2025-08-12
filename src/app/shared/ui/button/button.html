@@ -1,8 +1,9 @@
 <button
     class="btn"
-    [class]="[type(), color(), size()]"
+    [class]="[fill(), color(), size()]"
     [disabled]="disabled()"
     (click)="handleClick.emit()"
+    [type]="type()"
 >
     {{ label() }}
     @if(icon()){

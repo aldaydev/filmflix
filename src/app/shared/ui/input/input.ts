@@ -12,7 +12,7 @@ export class Input {
   themeService = inject(ThemeService);
 
   type = input<'text'>('text');
-  label = input<string>('Label');
+  label = input<string>('');
   size = input<'small' | 'big'>('big');
   placeholder = input<string | null> ("");
   disabled = input<boolean>(false);

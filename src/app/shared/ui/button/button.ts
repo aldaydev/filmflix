@@ -17,7 +17,8 @@ export class Button {
 
   themeService = inject(ThemeService);
 
-  type = input<'solid' | 'outline'>('solid');
+  fill = input<'solid' | 'outline'>('solid');
+  type = input<string | null>("button")
   size = input<'small' | 'big'>('small');
   color = input<'primary' | 'secondary' | 'none'>('primary');
   label = input<string> ('botón');

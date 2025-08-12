@@ -1,8 +1,8 @@
 .searchByFilters__genresFilter,
 .searchByFilters__yearFilter{
-    border: 1px solid white;
-    border-radius: 7px;
-    padding: 10px;
+    border: none;
+    
+    padding: 10px 0;
 
     display: flex;
     flex-wrap: wrap;
@@ -11,8 +11,10 @@
 
 .genresFilter__genreContainer{
     padding: 5px;
-    border: 1px solid white;
+    border: 1px solid var(--theme-bg);
     background-color: transparent;
+
+    color: var(--theme-bg);
 
     position: relative;
 
@@ -21,14 +23,28 @@
 
 }
 
+/* .genresFilter__genreContainer:hover{
+    background-color: var(--theme-text);
+} */
+
+/* .genresFilter__genreContainer:hover .genresFilter__genreName{
+    color: var(--color-primary);
+} */
+
+
 .genresFilter__genreContainer:hover,
 .genresFilter__genreContainer:has(.genresFilter__genreCheckbox:checked) {
-    background-color: white;
-    color: black;
+    background-color: var(--theme-text);
+    color: var(--theme-bg);
 }
 
 .genresFilter__genreContainer:not(:has(.genresFilter__genreCheckbox:checked)){
     background-color: transparent;
+}
+
+.genresFilter__genreContainer:hover:not(:has(.genresFilter__genreCheckbox:checked)){
+    background-color: var(--theme-text);
+    color: var(--theme-bg);
 }
 
 .genresFilter__genreCheckbox{
@@ -45,4 +61,35 @@
     padding: 8px 16px;
     border-radius: 7px;
     color: var(--theme-text);
+}
+
+.yearFilter__yearCheckbox::placeholder{
+    color: var(--theme-text-trans);
+    font-weight: 700;
+}
+
+.genresFilter__genreName{
+    font-weight: 400;
+}
+
+.genresFilter__title,
+.yearFilter__title{
+    font-weight: 500;
+}
+
+@media screen and (min-width: 400px) {
+
+    .searchByFilters__genresFilter,
+    .searchByFilters__yearFilter{
+        padding: 15px 0;
+        gap: 10px;
+        margin-top: 8px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .genresFilter__genreName{
+        font-size: 1.2rem;
+    }
 }

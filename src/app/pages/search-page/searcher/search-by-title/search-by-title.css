@@ -6,6 +6,14 @@
     padding: 0 0 15px 0;
 }
 
+@media screen and (min-width: 400px) {
+
+    .searchByName{
+        border-bottom: 2px solid var(--theme-bg);
+        margin-bottom: 15px;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .searchByName{
         max-width: 1024px;

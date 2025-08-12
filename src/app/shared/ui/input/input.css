@@ -80,11 +80,12 @@
 }
 
 .customInput:focus{
-    border: 2px solid var(--theme-text);
+    border: 1px solid var(--theme-text);
 }
 
 .customInput::placeholder{
-    color: var(--theme-text);
+    color: var(--theme-text-trans);
+    font-weight: 600;
 }
 
 @media screen and (max-width: 800px) {

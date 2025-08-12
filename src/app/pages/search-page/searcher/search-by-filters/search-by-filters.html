@@ -19,20 +19,24 @@
         }
     </fieldset>
     <fieldset class="searchByFilters__yearFilter">
-        <legend>Por año: </legend>
+        <legend class="yearFilter__title">Por año: </legend>
             <input 
                 type="number" 
                 class="yearFilter__yearCheckbox"
-                #yearInput
                 [value]="searchState.selectedYear()"
                 (input)="searchState.setSelectedYear($event)"
+                placeholder="Año"
             >
         
     </fieldset>
     
+    <div class="buttonContainer">
+        <app-button
+            label="Buscar"
+            (handleClick)="searchState.searchByfilters()"
+        />
+    </div>
     
 </form>
-<app-button
-        label="Buscar"
-        (handleClick)="searchState.searchByfilters()"
-/>
+
+

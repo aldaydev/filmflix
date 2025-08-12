@@ -12,8 +12,8 @@ export class ScreenSizeService {
   constructor() {
     if(this.isBrowser){
       window.addEventListener('resize', () => {
-      this.width.set(window.innerWidth);
-    });
+        this.width.set(window.innerWidth);
+      });
     }
   }
 }
