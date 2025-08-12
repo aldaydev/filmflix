@@ -7,10 +7,11 @@ import {
 import { Genre } from 'app/models/genre-list.model';
 import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchStateService } from '../../search-state-service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-film-card',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './film-card.html',
   styleUrl: './film-card.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,6 +22,7 @@ export class FilmCard {
   image = input<string>('');
   title = input<string>('');
   date = input<string>('');
+  id = input<number>();
   genres = input<Genre[], number[]>(
     [],
     {

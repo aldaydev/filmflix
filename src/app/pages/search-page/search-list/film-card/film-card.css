@@ -8,6 +8,13 @@
     display: flex;
     column-gap: 15px;
     padding: 10px;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.filmCard:hover{
+    background-color: var(--theme-bg-trans-darker);
 }
 
 .filmCard__image{
