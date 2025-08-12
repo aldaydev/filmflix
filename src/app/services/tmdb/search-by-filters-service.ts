@@ -10,9 +10,16 @@ export class SearchByFiltersService {
   private http = inject(HttpClient);
   private url: string = `${environment.tmdbBaseUrl}/discover/movie?language=es-ES`;
 
-  getFilmsByFilters(query: string) : Observable<FilmListResponse>{
+  getFilmsByFilters(query?: string) : Observable<FilmListResponse>{
     const finalUrl = `${this.url}${query}`;
     console.log(finalUrl);
     return this.http.get<FilmListResponse>(finalUrl, {headers: tmdbHeaders})
   }
+
+  // getInitialFilms(){
+  //   const finalUrl = `${this.url}`;
+  //   console.log(finalUrl);
+  //   return this.http.get<FilmListResponse>(finalUrl, {headers: tmdbHeaders})
+  // }
+
 }

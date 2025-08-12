@@ -1,25 +1,38 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 import { Genre } from 'app/models/genre-list.model';
+import { GenreService } from 'app/services/tmdb/genre-service';
+import { SearchStateService } from '../../search-state-service';
 
 @Component({
   selector: 'app-film-card',
   imports: [],
   templateUrl: './film-card.html',
   styleUrl: './film-card.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilmCard {
+  searchState = inject(SearchStateService);
+
   image = input<string>('');
   title = input<string>('');
   date = input<string>('');
-  genres = input<Genre, number[]>(
-    {id: 1, name: 'hola'}, // valor inicial ya transformado
+  genres = input<Genre[], number[]>(
+    [],
     {
       transform: (genreIds: number[]) => {
-        return {id: 2, name: 'adios'};
-      }
+        return genreIds
+          .map((genreId) =>
+            this.searchState
+              .genreList()
+              .find((genreObj) => genreObj.id === genreId)
+          )
+          .filter((g): g is Genre => g !== undefined);
+      },
     }
   );
-
-
 }

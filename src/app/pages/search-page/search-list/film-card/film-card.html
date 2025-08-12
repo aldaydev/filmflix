@@ -1,1 +1,7 @@
-<p>film-card works!</p>
+<article>
+    <p>{{title()}}</p>
+    @for (genre of genres(); track $index) {
+        <p>{{genre.name}}</p>
+    }
+    
+</article>

@@ -2,7 +2,15 @@
 
 <section class="searchList">
     @for (film of filmList; track $index) {
-        <h1>{{film.title}}</h1>
-        <img [src]="film.poster_path | posterUrl" [alt]="'Poster de ' + film.title ">
+
+        <app-film-card
+            [title]="film.title"
+            [image]="film.poster_path | posterUrl"
+            [date]="film.release_date"
+            [genres]="film.genre_ids"
+        
+        />
+        <!-- <h1>{{film.title}}</h1>
+        <img [src]="film.poster_path | posterUrl" [alt]="'Poster de ' + film.title "> -->
     }
 </section>

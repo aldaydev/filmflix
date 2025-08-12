@@ -1,5 +1,7 @@
 import { effect, inject, Injectable, OnInit, signal } from '@angular/core';
+import { Genre } from 'app/models/genre-list.model';
 import { FilmListItem } from 'app/models/popular-film.model';
+import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchByFiltersService } from 'app/services/tmdb/search-by-filters-service';
 
 @Injectable()
@@ -8,6 +10,7 @@ export class SearchStateService {
   // ---------- Injections ----------
 
   searchByFiltersService = inject(SearchByFiltersService);
+  genreService = inject(GenreService);
 
   // ---------- Properties ----------
 
@@ -19,9 +22,21 @@ export class SearchStateService {
   hasName = signal<boolean>(false);
   hasYear = signal<boolean>(false);
 
+  genreList = signal<Genre[]>([]);
   filmList = signal<FilmListItem[]>([]);
 
   // ---------- Methods ----------
+
+  getGenreList(){
+    this.genreService.getGenresList()
+      .subscribe((genreList) => {
+        this.genreList.set(genreList.genres);
+      })
+  }
+
+  initialFilmList(){
+    this.searchByFiltersService.getFilmsByFilters().subscribe(data => this.filmList.set(data.results));
+  }
 
   searchByfilters() {
     

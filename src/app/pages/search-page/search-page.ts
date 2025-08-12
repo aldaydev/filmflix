@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { Searcher } from "./searcher/searcher";
 import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchStateService } from './search-state-service';
@@ -14,7 +14,13 @@ import { SearchList } from "./search-list/search-list";
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [GenreService, SearchStateService, SearchByFiltersService]
 })
-export class SearchPage {
+export class SearchPage implements OnInit{
 
+  searchState = inject(SearchStateService);
+
+  ngOnInit(): void {
+    this.searchState.initialFilmList();
+    this.searchState.getGenreList();
+  }
 
 }
