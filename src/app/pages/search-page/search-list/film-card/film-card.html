@@ -1,7 +1,26 @@
-<article>
-    <p>{{title()}}</p>
-    @for (genre of genres(); track $index) {
-        <p>{{genre.name}}</p>
+<article class="filmCard">
+
+    @defer () {
+        <img [src]="image()" [alt]="'Poster de ' + title()" class="filmCard__image">
     }
     
+
+    <div class="filmCard__info">
+
+        <h3 class="filmCard__title">{{title()}}</h3>
+
+        <div class="filmCard__genres">
+            @for (genre of genres().slice(0, 5); track $index) {
+                <span class="filmCard__genre">{{genre.name}}</span>
+            }
+
+            @if (genres().length > 5) {
+                <span class="filmCard__more">+{{ genres().length - 5 }}</span>
+            }
+        </div>
+
+
+        <h4 class="filmCard__date">{{date()}}</h4>
+    </div>
+
 </article>

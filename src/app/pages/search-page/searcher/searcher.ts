@@ -3,6 +3,7 @@ import { SearchByTitle } from "./search-by-title/search-by-title";
 import { isPlatformBrowser } from '@angular/common';
 import { SearchByFilters } from "./search-by-filters/search-by-filters";
 import { SearchStateService } from '../search-state-service';
+import { ThemeService } from 'app/services/theme-service/theme-service';
 
 @Component({
   selector: 'app-searcher',
@@ -15,6 +16,7 @@ export class Searcher implements AfterViewInit{
 
   // ---------- Injects ----------
 
+  themeService = inject(ThemeService);
   elRef = inject(ElementRef);
   searchStateService = inject(SearchStateService);
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
@@ -22,6 +24,7 @@ export class Searcher implements AfterViewInit{
   // ---------- Properties ----------
 
   isOpen = signal(false);
+  // isScrolled = signal(false);
   // searchOptions = signal(false);
 
   // constructor(){
@@ -60,13 +63,27 @@ export class Searcher implements AfterViewInit{
     }
   }
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    if(this.isBrowser){
-      this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-      this.isOpen.set(false);
-    }
-  }
+  // @HostListener('window:scroll')
+  // onWindowScroll() {
+  //   if(this.isBrowser){
+  //     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  //     if(currentScrollTop !== 0){
+  //       this.isScrolled.set(true);
+  //     }else{
+  //       this.isScrolled.set(false);
+  //     }
+      
+  //   }
+  // }
+
+  // @HostListener('window:scroll')
+  // onWindowScroll() {
+  //   if(this.isBrowser){
+  //     this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+  //     this.isOpen.set(false);
+  //   }
+  // }
 
   // --------- Life cycle ---------
 

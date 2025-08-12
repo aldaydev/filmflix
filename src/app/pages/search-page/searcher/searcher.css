@@ -1,6 +1,8 @@
 :host{
     width: 100%;
     height: 100%;
+    position: relative;
+    z-index: 990;
 }
 .searchFilms__hero{
     height: 100%;
@@ -8,7 +10,7 @@
 
 .searchFilms__searcher{
     display: block;
-    background-color: var(--theme-text-trans);
+    background-color: var(--theme-text-trans-darker);
     color: var(--theme-bg);
     width: 100%;
     /* height: 50px; */
@@ -24,9 +26,12 @@
 
     z-index: 1;
 
-    transition: height .3s ease-in-out;
+    transition: height .3s ease-in-out, background .3s ease-in-out;
 }
 
+/* .searchFilms__searcher.isScrolled{
+    background-color: var(--theme-text);
+} */
 
 .searcher__expander{
     height: 50px;
