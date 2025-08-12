@@ -1,0 +1,8 @@
+@let filmList = searchState.filmList();
+
+<section class="searchList">
+    @for (film of filmList; track $index) {
+        <h1>{{film.title}}</h1>
+        <img [src]="film.poster_path | posterUrl" [alt]="'Poster de ' + film.title ">
+    }
+</section>

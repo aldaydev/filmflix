@@ -23,12 +23,13 @@
 
 }
 
-/* .genresFilter__genreContainer:hover{
+.genresFilter__genreContainer:hover{
     background-color: var(--theme-text);
-} */
+    scale: 1.02;
+}
 
 /* .genresFilter__genreContainer:hover .genresFilter__genreName{
-    color: var(--color-primary);
+    color: var(--theme-bg);
 } */
 
 
@@ -42,10 +43,10 @@
     background-color: transparent;
 }
 
-.genresFilter__genreContainer:hover:not(:has(.genresFilter__genreCheckbox:checked)){
+/* .genresFilter__genreContainer:hover:not(:has(.genresFilter__genreCheckbox:checked)){
     background-color: var(--theme-text);
     color: var(--theme-bg);
-}
+} */
 
 .genresFilter__genreCheckbox{
     position: absolute;

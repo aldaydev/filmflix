@@ -2,6 +2,9 @@
 
 ### feat/film-search
 * Creación del componente search-page
+* Creación de componentes searcher, search-by-name, search-by-filters
+* Diseño del header donde se podrán aplicar filtros
+* Trabajando selección de opciones "por filtro" y haciendo llamada a la API
 
 ### feat/film-videos
 * Creación del componente film-videos (modal)
