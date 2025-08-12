@@ -6,7 +6,6 @@ import { SearchByFiltersService } from 'app/services/tmdb/search-by-filters-serv
 
 @Injectable()
 export class SearchStateService {
-
   // ---------- Injections ----------
 
   searchByFiltersService = inject(SearchByFiltersService);
@@ -14,8 +13,10 @@ export class SearchStateService {
 
   // ---------- Properties ----------
 
+  page = signal<number>(1);
+
   selectedGenreIds = signal<number[]>([]);
-  selectedYear = signal("");
+  selectedYear = signal('');
 
   hasOptions = signal<boolean>(false);
   hasGenres = signal<boolean>(false);
@@ -25,44 +26,66 @@ export class SearchStateService {
   genreList = signal<Genre[]>([]);
   filmList = signal<FilmListItem[]>([]);
 
+  loading = signal<boolean>(false);
+
   // ---------- Methods ----------
 
-  getGenreList(){
-    this.genreService.getGenresList()
-      .subscribe((genreList) => {
-        this.genreList.set(genreList.genres);
-      })
+  getNextPage() {
+    if (this.loading()) return;
+    
+    this.loading.set(true);
+    this.page.set(this.page() + 1);
+
+    this.searchByFiltersService
+      .getFilmsByFilters(this.setQueryString(), this.page())
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.filmList.update((prev) => [...prev, ...data.results]);
+          this.loading.set(false);
+        },
+        error: (err) => this.loading.set(false)
+      });
   }
 
-  initialFilmList(){
-    this.searchByFiltersService.getFilmsByFilters().subscribe(data => this.filmList.set(data.results));
+  getGenreList() {
+    this.genreService.getGenresList().subscribe((genreList) => {
+      this.genreList.set(genreList.genres);
+    });
+  }
+
+  initialFilmList() {
+    this.searchByFiltersService
+      .getFilmsByFilters()
+      .subscribe((data) => this.filmList.set(data.results));
   }
 
   searchByfilters() {
-    
     const queryString = this.setQueryString();
     this.hasName = signal<boolean>(false);
-    this.searchByFiltersService.getFilmsByFilters(queryString).subscribe((data) => {
-      
-      this.selectedGenreIds().length > 0 || this.selectedYear()
-        ? this.hasOptions.set(true) 
-        : this.hasOptions.set(false);
+    this.searchByFiltersService
+      .getFilmsByFilters(queryString)
+      .subscribe((data) => {
+        this.selectedGenreIds().length > 0 || this.selectedYear()
+          ? this.hasOptions.set(true)
+          : this.hasOptions.set(false);
 
-      this.selectedGenreIds().length > 0 ? this.hasGenres.set(true) : this.hasGenres.set(false);
-      this.selectedYear() ? this.hasYear.set(true) : this.hasYear.set(false);
-      
-      this.filmList.set(data.results);
-      console.log(data.results);
-    })
+        this.selectedGenreIds().length > 0
+          ? this.hasGenres.set(true)
+          : this.hasGenres.set(false);
+        this.selectedYear() ? this.hasYear.set(true) : this.hasYear.set(false);
+
+        this.filmList.set(data.results);
+        console.log(data.results);
+      });
   }
 
-  setSelectedGenres(genreId: number){
-
+  setSelectedGenres(genreId: number) {
     const genreIds = this.selectedGenreIds();
 
-    if(genreIds.includes(genreId)){
-      this.selectedGenreIds.set(genreIds.filter(g => g !== genreId));
-    }else{
+    if (genreIds.includes(genreId)) {
+      this.selectedGenreIds.set(genreIds.filter((g) => g !== genreId));
+    } else {
       this.selectedGenreIds.set([...genreIds, genreId]);
     }
   }
@@ -74,32 +97,34 @@ export class SearchStateService {
     input.value = value;
   }
 
-  setQueryString() : string{
-    let query = "";
+  setQueryString(): string {
+    let query = '';
 
-    if(this.selectedGenreIds().length > 0){
-
-      const genresQuery = this.selectedGenreIds().reduce((acc, curr, currIndex) => {
-        currIndex < this.selectedGenreIds().length -1 ? acc += `${curr},` : acc += curr;
-        return acc;
-      }, "with_genres=");
+    if (this.selectedGenreIds().length > 0) {
+      const genresQuery = this.selectedGenreIds().reduce(
+        (acc, curr, currIndex) => {
+          currIndex < this.selectedGenreIds().length - 1
+            ? (acc += `${curr},`)
+            : (acc += curr);
+          return acc;
+        },
+        'with_genres='
+      );
 
       query += '&' + genresQuery;
     }
 
-    if(this.selectedYear()){
-      console.log("Desde create query", this.selectedYear());
+    if (this.selectedYear()) {
+      console.log('Desde create query', this.selectedYear());
       const yearQuery = `&primary_release_year=${this.selectedYear()}`;
 
       query += yearQuery;
     }
 
-    if(query){
+    if (query) {
       return query;
-    }else{
-      return "";
+    } else {
+      return '';
     }
-    
   }
-
 }

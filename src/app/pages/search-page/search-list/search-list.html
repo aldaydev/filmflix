@@ -1,7 +1,13 @@
 @let filmList = searchState.filmList();
 
-<section class="searchList">
-    @for (film of filmList; track $index) {
+<section class="searchList"
+    infiniteScroll
+    [scrollWindow]="true"
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="300"
+    (scrolled)="onScroll()"
+>
+    @for (film of filmList; track trackByFilmId($index, film)) {
         <app-film-card
             [title]="film.title"
             [image]="film.poster_path | posterUrl"

@@ -1,7 +1,11 @@
 <div class="modalContainer">
-    <button (click)="handleClose()" class="closeButton">
-        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff"><path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/></svg>
-    </button>
+    
+    <div class="closeButton__container">
+        <button (click)="handleClose()" class="closeButton">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#ffffff"><path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/></svg>
+        </button>
+    </div>
+    
 
     @let video = videoData();
     @if(video && safeUrl()){
@@ -9,6 +13,7 @@
             <div class="iframeContainer">
                 <iframe 
                     [src]="safeUrl()" 
+                    class="video-iframe"
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
