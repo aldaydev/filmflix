@@ -17,11 +17,8 @@ export class SearchList {
   searchByFiltersService = inject(SearchByFiltersService);
   searchState = inject(SearchStateService);
 
-
-
   onScroll() {
     this.searchState.getNextPage();
-
   }
 
   trackByFilmId(index: number, film: any): number {

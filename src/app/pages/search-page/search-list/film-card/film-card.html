@@ -24,6 +24,9 @@
 
 
         <h4 class="filmCard__date">{{date()}}</h4>
+        <div class="filmCard_starsContainer">
+            <app-five-stars-rate [vote_average]="vote_average() | roundRate"/>
+        </div>
     </div>
 
 </a>
