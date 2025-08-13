@@ -2,6 +2,9 @@
 
 ### feat/searchbyname
 * Creando search-by-name-service
+* Generando funcionalidades en search-state-service
+* Trabajando la interación entre buscar por nombre o por filtros
+* Scroll infinito
 
 ### feat/film-search-list
 * Creación del componente search-list que contendrá el listado de películas

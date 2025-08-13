@@ -2,6 +2,36 @@
     <a routerLink="/" class="header__brandText">
         FILMFLIX
     </a>
-    <app-toggle-theme/>
+    <section class="header__menu">
+        <nav class="headerMenu__nav">
+            <ul class="headerMenu__navList">
+                <li class="headerMenu__navItem">
+                    <a 
+                        routerLink="/search"
+                        class="headerMenu__navLink">
+                        <span>Películas</span>
+                    </a>
+                </li>
+
+                <li class="headerMenu__navItem">
+                    <a 
+                        routerLink="/search"
+                        class="headerMenu__navLink">
+                        <span>Cartelera</span>
+                    </a>
+                </li>
+
+                <li class="headerMenu__navItem">
+                    <a 
+                        routerLink="/search"
+                        class="headerMenu__navLink">
+                        <span>Próximamente</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <app-toggle-theme/>
+    </section>
+    
 </header>
 

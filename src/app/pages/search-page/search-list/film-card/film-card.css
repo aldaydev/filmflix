@@ -8,17 +8,18 @@
     background-color: var(--theme-bg-trans);
     display: flex;
     column-gap: 15px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 0 4px var(--theme-text);
+    box-shadow: 0 0 2px var(--theme-text);
 
     cursor: pointer;
 
-    transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out, scale .3s ease-in-out;
 }
 
 .filmCard:hover{
-    background-color: var(--theme-bg-trans-darker);
+    background-color: var(--theme-bg);
+    scale: 1.02;
 }
 
 .filmCard__image{
@@ -62,7 +63,7 @@
     z-index: 10;
     padding: 5px;
     width: 80%;
-    max-width: 150px;
+    max-width: 140px;
 }
 
 .empty-state{
