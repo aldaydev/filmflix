@@ -37,7 +37,7 @@ export class SearchStateService {
     this.page.set(this.page() + 1);
 
     this.searchByFiltersService
-      .getFilmsByFilters(this.setQueryString(), this.page())
+      .getFilmsByFilters(this.setFiltersQuery(), this.page())
       .subscribe({
         next: (data) => {
           console.log(data);
@@ -66,7 +66,7 @@ export class SearchStateService {
 
   searchByfilters() {
     this.loading.set(true);
-    const queryString = this.setQueryString();
+    const queryString = this.setFiltersQuery();
     this.hasName = signal<boolean>(false);
     this.searchByFiltersService
       .getFilmsByFilters(queryString)
@@ -83,6 +83,11 @@ export class SearchStateService {
         this.filmList.set(data.results);
         this.loading.set(false);
       });
+  }
+
+  searchByName() {
+    this.loading.set(true);
+
   }
 
   setSelectedGenres(genreId: number) {
@@ -102,7 +107,7 @@ export class SearchStateService {
     input.value = value;
   }
 
-  setQueryString(): string {
+  setFiltersQuery(): string {
     let query = '';
 
     if (this.selectedGenreIds().length > 0) {
@@ -132,4 +137,5 @@ export class SearchStateService {
       return '';
     }
   }
+
 }

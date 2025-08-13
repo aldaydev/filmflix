@@ -11,16 +11,10 @@ export class SearchByFiltersService {
   private url: string = `${environment.tmdbBaseUrl}/discover/movie?language=es-ES`;
 
   getFilmsByFilters(query?: string, page?: number) : Observable<FilmListResponse>{
-    const currentPate = !page ? '&page=2' : `&page=${page}`
+    const currentPate = !page ? '&page=1' : `&page=${page}`
     const finalUrl = `${this.url}${query}${currentPate}`;
     console.log(finalUrl);
     return this.http.get<FilmListResponse>(finalUrl, {headers: tmdbHeaders})
   }
-
-  // getInitialFilms(){
-  //   const finalUrl = `${this.url}`;
-  //   console.log(finalUrl);
-  //   return this.http.get<FilmListResponse>(finalUrl, {headers: tmdbHeaders})
-  // }
 
 }
