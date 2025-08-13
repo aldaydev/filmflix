@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/searchbyname
+* Creando search-by-name-service
+
 ### feat/film-search-list
 * Creación del componente search-list que contendrá el listado de películas
 * Creación de film-car y configuración de los inputs
