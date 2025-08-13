@@ -5,7 +5,7 @@ import { FilmListResponse } from 'app/models/popular-film.model';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class SearchByNameService {
     private http = inject(HttpClient);
     private url: string = `${environment.tmdbBaseUrl}/search/movie?language=es-ES&include_adult=false`;

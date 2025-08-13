@@ -11,6 +11,7 @@
                     type="checkbox"
                     [value]="genre.id"
                     class="genresFilter__genreCheckbox"
+                    [checked]="searchStateService.selectedGenreIds().includes(genre.id)"
                     [id]="genre.id"
                     #genreCheckbox
                     (change)="searchState.setSelectedGenres(genre.id)"

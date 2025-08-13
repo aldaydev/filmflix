@@ -1,17 +1,26 @@
-import { effect, inject, Injectable, OnInit, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { effect, inject, Injectable, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { Genre } from 'app/models/genre-list.model';
 import { FilmListItem } from 'app/models/popular-film.model';
 import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchByFiltersService } from 'app/services/tmdb/search-by-filters-service';
 import { SearchByNameService } from 'app/services/tmdb/search-by-name-service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SearchStateService {
   // ---------- Injections ----------
 
+  isBRowser = isPlatformBrowser(inject(PLATFORM_ID));
   searchByFiltersService = inject(SearchByFiltersService);
   genreService = inject(GenreService);
   searchByNameService = inject(SearchByNameService);
+
+  constructor(){
+    this.initialFilmList();
+    this.getGenreList();
+  }
 
   // ---------- Properties ----------
 
@@ -33,29 +42,7 @@ export class SearchStateService {
 
   // ---------- Methods ----------
 
-  getNextPage() {
-    if (this.loading()) return;
-    
-    this.loading.set(true);
-    this.page.set(this.page() + 1);
-
-    this.searchByFiltersService
-      .getFilmsByFilters(this.setFiltersQuery(), this.page())
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          this.filmList.update((prev) => [...prev, ...data.results]);
-          this.loading.set(false);
-        },
-        error: (err) => this.loading.set(false)
-      });
-  }
-
-  getGenreList() {
-    this.genreService.getGenresList().subscribe((genreList) => {
-      this.genreList.set(genreList.genres);
-    });
-  }
+  // Subscribers
 
   initialFilmList() {
     this.loading.set(true);
@@ -67,14 +54,58 @@ export class SearchStateService {
       });
   }
 
+  getNextPage() {
+    if (this.loading()) return;
+    
+    this.loading.set(true);
+    this.page.set(this.page() + 1);
+
+    if(this.selectedName() && this.hasName()){
+      const query = this.setNameQuery();
+      if (!query) return;
+      this.searchByNameService
+      .getFilmsByName(query, this.page())
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.filmList.update((prev) => [...prev, ...data.results]);
+          this.loading.set(false);
+        },
+        error: (err) => this.loading.set(false)
+      });
+    }else{
+      this.searchByFiltersService
+      .getFilmsByFilters(this.setFiltersQuery(), this.page())
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.filmList.update((prev) => [...prev, ...data.results]);
+          this.loading.set(false);
+        },
+        error: (err) => this.loading.set(false)
+      });
+    }
+
+    
+  }
+
+  getGenreList() {
+    this.genreService.getGenresList().subscribe((genreList) => {
+      this.genreList.set(genreList.genres);
+    });
+  }
+
   searchByfilters() {
     this.loading.set(true);
     const queryString = this.setFiltersQuery();
-    
+
+    if(this.isBRowser) window.scrollTo(0,0);
+
     this.searchByFiltersService
       .getFilmsByFilters(queryString)
       .subscribe((data) => {
         this.hasName.set(false);
+        this.selectedName.set('');
         this.selectedGenreIds().length > 0 || this.selectedYear()
           ? this.hasOptions.set(true)
           : this.hasOptions.set(false);
@@ -94,7 +125,9 @@ export class SearchStateService {
     this.loading.set(true);
     const queryString = this.setNameQuery();
 
-    if(!queryString) return
+    if(!queryString) return;
+
+    if(this.isBRowser) window.scrollTo(0,0);
 
     this.searchByNameService.getFilmsByName(queryString).subscribe((data)=> {
       this.hasOptions.set(true);
@@ -107,6 +140,8 @@ export class SearchStateService {
       this.loading.set(false);
     })
   }
+
+  // Form Setters
 
   setSelectedGenres(genreId: number) {
     const genreIds = this.selectedGenreIds();
@@ -131,6 +166,8 @@ export class SearchStateService {
     input.value = input.value;
     console.log(input.value);
   }
+
+  // Query setters
 
   setFiltersQuery(): string {
     let query = '';

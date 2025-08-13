@@ -21,4 +21,9 @@ export class SearchByFilters {
   @ViewChild('yearInput') yearInput!: ElementRef<HTMLInputElement>;
 
 
+  // isGenreChecked(genreId: number): boolean {
+
+  //   console.log('Está marcado??', this.searchStateService.genreList().some(g => g.id === genreId))
+  //   return this.searchStateService.selectedGenreIds().some(g => g.id === genreId);
+  // }
 }

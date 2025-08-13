@@ -24,7 +24,7 @@
 }
 
 .genresFilter__genreContainer:hover{
-    background-color: var(--theme-text);
+    background-color: var(--color-primary);
     scale: 1.02;
 }
 
@@ -33,10 +33,9 @@
 } */
 
 
-.genresFilter__genreContainer:hover,
 .genresFilter__genreContainer:has(.genresFilter__genreCheckbox:checked) {
-    background-color: var(--theme-text);
-    color: var(--theme-bg);
+    background-color: var(--color-primary);
+    color: white;
 }
 
 .genresFilter__genreContainer:not(:has(.genresFilter__genreCheckbox:checked)){

@@ -6,7 +6,7 @@ import { GenreResponse } from 'app/models/genre-list.model';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class GenreService {
   private http = inject(HttpClient);
   private url: string = `${environment.tmdbBaseUrl}/genre/movie/list`;

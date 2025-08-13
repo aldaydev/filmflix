@@ -13,15 +13,15 @@ import { SearchByNameService } from 'app/services/tmdb/search-by-name-service';
   templateUrl: './search-page.html',
   styleUrl: './search-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [GenreService, SearchStateService, SearchByFiltersService, SearchByNameService]
+  providers: []
 })
 export class SearchPage implements OnInit{
 
   searchState = inject(SearchStateService);
 
   ngOnInit(): void {
-    this.searchState.initialFilmList();
-    this.searchState.getGenreList();
+    // this.searchState.initialFilmList();
+    // this.searchState.getGenreList();
   }
 
 }

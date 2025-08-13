@@ -33,6 +33,17 @@ export class Searcher implements AfterViewInit{
 
   // --------- Host Listeners ---------
 
+  constructor() {
+    effect(() => {
+      this.searchStateService.filmList();
+      if(this.isBrowser){
+        this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+        this.isOpen.set(false);
+      }
+    })
+    
+  }
+
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent){
     if(this.isBrowser){
