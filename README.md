@@ -5,6 +5,7 @@
 * Generando funcionalidades en search-state-service
 * Trabajando la interación entre buscar por nombre o por filtros
 * Scroll infinito
+* Búsqueda por nombre a través de url desde otros lugares (home, film)
 
 ### feat/film-search-list
 * Creación del componente search-list que contendrá el listado de películas

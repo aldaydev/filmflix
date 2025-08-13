@@ -6,7 +6,7 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FilmDetails, Similar } from 'app/models/film-details.model';
 import { FilmService } from 'app/services/tmdb/film-service';
 import { RoundRatePipe } from 'app/pipes/round-rate-pipe';
@@ -18,6 +18,7 @@ import { CarouselFilmData } from 'app/models/film-carousel.model';
 import { Subscription } from 'rxjs';
 import { Input } from "app/shared/ui/input/input";
 import { FilmVideosModal } from "./film-videos-modal/film-videos-modal";
+import { SearchStateService } from '../search-page/search-state-service';
 
 @Component({
   selector: 'app-film-page',
@@ -28,7 +29,14 @@ import { FilmVideosModal } from "./film-videos-modal/film-videos-modal";
 })
 export class FilmPage implements OnInit {
 
+  // ---------- Injections ----------
+
+  router = inject(Router);
+  searchState = inject(SearchStateService);
+
   private routeSub!: Subscription;
+
+  // ---------- Properties ----------
 
   filmId = signal<string | null>('');
   filmService = inject(FilmService);
@@ -44,22 +52,30 @@ export class FilmPage implements OnInit {
     return url ? `url("${encodeURI(url)}")` : '';
   }
 
-  ngOnInit() {
-  this.routeSub = this.route.paramMap.subscribe(params => {
-    const paramId = params.get('id');
-    this.filmId.set(paramId);
+  // ---------- Life cycle ----------
 
-    if (paramId) {
-      this.filmService.getFilmById(Number(paramId)).subscribe(data => {
-        this.filmDetails.set(data);
-        console.log(data);
-        const bgImage = this.getBgUrl(data.backdrop_path);
-        this.bgImage.set(bgImage);
-        this.similarFilms.set(this.filterSimilarFilms(data.similar));
-      });
-    }
-  });
-}
+  ngOnInit() {
+    this.routeSub = this.route.paramMap.subscribe(params => {
+      const paramId = params.get('id');
+      this.filmId.set(paramId);
+
+      if (paramId) {
+        this.filmService.getFilmById(Number(paramId)).subscribe(data => {
+          this.filmDetails.set(data);
+          console.log(data);
+          const bgImage = this.getBgUrl(data.backdrop_path);
+          this.bgImage.set(bgImage);
+          this.similarFilms.set(this.filterSimilarFilms(data.similar));
+        });
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.routeSub.unsubscribe();
+  }
+
+  // ---------- Methods ----------
 
   openVideosModal() {
     this.videosModalOpened.set(true);
@@ -86,8 +102,9 @@ export class FilmPage implements OnInit {
     }
   }
 
-  ngOnDestroy() {
-    this.routeSub.unsubscribe();
+  searchByNameFromFilm(){
+    this.searchState.searchByName();
+    this.router.navigate(['search']);
   }
 
 }

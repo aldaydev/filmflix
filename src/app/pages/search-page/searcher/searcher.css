@@ -57,15 +57,21 @@
 }
 
 .searcher__info{
+    width: 80%;
     display: flex;
     align-items: center;
     column-gap: 10px;
 }
 
 .searcher__resume{
+    max-width: 70%;
     color: var(--theme-bg);
     font-weight: 600;
     font-size: 1.1rem;
+
+    white-space: nowrap;      /* Que no se vaya a otra línea */
+    overflow: hidden;         /* Oculta el texto sobrante */
+    text-overflow: ellipsis;  /* Pone los "..." al final */
 }
 
 .searcher__indicator{

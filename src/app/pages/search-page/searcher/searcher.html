@@ -17,16 +17,19 @@
             @if(hasOptions){
                 <span class="searcher__indicator"></span>
 
-                @if(hasGenres){
-                    <span class="searcher__resume">Género</span>
+                @let genres = searchStateService.genreIdsToText();
+                @if(hasGenres && genres){
+                    <span class="searcher__resume">
+                        {{genres ? 'Género: ' + genres : ""}}
+                    </span>
                 }
                 
-                @if(hasYear){
-                    <span class="searcher__resume">Año</span>
+                @if(hasYear && searchStateService.selectedYear()){
+                    <span class="searcher__resume">{{'Año: ' + searchStateService.selectedYear()}}</span>
                 }
 
-                @if(hasName){
-                    <span class="searcher__resume">Nombre</span>
+                @if(hasName && searchStateService.selectedName()){
+                    <span class="searcher__resume">{{'Nombre: ' + searchStateService.selectedName()}}</span>
                 }
                 
             }@else {

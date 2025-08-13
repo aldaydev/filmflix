@@ -10,6 +10,7 @@ import { SearchByNameService } from 'app/services/tmdb/search-by-name-service';
   providedIn: 'root'
 })
 export class SearchStateService {
+  
   // ---------- Injections ----------
 
   isBRowser = isPlatformBrowser(inject(PLATFORM_ID));
@@ -164,7 +165,6 @@ export class SearchStateService {
     const input = event.target as HTMLInputElement;
     this.selectedName.set(input.value);
     input.value = input.value;
-    console.log(input.value);
   }
 
   // Query setters
@@ -184,7 +184,6 @@ export class SearchStateService {
     }
 
     if (this.selectedYear()) {
-      console.log('Desde create query', this.selectedYear());
       const yearQuery = `&primary_release_year=${this.selectedYear()}`;
 
       query += yearQuery;
@@ -205,6 +204,16 @@ export class SearchStateService {
       return null;
     }
     
+  }
+
+  genreIdsToText() : string{
+    const genreArr : string[] = [];
+    const textGenders = this.selectedGenreIds().map((genreId) =>
+            this.genreList()
+              .find((genreObj) => genreObj.id === genreId)
+          )
+          .filter((g): g is Genre => g !== undefined).forEach((item) => genreArr.push(item.name));
+    return genreArr.join(', ');
   }
 
 }
