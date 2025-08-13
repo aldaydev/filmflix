@@ -6,10 +6,11 @@ import { SearchByFiltersService } from 'app/services/tmdb/search-by-filters-serv
 import { SearchByFilters } from './searcher/search-by-filters/search-by-filters';
 import { SearchList } from "./search-list/search-list";
 import { SearchByNameService } from 'app/services/tmdb/search-by-name-service';
+import { SearchSorter } from "./search-sorter/search-sorter";
 
 @Component({
   selector: 'app-search-page',
-  imports: [Searcher, SearchList],
+  imports: [Searcher, SearchList, SearchSorter],
   templateUrl: './search-page.html',
   styleUrl: './search-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,0 +1,10 @@
+:host{
+    display: block;
+    position: inherit;
+    margin-top: 60px;
+    z-index: 100;
+}
+
+.searchSorter{
+    background-color: aqua;
+}
