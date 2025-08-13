@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/search-sorter
+* Creación del componente search-sorter
+
 ### feat/searchbyname
 * Creando search-by-name-service
 * Generando funcionalidades en search-state-service
