@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { ThemeService } from 'app/services/theme-service/theme-service';
 
 @Component({
@@ -16,4 +16,6 @@ export class Input {
   size = input<'small' | 'big'>('big');
   placeholder = input<string | null> ("");
   disabled = input<boolean>(false);
+  value = input<string>('');
+  inputEvent = output<any>();
 }

@@ -4,6 +4,8 @@
         [attr.placeholder]="placeholder()"
         [class.light]="themeService.theme() === 'light'"
         class="customInput"
+        [value]="value()"
+        (input)="inputEvent.emit($event)"
     >
     <span class="customInput__labelText">
         {{label()}}

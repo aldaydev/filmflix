@@ -3,6 +3,7 @@ import { Genre } from 'app/models/genre-list.model';
 import { FilmListItem } from 'app/models/popular-film.model';
 import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchByFiltersService } from 'app/services/tmdb/search-by-filters-service';
+import { SearchByNameService } from 'app/services/tmdb/search-by-name-service';
 
 @Injectable()
 export class SearchStateService {
@@ -10,13 +11,15 @@ export class SearchStateService {
 
   searchByFiltersService = inject(SearchByFiltersService);
   genreService = inject(GenreService);
+  searchByNameService = inject(SearchByNameService);
 
   // ---------- Properties ----------
 
   page = signal<number>(1);
 
   selectedGenreIds = signal<number[]>([]);
-  selectedYear = signal('');
+  selectedYear = signal<string>('');
+  selectedName = signal<string>('');
 
   hasOptions = signal<boolean>(false);
   hasGenres = signal<boolean>(false);
@@ -67,10 +70,11 @@ export class SearchStateService {
   searchByfilters() {
     this.loading.set(true);
     const queryString = this.setFiltersQuery();
-    this.hasName = signal<boolean>(false);
+    
     this.searchByFiltersService
       .getFilmsByFilters(queryString)
       .subscribe((data) => {
+        this.hasName.set(false);
         this.selectedGenreIds().length > 0 || this.selectedYear()
           ? this.hasOptions.set(true)
           : this.hasOptions.set(false);
@@ -78,6 +82,7 @@ export class SearchStateService {
         this.selectedGenreIds().length > 0
           ? this.hasGenres.set(true)
           : this.hasGenres.set(false);
+
         this.selectedYear() ? this.hasYear.set(true) : this.hasYear.set(false);
 
         this.filmList.set(data.results);
@@ -87,7 +92,20 @@ export class SearchStateService {
 
   searchByName() {
     this.loading.set(true);
+    const queryString = this.setNameQuery();
 
+    if(!queryString) return
+
+    this.searchByNameService.getFilmsByName(queryString).subscribe((data)=> {
+      this.hasOptions.set(true);
+      this.hasGenres.set(false);
+      this.selectedGenreIds.set([]);
+      this.hasYear.set(false);
+      this.selectedYear.set('');
+      this.hasName.set(true);
+      this.filmList.set(data.results);
+      this.loading.set(false);
+    })
   }
 
   setSelectedGenres(genreId: number) {
@@ -107,19 +125,23 @@ export class SearchStateService {
     input.value = value;
   }
 
+  setSelectedName(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.selectedName.set(input.value);
+    input.value = input.value;
+    console.log(input.value);
+  }
+
   setFiltersQuery(): string {
     let query = '';
 
     if (this.selectedGenreIds().length > 0) {
-      const genresQuery = this.selectedGenreIds().reduce(
-        (acc, curr, currIndex) => {
+      const genresQuery = this.selectedGenreIds().reduce((acc, curr, currIndex) => {
           currIndex < this.selectedGenreIds().length - 1
             ? (acc += `${curr},`)
             : (acc += curr);
           return acc;
-        },
-        'with_genres='
-      );
+        },'with_genres=');
 
       query += '&' + genresQuery;
     }
@@ -136,6 +158,16 @@ export class SearchStateService {
     } else {
       return '';
     }
+  }
+
+  setNameQuery() : string | null{
+    if(this.selectedName().trim()){
+      const safe = encodeURIComponent(this.selectedName());
+      return `&query=${safe}`;
+    }else{
+      return null;
+    }
+    
   }
 
 }

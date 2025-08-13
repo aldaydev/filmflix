@@ -10,7 +10,7 @@ export class SearchByNameService {
     private http = inject(HttpClient);
     private url: string = `${environment.tmdbBaseUrl}/search/movie?language=es-ES&include_adult=false`;
 
-        getFilmsByFilters(query?: string, page?: number ): Observable<FilmListResponse> {
+        getFilmsByName(query?: string, page?: number ): Observable<FilmListResponse> {
         const currentPate = !page ? '&page=1' : `&page=${page}`;
         const finalUrl = `${this.url}${query}${currentPate}`;
         console.log(finalUrl);

@@ -24,18 +24,6 @@ export class Searcher implements AfterViewInit{
   // ---------- Properties ----------
 
   isOpen = signal(false);
-  // isScrolled = signal(false);
-  // searchOptions = signal(false);
-
-  // constructor(){
-    
-  //   effect(() => {
-  //     this.searchStateService.searchOptions();
-  //     console.log('Ha cambiado');
-  //   })
-    
-    
-  // }
 
   // ---------- Viewers ----------
 
@@ -62,28 +50,6 @@ export class Searcher implements AfterViewInit{
       this.isOpen.set(false);
     }
   }
-
-  // @HostListener('window:scroll')
-  // onWindowScroll() {
-  //   if(this.isBrowser){
-  //     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  //     if(currentScrollTop !== 0){
-  //       this.isScrolled.set(true);
-  //     }else{
-  //       this.isScrolled.set(false);
-  //     }
-      
-  //   }
-  // }
-
-  // @HostListener('window:scroll')
-  // onWindowScroll() {
-  //   if(this.isBrowser){
-  //     this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-  //     this.isOpen.set(false);
-  //   }
-  // }
 
   // --------- Life cycle ---------
 

@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Input } from "app/shared/ui/input/input";
 import { Button } from "app/shared/ui/button/button";
+import { SearchStateService } from '../../search-state-service';
 
 @Component({
   selector: 'app-search-by-title',
@@ -10,5 +11,5 @@ import { Button } from "app/shared/ui/button/button";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchByTitle {
-  isOpen = input(false);
+  searchState = inject(SearchStateService);
 }

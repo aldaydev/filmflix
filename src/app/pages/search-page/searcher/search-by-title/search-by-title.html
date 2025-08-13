@@ -2,9 +2,12 @@
     <app-input
         size="small"
         placeholder="Busca por nombre"
+        [value]="searchState.selectedName()"
+        (inputEvent)="searchState.setSelectedName($event)"
     />
     <app-button
         size="small"
         label="Buscar"
+        (handleClick)="searchState.searchByName()"
     />
 </form>
