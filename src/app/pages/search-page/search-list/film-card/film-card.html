@@ -1,24 +1,23 @@
+@defer (when !searchState.loading()) {
 <a 
     class="filmCard"
     [routerLink]="['/film', id()]"
 >
 
-    @defer () {
-        <img [src]="image()" [alt]="'Poster de ' + title()" class="filmCard__image">
-    }
-    
+
+    <img [src]="image()" [alt]="'Poster de ' + title()" class="filmCard__image">
 
     <div class="filmCard__info">
 
         <h3 class="filmCard__title">{{title()}}</h3>
 
         <div class="filmCard__genres">
-            @for (genre of genres().slice(0, 5); track $index) {
+            @for (genre of genres().slice(0, 4); track $index) {
                 <span class="filmCard__genre">{{genre.name}}</span>
             }
 
-            @if (genres().length > 5) {
-                <span class="filmCard__more">+{{ genres().length - 5 }}</span>
+            @if (genres().length > 4) {
+                <span class="filmCard__more">+{{ genres().length - 4 }}</span>
             }
         </div>
 
@@ -30,3 +29,8 @@
     </div>
 
 </a>
+}@placeholder {
+    <div class="empty-state">Preparando películas...</div>
+} @loading {
+    <div class="empty-state">Preparando películas...</div>
+}

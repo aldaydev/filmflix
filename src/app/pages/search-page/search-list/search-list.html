@@ -1,5 +1,6 @@
 @let filmList = searchState.filmList();
 
+
 <section class="searchList"
     infiniteScroll
     [scrollWindow]="true"
@@ -7,6 +8,7 @@
     [infiniteScrollThrottle]="300"
     (scrolled)="onScroll()"
 >
+<!-- @defer (when searchState.loading()) { -->
     @if (filmList.length > 0) {
         @for (film of filmList; track trackByFilmId($index, film)) {
             <app-film-card
@@ -19,7 +21,14 @@
             />
         }
     }
+<!-- } @placeholder {
+    <div class="empty-state">Preparando películas...</div>
+} @loading {
+    <div class="spinner">Cargando películas...</div>
+} -->
 </section>
+
+
 @if(filmList.length === 0) {
     <div class="searchList__noResultContainer">
         <span class="searchList__noResultText">No se han encontrado resultados</span>

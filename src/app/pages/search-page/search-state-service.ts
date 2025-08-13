@@ -55,12 +55,17 @@ export class SearchStateService {
   }
 
   initialFilmList() {
+    this.loading.set(true);
     this.searchByFiltersService
       .getFilmsByFilters()
-      .subscribe((data) => this.filmList.set(data.results));
+      .subscribe((data) => {
+        this.filmList.set(data.results);
+        this.loading.set(false);
+      });
   }
 
   searchByfilters() {
+    this.loading.set(true);
     const queryString = this.setQueryString();
     this.hasName = signal<boolean>(false);
     this.searchByFiltersService
@@ -76,7 +81,7 @@ export class SearchStateService {
         this.selectedYear() ? this.hasYear.set(true) : this.hasYear.set(false);
 
         this.filmList.set(data.results);
-        console.log(data.results);
+        this.loading.set(false);
       });
   }
 
