@@ -100,11 +100,77 @@ header.bgSolid{
 }
 
 .headerMenu__navToggle{
-    height: 30px;
-    width: 30px;
-    background-color: aqua;
+    height: 34px;
+    width: 34px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    display: block;
+    position: relative;
+
+    /* background-color: aqua; */
 }
+
+.navToggle__bar{
+    height: 5px;
+    width: 100%;
+    background-color: var(--theme-text);
+    left: 0;
+
+    position: absolute;
+}
+
+.navToggle__bar--1{
+    top: 0;
+    transform-origin: top left;
+    transition: transform .3s ease-in-out, width .3s ease-in-out;
+}
+
+.navToggle__bar--1,
+.navToggle__bar--4{
+    transition: width .3s ease-in-out;
+}
+
+
+.navToggle__bar--2,
+.navToggle__bar--3{
+    transform-origin: center;
+    transition: transform .3s ease-in-out, width .3s ease-in-out;
+}
+
+.navToggle__bar--2{
+    top: 15px;
+    
+}
+
+.navToggle__bar--3{
+    top: 15px;
+}
+
+.navToggle__bar--2.isOpen{
+    transform: rotate(45deg) translateX(-6px) translateY(5px);
+    width: 45px;
+}
+
+.navToggle__bar--3.isOpen{
+    transform: rotate(-45deg) translateX(-4px) translateY(-5px);
+    width: 45px;
+}
+
+.navToggle__bar--4{
+    bottom: 0;
+    transform-origin: bottom left;
+}
+
+.navToggle__bar--4.isOpen{
+    width: 0;
+}
+
+.navToggle__bar--1.isOpen{
+    width: 0;
+}
+
 
 .headerMenu__navLink{
     font-size: 1.4rem;

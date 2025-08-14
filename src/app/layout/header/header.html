@@ -50,9 +50,11 @@
             class="headerMenu__navToggle" 
             (click)="navToggle()"
         >
-            <span class="navToggle__bar1"></span>
-            <span class="navToggle__bar2"></span>
-            <span class="navToggle__bar3"></span>
+            <span 
+                class="navToggle__bar navToggle__bar--1"[class.isOpen]="isOpen()"></span>
+            <span class="navToggle__bar navToggle__bar--2" [class.isOpen]="isOpen()"></span>
+            <span class="navToggle__bar navToggle__bar--3" [class.isOpen]="isOpen()"></span>
+            <span class="navToggle__bar navToggle__bar--4" [class.isOpen]="isOpen()"></span>
         </button>
         }
         
