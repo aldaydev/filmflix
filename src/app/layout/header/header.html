@@ -1,4 +1,4 @@
-<header class="header" [appHeaderThemeBg]="{isOpen: isOpen()}">
+<header class="header" [appHeaderThemeBg]="{isOpen: isOpen(), isCollapsed: isCollapsed()}">
     <a routerLink="/" class="header__brandText">
         FILMFLIX
     </a>
@@ -45,15 +45,17 @@
             
         </nav>
         <app-toggle-theme/>
-        <button 
+        @if (isCollapsed()) {
+            <button 
             class="headerMenu__navToggle" 
             (click)="navToggle()"
-            [class.hidden]="screenSize.width() >= 1024"
         >
             <span class="navToggle__bar1"></span>
             <span class="navToggle__bar2"></span>
             <span class="navToggle__bar3"></span>
         </button>
+        }
+        
         
     </section>
     

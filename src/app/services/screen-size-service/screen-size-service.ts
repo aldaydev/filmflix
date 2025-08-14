@@ -12,7 +12,6 @@ export class ScreenSizeService {
   constructor() {
     if(this.isBrowser){
       this.width.set(window.innerWidth);
-      console.log('inner width', window.innerWidth);
       window.addEventListener('resize', () => {
         this.width.set(window.innerWidth);
       });

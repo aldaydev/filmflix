@@ -17,7 +17,8 @@ import { ThemeService } from 'app/services/theme-service/theme-service';
 })
 export class HeaderThemeBg {
 
-  appHeaderThemeBg = input<{isOpen: boolean}>({isOpen: false});
+  appHeaderThemeBg = input<{isOpen: boolean, isCollapsed: boolean}>({isOpen: false, isCollapsed: false});
+
 
   themeService = inject(ThemeService);
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
@@ -29,9 +30,17 @@ export class HeaderThemeBg {
         this.onWindowScroll();
 
         console.log('ISOPEN FROM HEADER', this.appHeaderThemeBg().isOpen)
+        console.log('ISCOLLAPSED FROM HEADER', this.appHeaderThemeBg().isCollapsed)
 
-        if(this.appHeaderThemeBg().isOpen){
-          this.renderer.addClass(this.el.nativeElement, 'bgSolid');
+        if(this.appHeaderThemeBg().isOpen ){
+          if(this.appHeaderThemeBg().isCollapsed){
+            this.renderer.addClass(this.el.nativeElement, 'bgSolid');
+          }else{
+            this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
+          }
+          
+        }else{
+          this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
         }
       });
     }
@@ -54,9 +63,19 @@ export class HeaderThemeBg {
     }
 
     if (scrollTop === 0) {
-      this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
+
+      console.log('Entra en el scroll 0');
+      if(!this.appHeaderThemeBg().isOpen){
+        this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
+      }else if(!this.appHeaderThemeBg().isCollapsed){
+        console.log('Debería entrar aquí');
+        this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
+      }
+
+      // this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
     } else {
       this.renderer.addClass(this.el.nativeElement, 'bgSolid');
+      console.log('¿Está entrando aquí?');
     }
   }
 }

@@ -24,20 +24,43 @@ export class Header implements AfterViewInit {
 
   @ViewChild('navbar') navbar! : ElementRef<HTMLUListElement>
 
+
   @HostListener('window.scroll')
+  onScroll(){
+    if(this.isBrowser){
+      if(this.isCollapsed()){
+        this.closeNav();
+      }
+    }
+  }
 
   @HostListener('window:resize')
   onResize() {
     if(this.isBrowser){
-      this.closeNav();
+      if(window.innerWidth >= 1024){
+        if(this.isCollapsed()) this.isCollapsed.set(false);
+        this.openNav();
+      }else{
+        this.isCollapsed.set(true);
+        this.closeNav();
+        
+      }
     }
   }
 
   ngAfterViewInit() {
     if(this.isBrowser){
-      this.navbarListOpenedHeight.set(this.navbar.nativeElement.offsetHeight.toString());
-      console.log('Desde Init',this.navbar.nativeElement.offsetHeight.toString());
-      this.closeNav();
+      console.log('1. Seha cargado la app', window.innerWidth);
+      if(window.innerWidth >= 1024){
+        this.isCollapsed.set(false);
+        this.openNav();
+      }else{
+        this.isCollapsed.set(true);
+        console.log('ESTA LLEGANDO AQUÍ');
+        // this.navbarListOpenedHeight.set(this.navbar.nativeElement.offsetHeight.toString());
+        this.closeNav();
+      }
+      
     }
   }
 
@@ -54,14 +77,25 @@ export class Header implements AfterViewInit {
 
   closeNav(){
     this.isOpen.set(false);
+    console.log('HEIGHT PREVIO',  this.navbar.nativeElement.style.height);
+    this.navbar.nativeElement.style.height === '100%'
+      ? this.navbar.nativeElement.style.transition = 'none'
+      : this.navbar.nativeElement.style.transition = 'height .3s ease-in, opacity .3s .2s ease-in';
     this.navbar.nativeElement.style.height = "0px";
     this.navbar.nativeElement.style.opacity = "0";
   }
 
   openNav(){
-    this.isOpen.set(true);
-    this.navbar.nativeElement.style.height = this.navbarListOpenedHeight() + "px";
     this.navbar.nativeElement.style.opacity = "1";
-    this.navbar.nativeElement.style.transition = 'height .3s ease-in, opacity .3s ease-in';
+    if(this.isCollapsed()){
+      this.navbar.nativeElement.style.height = "340px";
+      this.navbar.nativeElement.style.transition = 'height .3s .3s ease-in, opacity .5s ease-in';
+      
+    }else{
+      this.navbar.nativeElement.style.height = "100%";
+      this.navbar.nativeElement.style.transition = 'none';
+    }
+    this.isOpen.set(true);
+      
   }
 }
