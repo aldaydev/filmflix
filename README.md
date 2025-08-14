@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/upcoming
+* Creación del servicio upcoming-films-service
+
 ### feat/navbar
 * Añdiendo páginas al navbar
 * Estilizando diseño responsive
