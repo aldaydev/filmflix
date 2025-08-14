@@ -1,9 +1,10 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, OnInit, PLATFORM_ID, signal, ViewChild } from '@angular/core';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { HeaderThemeBg } from 'app/directives';
 import { ToggleTheme } from 'app/shared/ui/toggle-theme/toggle-theme';
 import { ScreenSizeService } from 'app/services/screen-size-service/screen-size-service';
 import { isPlatformBrowser } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +13,20 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Header implements AfterViewInit {
+export class Header implements AfterViewInit, OnInit {
+
+  private router = inject(Router);
+  private sub: Subscription = new Subscription;
+
   screenSize = inject(ScreenSizeService);
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   isCollapsed = signal<boolean>(false);
   isOpen = signal<boolean>(false);
 
+  construction() {
+
+  }
 
   @ViewChild('navbar') navbar! : ElementRef<HTMLUListElement>
 
@@ -54,8 +62,17 @@ export class Header implements AfterViewInit {
         this.isCollapsed.set(true);
         this.closeNav();
       }
-      
     }
+  }
+
+  ngOnInit(): void {
+    this.sub = this.router.events.subscribe(event => {
+        if(event instanceof NavigationEnd) {
+          if(this.isOpen()) {
+            this.closeNav();
+          }
+        }
+      })
   }
 
   navToggle(){

@@ -48,9 +48,9 @@ header::after {
     position: absolute;
     top: 0;
     left: 0;
-    height: 120%;
+    height: 130%;
     width: 100%;
-    background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%);
+    background: linear-gradient(to bottom, var(--theme-bg-trans) 50%, transparent 100%);
     z-index: -1;
     opacity: 0;
 }
@@ -174,8 +174,10 @@ header.bgSolid{
 .headerMenu__navLink{
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--theme-text);
     cursor: pointer;
+    text-shadow: 0 0 10px var(--theme-bg);
+    transition: text-shadow .3s ease-in-out;
 }
 
 .headerMenu__navLink--aldaydev{
@@ -184,6 +186,7 @@ header.bgSolid{
     border: 1px solid var(--theme-text);
     border-radius: 8px;
     max-height: 40px;
+    text-shadow: none;
 
     transition: background .3s ease-in-out, color .3s ease-in-out;
 }
@@ -209,12 +212,6 @@ header.bgSolid{
     scale: 1.03;
 }
 
-@media screen and (min-width: 800px) {
-    .header__brandText {
-        font-size: 2rem;
-    }
-}
-
 @media screen and (min-width: 1024px) {
     .headerMenu__nav{
         position: static;
@@ -238,10 +235,10 @@ header.bgSolid{
     }
 }
 
-@media screen and (min-width: 1400px) {
+/* @media screen and (min-width: 1500px) {
     .headerMenu__navLink,
     .headerMenu__navLink--aldaydev{
         font-size: 1.3rem;
     }
     
-}
+} */

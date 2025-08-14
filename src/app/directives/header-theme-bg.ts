@@ -63,19 +63,28 @@ export class HeaderThemeBg {
     }
 
     if (scrollTop === 0) {
-
-      console.log('Entra en el scroll 0');
       if(!this.appHeaderThemeBg().isOpen){
         this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
       }else if(!this.appHeaderThemeBg().isCollapsed){
-        console.log('Debería entrar aquí');
         this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
       }
 
       // this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
     } else {
       this.renderer.addClass(this.el.nativeElement, 'bgSolid');
-      console.log('¿Está entrando aquí?');
     }
   }
+
+  @HostListener('window:resize', [])
+  windowResuze(){
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop === 0) {
+      this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
+    } else {
+      this.renderer.addClass(this.el.nativeElement, 'bgSolid');
+    }
+
+  }
 }
+
+

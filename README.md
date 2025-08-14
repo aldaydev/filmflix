@@ -3,6 +3,7 @@
 ### feat/navbar
 * Añdiendo páginas al navbar
 * Estilizando diseño responsive
+* Estilos para isOpen, isCollapsed, resize, scroll...
 
 ### feat/search-sorter
 * Creación del componente search-sorter
