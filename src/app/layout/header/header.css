@@ -72,7 +72,7 @@ header.bgSolid{
     height: 100%;
     display: flex;
     align-items: center;
-    column-gap: 50px;
+    column-gap: 20px;
 }
 
 .headerMenu__nav{
@@ -109,6 +109,8 @@ header.bgSolid{
     display: block;
     position: relative;
 
+    scale: .8;
+
     /* background-color: aqua; */
 }
 
@@ -122,14 +124,12 @@ header.bgSolid{
 }
 
 .navToggle__bar--1{
-    top: 0;
-    transform-origin: top left;
-    transition: transform .3s ease-in-out, width .3s ease-in-out;
+    top: 4px;
 }
 
 .navToggle__bar--1,
 .navToggle__bar--4{
-    transition: width .3s ease-in-out;
+    transition: height .3s ease-in-out, opacitu .3s ease-in-out;
 }
 
 
@@ -149,26 +149,25 @@ header.bgSolid{
 }
 
 .navToggle__bar--2.isOpen{
-    transform: rotate(45deg) translateX(-6px) translateY(5px);
-    width: 45px;
+    transform: rotate(45deg);
 }
 
 .navToggle__bar--3.isOpen{
-    transform: rotate(-45deg) translateX(-4px) translateY(-5px);
-    width: 45px;
+    transform: rotate(-45deg);
 }
 
 .navToggle__bar--4{
-    bottom: 0;
-    transform-origin: bottom left;
+    bottom: 3px;
 }
 
 .navToggle__bar--4.isOpen{
-    width: 0;
+    height: 0;
+    opacity: 0;
 }
 
 .navToggle__bar--1.isOpen{
-    width: 0;
+    height: 0;
+    opacity: 0;
 }
 
 
