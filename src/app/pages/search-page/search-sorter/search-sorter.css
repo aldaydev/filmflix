@@ -7,4 +7,39 @@
 
 .searchSorter{
     border-bottom: 1px solid var(--theme-text);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.searchSorter__sortBy{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.sortBy__button,
+.sortBy__select{
+    background-color: transparent;
+    color: var(--theme-text);
+    border: 1px solid var(--theme-text);
+    border-radius: 3px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.sortBy__select:focus{
+    padding: 3px 5px;
+}
+
+.sortBy__option{
+    padding: 3px;
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+}
+
+
+.sortBy__button:hover{
+    background-color: var(--theme-text);
+    color: var(--theme-bg);
 }

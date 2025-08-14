@@ -41,7 +41,7 @@ export class SearchStateService {
 
   loading = signal<boolean>(false);
 
-  sortOptions = signal<{by: 'vote_average' | 'year', order: 'desc' | 'asc'}>({by: 'vote_average', order: 'desc'});
+  sortOptions = signal<{by: 'vote_average' | 'primary_release_date' | 'popularity', order: 'desc' | 'asc'}>({by: 'popularity', order: 'desc'});
 
   // ---------- Methods ----------
 
@@ -50,7 +50,7 @@ export class SearchStateService {
   initialFilmList() {
     this.loading.set(true);
     this.searchByFiltersService
-      .getFilmsByFilters({})
+      .getFilmsByFilters({sort: this.sortOptions()})
       .subscribe((data) => {
         console.log(data);
         this.filmList.set(data.results);
@@ -221,9 +221,28 @@ export class SearchStateService {
 
   // Order setters
 
-  setOrderByRate() {
+  setOrderByPopularity() {
+    if(!this.hasName()){
+      if(this.sortOptions().order === 'desc'){
+        this.sortOptions.set({by: 'popularity', order: 'asc'});
+      }else if(this.sortOptions().order === 'asc'){
+        this.sortOptions.set({by: 'popularity', order: 'desc'});
+      }
+      this.searchByfilters();
+    }else{
+      if(this.sortOptions().order === 'desc'){
+        this.sortOptions.set({by: 'popularity', order: 'asc'});
+        this.filmList.update((prev) => [...prev].sort((a, b) => a.popularity - b.popularity));
+      }else if(this.sortOptions().order === 'asc'){
 
-    if(this.hasGenres() || this.hasYear()){
+        this.sortOptions.set({by: 'popularity', order: 'desc'});
+        this.filmList.update((prev) => [...prev].sort((a, b) => b.popularity - a.popularity));
+      }
+    }
+  }
+
+  setOrderByRate() {
+    if(!this.hasName()){
       if(this.sortOptions().order === 'desc'){
         this.sortOptions.set({by: 'vote_average', order: 'asc'});
       }else if(this.sortOptions().order === 'asc'){
@@ -232,17 +251,48 @@ export class SearchStateService {
       this.searchByfilters();
     }else{
       if(this.sortOptions().order === 'desc'){
-        console.log('Hola');
         this.sortOptions.set({by: 'vote_average', order: 'asc'});
         this.filmList.update((prev) => [...prev].sort((a, b) => a.vote_average - b.vote_average));
       }else if(this.sortOptions().order === 'asc'){
-        console.log('Adios');
+
         this.sortOptions.set({by: 'vote_average', order: 'desc'});
         this.filmList.update((prev) => [...prev].sort((a, b) => b.vote_average - a.vote_average));
       }
     }
+  }
 
-    
+  setOrderByYear() {
+    if(!this.hasName()){
+      console.log('Hola');
+      if(this.sortOptions().order === 'desc'){
+        this.sortOptions.set({by: 'primary_release_date', order: 'asc'});
+      }else if(this.sortOptions().order === 'asc'){
+        this.sortOptions.set({by: 'primary_release_date', order: 'desc'});
+      }
+      this.searchByfilters();
+    }else{
+      if(this.sortOptions().order === 'desc'){
+        this.sortOptions.set({by: 'primary_release_date', order: 'asc'});
+        this.filmList.update((prev) => [...prev].sort((a, b) => {
+          return Number(new Date(a.release_date).getFullYear()) - Number(new Date(b.release_date).getFullYear())
+        }));
+      }else if(this.sortOptions().order === 'asc'){
+        this.sortOptions.set({by: 'primary_release_date', order: 'desc'});
+        this.filmList.update((prev) => [...prev].sort((a, b) => {
+          return Number(new Date(b.release_date).getFullYear()) - Number(new Date(a.release_date).getFullYear())
+        }));
+      }
+    }
+  }
+
+  changeOrder() {
+    if(this.sortOptions().by === 'primary_release_date'){
+      this.setOrderByYear();
+    }else if(this.sortOptions().by === 'vote_average'){
+      this.setOrderByRate();
+    }else if(this.sortOptions().by === 'popularity'){
+      this.setOrderByPopularity();
+    }
   }
 
 }

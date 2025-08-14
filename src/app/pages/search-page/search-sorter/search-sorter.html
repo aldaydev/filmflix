@@ -1,16 +1,34 @@
 <section class="searchSorter">
-    <article>
-        <span>Ordenar por: </span>
-        <button (click)="searchState.setOrderByRate()">
-            rate
-        </button>
-        <button>
-            year
-        </button>
+    <article class="searchSorter__sortBy">
+        <span class="sortBy__span">Orden: </span>
+        @if(screenSize.width() > 600){
+            <button (click)="searchState.setOrderByRate()" class="sortBy__button">
+                Votos
+            </button>
+            <button (click)="searchState.setOrderByYear()" class="sortBy__button">
+                Año
+            </button>
+            <button (click)="searchState.setOrderByPopularity()" class="sortBy__button">
+                Popularidad
+            </button>
+        }@else {
+            <select (change)="handleSortChange($event)" class="sortBy__select">
+                <option value="popularity" class="sortBy__option">
+                    Popularidad
+                </option>
+                <option value="rate" class="sortBy__option">
+                    Votos
+                </option>
+                <option value="year" class="sortBy__option">
+                    Año
+                </option>
+            </select>
+        }
+        
     </article>
-    <article>
-        <button>
-            ASC
+    <article class="searchSorter__orderIndicator">
+        <button (click)="searchState.changeOrder()" class="sortBy__button">
+            {{searchState.sortOptions().order === 'asc' ? 'A-Z' : 'Z-A'}}
         </button>
     </article>
 </section>

@@ -53,9 +53,14 @@
     <h2 class="similarFilms__title">
         Películas similares
     </h2>
-    <app-film-carousel
-        [filmList]="similarFilms()"
-    />
+    @if(film.similar.results.length > 0){
+        <app-film-carousel
+            [filmList]="similarFilms()"
+        />
+    }@else {
+        <span class="similarFilms__none">No tenemos películas similares que recomendarte</span>
+    }
+    
 </section>
 
 <section class="filmPage__moreActions">
