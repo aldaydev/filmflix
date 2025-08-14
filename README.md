@@ -1,5 +1,9 @@
 # Filmflix
 
+### feat/navbar
+* Añdiendo páginas al navbar
+* Estilizando diseño responsive
+
 ### feat/search-sorter
 * Creación del componente search-sorter
 * Creación de la función de ordenación por año, votos y popularidad
