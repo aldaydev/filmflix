@@ -1,8 +1,7 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderThemeBg } from 'app/directives';
 import { ToggleTheme } from 'app/shared/ui/toggle-theme/toggle-theme';
-import { Button } from "app/shared/ui/button/button";
 import { ScreenSizeService } from 'app/services/screen-size-service/screen-size-service';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -23,39 +22,46 @@ export class Header implements AfterViewInit {
   navbarListHeight = signal<number>(0);
   navbarListOpenedHeight = signal<string>("0");
 
-  @ViewChild('navbarList') navbarList! : ElementRef<HTMLUListElement>
+  @ViewChild('navbar') navbar! : ElementRef<HTMLUListElement>
 
   @HostListener('window.scroll')
 
   @HostListener('window:resize')
   onResize() {
     if(this.isBrowser){
-      this.isOpen.set(false);
-      this.navbarListOpenedHeight.set(this.navbarList.nativeElement.offsetHeight.toString());
+      this.closeNav();
     }
   }
 
   ngAfterViewInit() {
     if(this.isBrowser){
-      this.navbarListOpenedHeight.set(this.navbarList.nativeElement.offsetHeight.toString());
-      console.log('Desde Init',this.navbarList.nativeElement.offsetHeight.toString());
-      this.navbarList.nativeElement.style.height = "0px";
-      this.navbarList.nativeElement.style.padding = "0px";
+      this.navbarListOpenedHeight.set(this.navbar.nativeElement.offsetHeight.toString());
+      console.log('Desde Init',this.navbar.nativeElement.offsetHeight.toString());
+      this.closeNav();
     }
   }
 
   navToggle(){
     if(this.isOpen()){
       console.log('Cerrar');
-      this.isOpen.set(false);
-      this.navbarList.nativeElement.style.height = "0px";
-      this.navbarList.nativeElement.style.padding = "0px";
+      this.closeNav();
     }else{
       console.log('Abrir')
       this.isOpen.set(true);
-      this.navbarList.nativeElement.style.height = this.navbarListOpenedHeight() + "px";
-      console.log(this.navbarListOpenedHeight() + "px");
-      this.navbarList.nativeElement.style.padding = "30px";
+      this.openNav();
     }
+  }
+
+  closeNav(){
+    this.isOpen.set(false);
+    this.navbar.nativeElement.style.height = "0px";
+    this.navbar.nativeElement.style.opacity = "0";
+  }
+
+  openNav(){
+    this.isOpen.set(true);
+    this.navbar.nativeElement.style.height = this.navbarListOpenedHeight() + "px";
+    this.navbar.nativeElement.style.opacity = "1";
+    this.navbar.nativeElement.style.transition = 'height .3s ease-in, opacity .3s ease-in';
   }
 }

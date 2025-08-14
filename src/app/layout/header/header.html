@@ -1,14 +1,13 @@
-<header class="header" appHeaderThemeBg>
+<header class="header" [appHeaderThemeBg]="{isOpen: isOpen()}">
     <a routerLink="/" class="header__brandText">
         FILMFLIX
     </a>
+
     <section class="header__menu">
-        <nav class="headerMenu__nav">
-            <ul #navbarList 
+        <nav #navbar class="headerMenu__nav">
+            <ul 
                 class="headerMenu__navList" 
             >
-            <!-- [class.isOpen]="isOpen()" -->
-            <!-- [style.height]="navbarListHeight() + 'px'" -->
                 <li class="headerMenu__navItem">
                     <a 
                         routerLink="/search"
@@ -43,13 +42,18 @@
                     </a>
                 </li>
             </ul>
-            <button class="headerMenu__navToggle" (click)="navToggle()">
-                <span class="navToggle__bar1"></span>
-                <span class="navToggle__bar2"></span>
-                <span class="navToggle__bar3"></span>
-            </button>
-            <app-toggle-theme/>
+            
         </nav>
+        <app-toggle-theme/>
+        <button 
+            class="headerMenu__navToggle" 
+            (click)="navToggle()"
+            [class.hidden]="screenSize.width() >= 1024"
+        >
+            <span class="navToggle__bar1"></span>
+            <span class="navToggle__bar2"></span>
+            <span class="navToggle__bar3"></span>
+        </button>
         
     </section>
     
