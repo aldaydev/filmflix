@@ -2,6 +2,8 @@
 
 ### feat/search-sorter
 * Creación del componente search-sorter
+* Creación de la función de ordenación por año, votos y popularidad
+* Interacción con el listado y arreglando algunos bugs
 
 ### feat/searchbyname
 * Creando search-by-name-service

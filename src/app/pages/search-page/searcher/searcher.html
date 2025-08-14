@@ -19,9 +19,7 @@
 
                 @let genres = searchStateService.genreIdsToText();
                 @if(hasGenres && genres){
-                    <span class="searcher__resume">
-                        {{genres ? 'Género: ' + genres : ""}}
-                    </span>
+                    <span class="searcher__resume">{{'Género: ' + genres }}</span>
                 }
                 
                 @if(hasYear && searchStateService.selectedYear()){
