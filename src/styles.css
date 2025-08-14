@@ -14,6 +14,8 @@
     --default-transition: .3s ease-in-out;
 
     --res-padding: 20px;
+
+    --header-height: 75px;
 }
 
 /* Tema oscuro por defecto */

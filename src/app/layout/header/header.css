@@ -18,6 +18,7 @@ header {
     justify-content: space-between;
     max-width: 120rem;
     padding: 0 var(--res-padding);
+    padding-top: 10px;
 
     transition: background .5s ease-in-out;
 
@@ -89,7 +90,6 @@ header.bgSolid{
     overflow: hidden;
     opacity: 0;
 
-    transition: height .3s .3s ease-in, opacity .5s ease-in;
 }
 
 .headerMenu__navList{

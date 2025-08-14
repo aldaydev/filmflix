@@ -19,20 +19,9 @@ export class Header implements AfterViewInit {
   isCollapsed = signal<boolean>(false);
   isOpen = signal<boolean>(false);
 
-  navbarListHeight = signal<number>(0);
-  navbarListOpenedHeight = signal<string>("0");
 
   @ViewChild('navbar') navbar! : ElementRef<HTMLUListElement>
 
-
-  @HostListener('window.scroll')
-  onScroll(){
-    if(this.isBrowser){
-      if(this.isCollapsed()){
-        this.closeNav();
-      }
-    }
-  }
 
   @HostListener('window:resize')
   onResize() {
@@ -43,21 +32,26 @@ export class Header implements AfterViewInit {
       }else{
         this.isCollapsed.set(true);
         this.closeNav();
-        
       }
     }
   }
 
+    @HostListener('window:scroll', [])
+    onScroll(){
+      if(this.isBrowser){
+        if(this.isCollapsed()){
+          this.closeNav();
+        }
+      }
+    }
+
   ngAfterViewInit() {
     if(this.isBrowser){
-      console.log('1. Seha cargado la app', window.innerWidth);
       if(window.innerWidth >= 1024){
-        this.isCollapsed.set(false);
+        if(this.isCollapsed()) this.isCollapsed.set(false);
         this.openNav();
       }else{
         this.isCollapsed.set(true);
-        console.log('ESTA LLEGANDO AQUÍ');
-        // this.navbarListOpenedHeight.set(this.navbar.nativeElement.offsetHeight.toString());
         this.closeNav();
       }
       
@@ -76,20 +70,22 @@ export class Header implements AfterViewInit {
   }
 
   closeNav(){
-    this.isOpen.set(false);
-    console.log('HEIGHT PREVIO',  this.navbar.nativeElement.style.height);
-    this.navbar.nativeElement.style.height === '100%'
-      ? this.navbar.nativeElement.style.transition = 'none'
-      : this.navbar.nativeElement.style.transition = 'height .3s ease-in, opacity .3s .2s ease-in';
-    this.navbar.nativeElement.style.height = "0px";
-    this.navbar.nativeElement.style.opacity = "0";
+    if(this.isCollapsed()){
+      this.isOpen.set(false);
+      this.navbar.nativeElement.style.height === '100%'
+        ? this.navbar.nativeElement.style.transition = 'none'
+        : this.navbar.nativeElement.style.transition = 'height .3s ease-in, opacity .3s .2s ease-in';
+      this.navbar.nativeElement.style.height = "0px";
+      this.navbar.nativeElement.style.opacity = "0";
+    }
+    
   }
 
   openNav(){
     this.navbar.nativeElement.style.opacity = "1";
     if(this.isCollapsed()){
       this.navbar.nativeElement.style.height = "340px";
-      this.navbar.nativeElement.style.transition = 'height .3s .3s ease-in, opacity .5s ease-in';
+      this.navbar.nativeElement.style.transition = 'height .3s .3s ease-in, opacity .5s ease-in, background .5s ease-in-out';
       
     }else{
       this.navbar.nativeElement.style.height = "100%";
