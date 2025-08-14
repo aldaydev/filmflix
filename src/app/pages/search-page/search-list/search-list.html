@@ -1,6 +1,3 @@
-@let filmList = searchState.filmList();
-
-
 <section class="searchList"
     infiniteScroll
     [scrollWindow]="true"
@@ -9,8 +6,8 @@
     (scrolled)="onScroll()"
 >
 <!-- @defer (when searchState.loading()) { -->
-    @if (filmList.length > 0) {
-        @for (film of filmList; track trackByFilmId($index, film)) {
+    @if (searchState.filmList().length > 0) {
+        @for (film of searchState.filmList(); track trackByFilmId($index, film)) {
             <app-film-card
                 [title]="film.title"
                 [image]="film.poster_path | posterUrl"
@@ -29,7 +26,7 @@
 </section>
 
 
-@if(filmList.length === 0) {
+@if(searchState.filmList().length === 0) {
     <div class="searchList__noResultContainer">
         <span class="searchList__noResultText">No se han encontrado resultados</span>
     </div>

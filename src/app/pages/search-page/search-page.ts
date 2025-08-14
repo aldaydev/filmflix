@@ -16,13 +16,9 @@ import { SearchSorter } from "./search-sorter/search-sorter";
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: []
 })
-export class SearchPage implements OnInit{
+export class SearchPage {
 
   searchState = inject(SearchStateService);
 
-  ngOnInit(): void {
-    // this.searchState.initialFilmList();
-    // this.searchState.getGenreList();
-  }
 
 }

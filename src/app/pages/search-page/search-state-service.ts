@@ -41,6 +41,8 @@ export class SearchStateService {
 
   loading = signal<boolean>(false);
 
+  sortOptions = signal<{by: 'vote_average' | 'year', order: 'desc' | 'asc'}>({by: 'vote_average', order: 'desc'});
+
   // ---------- Methods ----------
 
   // Subscribers
@@ -48,8 +50,9 @@ export class SearchStateService {
   initialFilmList() {
     this.loading.set(true);
     this.searchByFiltersService
-      .getFilmsByFilters()
+      .getFilmsByFilters({})
       .subscribe((data) => {
+        console.log(data);
         this.filmList.set(data.results);
         this.loading.set(false);
       });
@@ -76,7 +79,7 @@ export class SearchStateService {
       });
     }else{
       this.searchByFiltersService
-      .getFilmsByFilters(this.setFiltersQuery(), this.page())
+      .getFilmsByFilters({query: this.setFiltersQuery(), page: this.page(), sort: this.sortOptions()})
       .subscribe({
         next: (data) => {
           console.log(data);
@@ -103,7 +106,7 @@ export class SearchStateService {
     if(this.isBRowser) window.scrollTo(0,0);
 
     this.searchByFiltersService
-      .getFilmsByFilters(queryString)
+      .getFilmsByFilters({query: queryString, sort: this.sortOptions()})
       .subscribe((data) => {
         this.hasName.set(false);
         this.selectedName.set('');
@@ -214,6 +217,32 @@ export class SearchStateService {
           )
           .filter((g): g is Genre => g !== undefined).forEach((item) => genreArr.push(item.name));
     return genreArr.join(', ');
+  }
+
+  // Order setters
+
+  setOrderByRate() {
+
+    if(this.hasGenres() || this.hasYear()){
+      if(this.sortOptions().order === 'desc'){
+        this.sortOptions.set({by: 'vote_average', order: 'asc'});
+      }else if(this.sortOptions().order === 'asc'){
+        this.sortOptions.set({by: 'vote_average', order: 'desc'});
+      }
+      this.searchByfilters();
+    }else{
+      if(this.sortOptions().order === 'desc'){
+        console.log('Hola');
+        this.sortOptions.set({by: 'vote_average', order: 'asc'});
+        this.filmList.update((prev) => [...prev].sort((a, b) => a.vote_average - b.vote_average));
+      }else if(this.sortOptions().order === 'asc'){
+        console.log('Adios');
+        this.sortOptions.set({by: 'vote_average', order: 'desc'});
+        this.filmList.update((prev) => [...prev].sort((a, b) => b.vote_average - a.vote_average));
+      }
+    }
+
+    
   }
 
 }

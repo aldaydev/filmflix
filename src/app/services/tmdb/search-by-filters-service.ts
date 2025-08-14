@@ -10,9 +10,12 @@ export class SearchByFiltersService {
   private http = inject(HttpClient);
   private url: string = `${environment.tmdbBaseUrl}/discover/movie?language=es-ES`;
 
-  getFilmsByFilters(query?: string, page?: number) : Observable<FilmListResponse>{
-    const currentPate = !page ? '&page=1' : `&page=${page}`
-    const finalUrl = `${this.url}${query}${currentPate}`;
+  getFilmsByFilters({query, page, sort} : {query?: string, page?: number, sort?: {by: string, order: string}
+    }
+  ) : Observable<FilmListResponse>{
+    const sortBy = sort ? `&sort_by=${sort.by}.${sort.order}` : "";
+    const currentPage = !page ? '&page=1' : `&page=${page}`;
+    const finalUrl = `${this.url}${query}${currentPage}${sortBy}`;
     console.log(finalUrl);
     return this.http.get<FilmListResponse>(finalUrl, {headers: tmdbHeaders})
   }

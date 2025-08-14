@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { SearchStateService } from '../search-state-service';
 
 @Component({
   selector: 'app-search-sorter',
@@ -8,5 +9,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchSorter {
+
+  searchState = inject(SearchStateService);
 
 }
