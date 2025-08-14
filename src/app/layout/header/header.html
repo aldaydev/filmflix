@@ -4,7 +4,11 @@
     </a>
     <section class="header__menu">
         <nav class="headerMenu__nav">
-            <ul class="headerMenu__navList">
+            <ul #navbarList 
+                class="headerMenu__navList" 
+            >
+            <!-- [class.isOpen]="isOpen()" -->
+            <!-- [style.height]="navbarListHeight() + 'px'" -->
                 <li class="headerMenu__navItem">
                     <a 
                         routerLink="/search"
@@ -28,9 +32,25 @@
                         <span>Próximamente</span>
                     </a>
                 </li>
+
+                <li class="headerMenu__navItem">
+                    <a 
+                        href="https://alday.dev"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="headerMenu__navLink headerMenu__navLink--aldaydev">
+                        <span>AldayDev</span>
+                    </a>
+                </li>
             </ul>
+            <button class="headerMenu__navToggle" (click)="navToggle()">
+                <span class="navToggle__bar1"></span>
+                <span class="navToggle__bar2"></span>
+                <span class="navToggle__bar3"></span>
+            </button>
+            <app-toggle-theme/>
         </nav>
-        <app-toggle-theme/>
+        
     </section>
     
 </header>

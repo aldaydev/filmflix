@@ -20,6 +20,8 @@ header {
     padding: 0 var(--res-padding);
 
     transition: background .5s ease-in-out;
+
+    position: relative;
 }
 
 .header__brandText {
@@ -74,8 +76,30 @@ header.bgSolid{
 }
 
 .headerMenu__navList{
+    position: absolute;
+    top: 75px;
+    left: 0;
+    background-color: var(--theme-bg);
+    width: 100%;
     display: flex;
-    column-gap: 35px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 25px;
+    padding: 50px 30px;
+
+    overflow: hidden;
+}
+
+/* .headerMenu__navList.isOpen{
+    padding: 30px;
+} */
+
+.headerMenu__navToggle{
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    cursor: pointer;
 }
 
 .headerMenu__navLink{
@@ -85,7 +109,21 @@ header.bgSolid{
     cursor: pointer;
 }
 
+.headerMenu__navLink--aldaydev{
+    display: block;
+    color: var(--theme-text);
+    border: 1px solid var(--theme-text);
+    border-radius: 8px;
+    max-height: 40px;
+}
+
+.headerMenu__navLink--aldaydev span{
+    padding: 6px 15px;
+    font-size: 1.2rem;
+}
+
 .headerMenu__navLink span{
+    text-align: center;
     display: block;
     height: 100%;
     transition: scale .2s ease-in-out;
