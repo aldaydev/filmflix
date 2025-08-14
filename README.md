@@ -2,6 +2,8 @@
 
 ### feat/upcoming
 * Creación del servicio upcoming-films-service
+* Creación de la página upcoming
+* Creación del componente upcoming-list
 
 ### feat/navbar
 * Añdiendo páginas al navbar
