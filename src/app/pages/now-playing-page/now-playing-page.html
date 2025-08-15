@@ -1,0 +1,10 @@
+<div class="upcoming">
+    <header class="upcoming__header">
+        <h1 class="upcomingHeader__title">Ahora en <span>cines</span></h1>
+        <h3 class="upcomingHeader__subtitle">Aquí podrás encontrar la cartelera en cines</h3>
+    </header>
+    <app-upcoming-list
+        [filmList]="nowPlayingFilmList()"
+        (getNextPage)="getNextPage()"
+    />
+</div>

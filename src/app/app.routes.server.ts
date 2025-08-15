@@ -23,5 +23,9 @@ export const serverRoutes: ServerRoute[] = [
     path: 'upcoming',
     renderMode: RenderMode.Prerender
   },
+  {
+    path: 'now-playing',
+    renderMode: RenderMode.Prerender
+  },
 
 ];
