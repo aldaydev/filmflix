@@ -1,1 +1,29 @@
-<p>film-list works!</p>
+<section class="searchList"
+    infiniteScroll
+    [scrollWindow]="true"
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="300"
+    (scrolled)="onScroll()"
+>
+    @if (filmList().length > 0) {
+        @for (film of filmList(); track trackByFilmId($index, film)) {
+            <app-film-card
+                [title]="film.title"
+                [image]="film.poster_path | posterUrl"
+                [date]="film.release_date"
+                [genres]="film.genre_ids"
+                [id]="film.id"
+                [vote_average]="film.vote_average"
+                [loading]="loading()"
+            />
+        }
+    }
+</section>
+
+
+@if(filmList().length === 0) {
+    <div class="searchList__noResultContainer">
+        <span class="searchList__noResultText">No se han encontrado resultados</span>
+    </div>
+    
+}

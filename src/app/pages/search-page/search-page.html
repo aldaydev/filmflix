@@ -1,3 +1,8 @@
 <app-searcher/>
 <app-search-sorter/>
-<app-search-list/>
+<!-- <app-search-list/> -->
+<app-film-list
+    [filmList]="searchState.filmList()"
+    [loading]="searchState.loading()"
+    (nextPage)="searchState.getNextPage()"
+/>
