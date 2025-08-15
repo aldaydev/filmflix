@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/now-playing
+* Creación del servicio now-playing-films-service
+
 ### feat/upcoming
 * Creación del servicio upcoming-films-service
 * Creación de la página upcoming
