@@ -2,6 +2,7 @@
 
 ### feat/footer
 * Creación del component footer
+* Diseño y adaptación responsive
 
 ### feat/now-playing
 * Creación del servicio now-playing-films-service
