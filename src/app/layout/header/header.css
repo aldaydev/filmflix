@@ -1,3 +1,5 @@
+/* ---------- HOST ---------- */
+
 :host {
     position: fixed;
     top: 0;
@@ -7,9 +9,9 @@
     max-width: 100dvw;
     height: 75px;
     z-index: 999;
-
-    /* background: linear-gradient(to bottom, var(--theme-bg-trans) 40%, transparent 100%); */
 }
+
+/* ---------- HEADER ---------- */
 
 header {
     height: 100%;
@@ -23,12 +25,6 @@ header {
     transition: background .5s ease-in-out;
 
     position: relative;
-}
-
-.header__brandText {
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--color-primary);
 }
 
 header::before {
@@ -69,12 +65,24 @@ header.bgSolid{
     background-color: var(--theme-bg);
 }
 
+/* ---------- HEADER BRAND ---------- */
+
+.header__brandText {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+}
+
+/* ---------- HEADER MENU ---------- */
+
 .header__menu{
     height: 100%;
     display: flex;
     align-items: center;
     column-gap: 20px;
 }
+
+/* ---------- HEADER NAVBAR ---------- */
 
 .headerMenu__nav{
     position: absolute;
@@ -99,6 +107,49 @@ header.bgSolid{
     padding: 50px 0;
 }
 
+.headerMenu__navLink{
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--theme-text);
+    cursor: pointer;
+    text-shadow: 0 0 10px var(--theme-bg);
+    transition: text-shadow .3s ease-in-out;
+}
+
+.headerMenu__navLink--aldaydev{
+    display: block;
+    color: var(--theme-text);
+    border: 1px solid var(--theme-text);
+    border-radius: 8px;
+    max-height: 40px;
+    text-shadow: none;
+
+    transition: background .3s ease-in-out, color .3s ease-in-out;
+}
+
+.headerMenu__navLink--aldaydev span{
+    padding: 6px 15px;
+    font-size: 1.2rem;
+}
+
+.headerMenu__navLink--aldaydev:hover{
+    background-color: var(--theme-text);
+    color: var(--theme-bg);
+}
+
+.headerMenu__navLink span{
+    text-align: center;
+    display: block;
+    height: 100%;
+    transition: scale .2s ease-in-out;
+}
+
+.headerMenu__navLink:hover span{
+    scale: 1.03;
+}
+
+/* ---------- HEADER NAV TOGGLE ---------- */
+
 .headerMenu__navToggle{
     height: 34px;
     width: 34px;
@@ -110,8 +161,6 @@ header.bgSolid{
     position: relative;
 
     scale: .8;
-
-    /* background-color: aqua; */
 }
 
 .navToggle__bar{
@@ -170,47 +219,7 @@ header.bgSolid{
     opacity: 0;
 }
 
-
-.headerMenu__navLink{
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--theme-text);
-    cursor: pointer;
-    text-shadow: 0 0 10px var(--theme-bg);
-    transition: text-shadow .3s ease-in-out;
-}
-
-.headerMenu__navLink--aldaydev{
-    display: block;
-    color: var(--theme-text);
-    border: 1px solid var(--theme-text);
-    border-radius: 8px;
-    max-height: 40px;
-    text-shadow: none;
-
-    transition: background .3s ease-in-out, color .3s ease-in-out;
-}
-
-.headerMenu__navLink--aldaydev span{
-    padding: 6px 15px;
-    font-size: 1.2rem;
-}
-
-.headerMenu__navLink--aldaydev:hover{
-    background-color: var(--theme-text);
-    color: var(--theme-bg);
-}
-
-.headerMenu__navLink span{
-    text-align: center;
-    display: block;
-    height: 100%;
-    transition: scale .2s ease-in-out;
-}
-
-.headerMenu__navLink:hover span{
-    scale: 1.03;
-}
+/* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 1024px) {
     .headerMenu__nav{
@@ -234,11 +243,3 @@ header.bgSolid{
         font-size: 1.2rem;
     }
 }
-
-/* @media screen and (min-width: 1500px) {
-    .headerMenu__navLink,
-    .headerMenu__navLink--aldaydev{
-        font-size: 1.3rem;
-    }
-    
-} */

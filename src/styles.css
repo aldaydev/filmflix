@@ -18,7 +18,7 @@
     --header-height: 75px;
 }
 
-/* Tema oscuro por defecto */
+/* Tema oscuro */
 :root {
     --theme-bg: #000;
     --theme-bg-trans: #0000009d;
@@ -28,7 +28,7 @@
     --theme-text-trans-darker: #ffffffe8;
 }
 
-/* Si el usuario tiene modo claro (lo sobrescribes) */
+/* Tema claro (sobreescritura) */
 html.light {
     --theme-bg: white;
     --theme-bg-trans: #ffffffbe;
@@ -51,7 +51,6 @@ html {
     color: var(--theme-text);
     -webkit-text-size-adjust: 100%;
     transition: color .3s ease-in-out, background .3s ease-in-out;
-    /* overflow-x: hidden; */
 }
 
 *,
@@ -85,11 +84,6 @@ button, input, textarea, select {
     font-family: inherit;
     font-size: inherit;
 }
-
-/* h1 {
-    font-weight: 800;
-    font-size: 3rem;
-} */
 
 /* ---------- APP TITLES ---------- */
 
@@ -157,6 +151,8 @@ h2 {
         --res-padding: 22.125rem;
     }
 }
+
+/* ---------- INLINE LINKS (Contenido desde objetos) ---------- */
 
 a.inlineLink{
     color: var(--color-primary);

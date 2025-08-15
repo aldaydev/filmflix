@@ -1,9 +1,13 @@
 <header class="header" [appHeaderThemeBg]="{isOpen: isOpen(), isCollapsed: isCollapsed()}">
+
+    <!-- Header Brand -->
     <a routerLink="/" class="header__brandText">
         FILMFLIX
     </a>
 
+    <!-- Header Content -->
     <section class="header__menu">
+        <!-- Header Navbar -->
         <nav #navbar class="headerMenu__nav">
             <ul 
                 class="headerMenu__navList" 
@@ -44,20 +48,23 @@
             </ul>
             
         </nav>
+
+        <!-- Header Theme Toggle -->
         <app-toggle-theme/>
+
+        <!-- Header Nav Toggle -->
         @if (isCollapsed()) {
             <button 
-            class="headerMenu__navToggle" 
-            (click)="navToggle()"
-        >
-            <span 
-                class="navToggle__bar navToggle__bar--1"[class.isOpen]="isOpen()"></span>
-            <span class="navToggle__bar navToggle__bar--2" [class.isOpen]="isOpen()"></span>
-            <span class="navToggle__bar navToggle__bar--3" [class.isOpen]="isOpen()"></span>
-            <span class="navToggle__bar navToggle__bar--4" [class.isOpen]="isOpen()"></span>
-        </button>
+                class="headerMenu__navToggle" 
+                (click)="navToggle()"
+            >
+                <span 
+                    class="navToggle__bar navToggle__bar--1"[class.isOpen]="isOpen()"></span>
+                <span class="navToggle__bar navToggle__bar--2" [class.isOpen]="isOpen()"></span>
+                <span class="navToggle__bar navToggle__bar--3" [class.isOpen]="isOpen()"></span>
+                <span class="navToggle__bar navToggle__bar--4" [class.isOpen]="isOpen()"></span>
+            </button>
         }
-        
         
     </section>
     

@@ -8,7 +8,6 @@ import {
   input,
   PLATFORM_ID,
   Renderer2,
-  signal,
 } from '@angular/core';
 import { ThemeService } from 'app/services/theme-service/theme-service';
 
@@ -17,11 +16,14 @@ import { ThemeService } from 'app/services/theme-service/theme-service';
 })
 export class HeaderThemeBg {
 
-  appHeaderThemeBg = input<{isOpen: boolean, isCollapsed: boolean}>({isOpen: false, isCollapsed: false});
+  // ---------- Properties ----------
 
+  appHeaderThemeBg = input<{isOpen: boolean, isCollapsed: boolean}>({isOpen: false, isCollapsed: false});
 
   themeService = inject(ThemeService);
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
+  // ---------- Life cycle ----------
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
     if (this.isBrowser) {
@@ -44,9 +46,9 @@ export class HeaderThemeBg {
         }
       });
     }
-
-    
   }
+
+  // ---------- Host listeners ----------
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -69,7 +71,6 @@ export class HeaderThemeBg {
         this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
       }
 
-      // this.renderer.removeClass(this.el.nativeElement, 'bgSolid');
     } else {
       this.renderer.addClass(this.el.nativeElement, 'bgSolid');
     }

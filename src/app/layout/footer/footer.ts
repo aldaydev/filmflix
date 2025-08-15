@@ -10,5 +10,7 @@ import { ThemeService } from 'app/services/theme-service/theme-service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Footer {
+
+  // ---------- Properties ----------
   themeService = inject(ThemeService);
 }

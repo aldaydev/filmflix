@@ -15,43 +15,22 @@ import { Subscription } from 'rxjs';
 })
 export class Header implements AfterViewInit, OnInit {
 
+  // ---------- Injections ----------
+
   private router = inject(Router);
+  screenSize = inject(ScreenSizeService);
   private sub: Subscription = new Subscription;
 
-  screenSize = inject(ScreenSizeService);
+  // ---------- Properties ----------
+  
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   isCollapsed = signal<boolean>(false);
   isOpen = signal<boolean>(false);
 
-  construction() {
-
-  }
-
   @ViewChild('navbar') navbar! : ElementRef<HTMLUListElement>
 
-
-  @HostListener('window:resize')
-  onResize() {
-    if(this.isBrowser){
-      if(window.innerWidth >= 1024){
-        if(this.isCollapsed()) this.isCollapsed.set(false);
-        this.openNav();
-      }else{
-        this.isCollapsed.set(true);
-        this.closeNav();
-      }
-    }
-  }
-
-    @HostListener('window:scroll', [])
-    onScroll(){
-      if(this.isBrowser){
-        if(this.isCollapsed()){
-          this.closeNav();
-        }
-      }
-    }
+  // ---------- Life cycle ----------
 
   ngAfterViewInit() {
     if(this.isBrowser){
@@ -74,6 +53,8 @@ export class Header implements AfterViewInit, OnInit {
         }
       })
   }
+
+  // ---------- Methos ----------
 
   navToggle(){
     if(this.isOpen()){
@@ -111,4 +92,29 @@ export class Header implements AfterViewInit, OnInit {
     this.isOpen.set(true);
       
   }
+
+  // ---------- Host Listeners ----------
+
+  @HostListener('window:resize')
+  onResize() {
+    if(this.isBrowser){
+      if(window.innerWidth >= 1024){
+        if(this.isCollapsed()) this.isCollapsed.set(false);
+        this.openNav();
+      }else{
+        this.isCollapsed.set(true);
+        this.closeNav();
+      }
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll(){
+    if(this.isBrowser){
+      if(this.isCollapsed()){
+        this.closeNav();
+      }
+    }
+  }
+
 }
