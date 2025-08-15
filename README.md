@@ -2,6 +2,9 @@
 
 ### feat/now-playing
 * Creación del servicio now-playing-films-service
+* Creación del componente now-playing
+* Refactorizando el código para reutilizar film-list y film-card components
+* Scroll infinito
 
 ### feat/upcoming
 * Creación del servicio upcoming-films-service
