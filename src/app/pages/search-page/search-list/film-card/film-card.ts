@@ -5,7 +5,6 @@ import {
   input,
 } from '@angular/core';
 import { Genre } from 'app/models/genre-list.model';
-import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchStateService } from '../../search-state-service';
 import { RouterModule } from '@angular/router';
 import { FiveStarsRate } from "app/shared/components/five-stars-rate/five-stars-rate";

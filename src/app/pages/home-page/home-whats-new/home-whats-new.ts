@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Button } from "app/shared/ui/button/button";
 
 @Component({
@@ -9,5 +10,12 @@ import { Button } from "app/shared/ui/button/button";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeWhatsNew {
+
+  router = inject(Router);
+
+  goToUpcoming(){
+    console.log('Debería navegar');
+    this.router.navigateByUrl('/upcoming');
+  }
 
 }

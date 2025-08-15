@@ -25,4 +25,6 @@
 
 .star-outline .blackStroke{
     stroke: var(--theme-text);
+
+    transition: stroke .3s ease-in-out;
 }
