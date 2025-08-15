@@ -1,5 +1,8 @@
 # Filmflix
 
+### refactor/cleanup
+* Añadiendo comentarios extra al código
+
 ### feat/footer
 * Creación del component footer
 * Diseño y adaptación responsive
