@@ -1,3 +1,5 @@
+/* ---------- HOST ---------- */
+
 :host {
     display: block;
     background-image: url('../../../assets/images/upcoming/theater-8569119_1920.webp');
@@ -28,10 +30,14 @@
     z-index: 0;
 }
 
+/* ---------- UPCOMING GLOBAL CONTAINER ---------- */
+
 .upcoming{
     position: relative;
     z-index: 10;
 }
+
+/* ---------- UPCOMING HEADER ---------- */
 
 .upcoming__header{
     width: 100%;

@@ -1,13 +1,12 @@
 <div class="upcoming">
+
+    <!-- UPCOMING HEADER -->
     <header class="upcoming__header">
         <h1 class="upcomingHeader__title">Próximos <span>estrenos</span></h1>
         <h3 class="upcomingHeader__subtitle">Aquí podrás encontrar todos los próximos estrenos</h3>
     </header>
-    <!-- <app-upcoming-list
-        [filmList]="upcomingFilmList()"
-        (getNextPage)="getNextPage()"
-    /> -->
 
+    <!-- UPCOMING FILM LIST -->
     <app-film-list
         [filmList]="upcomingFilmList()"
         [loading]="loading()"

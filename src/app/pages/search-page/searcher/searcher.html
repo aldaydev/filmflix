@@ -8,11 +8,12 @@
     #searcherExpander 
     [style.height]="searchExpanderHeight() + 'px'"
 >
+    <!-- SEARCHER EXPANDER -->
     <button 
         class="searcher__expander" 
         (click)="toggleSearchExpander()"
     >   
-        
+        <!-- SEARCHER SEARCH INFO -->
         <div class="searcher__info">
             @if(hasOptions){
                 <span class="searcher__indicator"></span>
@@ -35,12 +36,14 @@
             }
         </div>
         
+        <!-- SEARCHER EXPAND ICON-->
         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" [attr.fill]="themeService.theme() === 'light' ?'#ffffff' : '#000000'" [class.isOpen]="isOpen()">
             <path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/>
         </svg>
 
     </button>
 
+    <!-- SEARCHER OPTIONS -->
     <section class="searcher__options">
         <app-search-by-title/>
         <app-search-by-filters/>

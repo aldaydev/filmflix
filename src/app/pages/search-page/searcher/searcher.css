@@ -1,12 +1,13 @@
+/* ---------- HOST ---------- */
+
 :host{
     width: 100%;
     height: 100%;
     position: relative;
     z-index: 990;
 }
-.searchFilms__hero{
-    height: 100%;
-}
+
+/* ---------- SEARCHER CONTAINER ---------- */
 
 .searchFilms__searcher{
     display: block;
@@ -29,9 +30,7 @@
     transition: height .3s ease-in-out, background .3s ease-in-out;
 }
 
-/* .searchFilms__searcher.isScrolled{
-    background-color: var(--theme-text);
-} */
+/* ---------- SEARCHER EXPANDER ---------- */
 
 .searcher__expander{
     height: 50px;
@@ -69,13 +68,12 @@
     font-weight: 600;
     font-size: 1.1rem;
 
-    white-space: nowrap;      /* Que no se vaya a otra línea */
-    overflow: hidden;         /* Oculta el texto sobrante */
-    text-overflow: ellipsis;  /* Pone los "..." al final */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .searcher__indicator{
-
     width: 15px;
     height: 15px;
     border-radius: 50%;

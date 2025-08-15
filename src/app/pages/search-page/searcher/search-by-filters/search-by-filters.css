@@ -1,3 +1,5 @@
+/* ---------- FILTER CONTAINERS SHARED STYLES ---------- */
+
 .searchByFilters__genresFilter,
 .searchByFilters__yearFilter{
     border: none;
@@ -8,6 +10,13 @@
     flex-wrap: wrap;
     gap: 7px;
 }
+
+.genresFilter__title,
+.yearFilter__title{
+    font-weight: 500;
+}
+
+/* ---------- GENRE FILTER ---------- */
 
 .genresFilter__genreContainer{
     padding: 5px;
@@ -28,10 +37,6 @@
     scale: 1.02;
 }
 
-/* .genresFilter__genreContainer:hover .genresFilter__genreName{
-    color: var(--theme-bg);
-} */
-
 
 .genresFilter__genreContainer:has(.genresFilter__genreCheckbox:checked) {
     background-color: var(--color-primary);
@@ -42,17 +47,18 @@
     background-color: transparent;
 }
 
-/* .genresFilter__genreContainer:hover:not(:has(.genresFilter__genreCheckbox:checked)){
-    background-color: var(--theme-text);
-    color: var(--theme-bg);
-} */
-
 .genresFilter__genreCheckbox{
     position: absolute;
     top: 0;
     left: 0;
     visibility: hidden;
 }
+
+.genresFilter__genreName{
+    font-weight: 400;
+}
+
+/* ---------- YEAR FILTER ---------- */
 
 .yearFilter__yearCheckbox{
     background-color: var(--theme-bg-trans);
@@ -68,14 +74,7 @@
     font-weight: 700;
 }
 
-.genresFilter__genreName{
-    font-weight: 400;
-}
-
-.genresFilter__title,
-.yearFilter__title{
-    font-weight: 500;
-}
+/* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 400px) {
 

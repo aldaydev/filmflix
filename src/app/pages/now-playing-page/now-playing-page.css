@@ -1,3 +1,5 @@
+/* ---------- HOST ---------- */
+
 :host {
     display: block;
     background-image: url('../../../assets/images/upcoming/theater-8569119_1920.webp');
@@ -28,28 +30,32 @@
     z-index: 0;
 }
 
-.upcoming{
+/* ---------- NOW PLAYING CONTAINER ---------- */
+
+.nowPlaying{
     position: relative;
     z-index: 10;
 }
 
-.upcoming__header{
+/* ---------- NOW PLAYING HEADER ---------- */
+
+.nowPlaying__header{
     width: 100%;
     margin-top: 30px;
 }
 
-.upcomingHeader__title{
+.nowPlayingHeader__title{
     text-align: center;
     margin-bottom: 17px;
 }
 
-.upcomingHeader__title span{
+.nowPlayingHeader__title span{
     color: var(--color-primary);
     text-shadow: 0 0 10px var(--theme-bg);
     transition: text-shadow .3s ease-in-out;
 }
 
-.upcomingHeader__subtitle{
+.nowPlayingHeader__subtitle{
     text-align: center;
     font-size: 1.2rem;
 }

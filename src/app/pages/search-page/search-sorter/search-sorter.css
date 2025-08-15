@@ -1,3 +1,5 @@
+/* ---------- HOST ---------- */
+
 :host{
     display: block;
     position: inherit;
@@ -5,12 +7,16 @@
     z-index: 100;
 }
 
+/* ---------- SEARCH SORTER CONTAINER ---------- */
+
 .searchSorter{
     border-bottom: 1px solid var(--theme-text);
     display: flex;
     justify-content: space-between;
     padding: 5px;
 }
+
+/* ---------- SORTBY ARTICLE ---------- */
 
 .searchSorter__sortBy{
     display: flex;

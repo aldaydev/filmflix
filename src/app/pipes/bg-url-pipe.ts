@@ -5,6 +5,7 @@ import { environment } from 'environments/environment';
   name: 'filmBgUrl',
 })
 export class FilmBgUrlPipe implements PipeTransform {
+
   transform(poster_path: string | null, size: string = 'w1280'): string {
     if (!poster_path) {
       return 'assets/images/no-poster_path.png';
@@ -12,4 +13,5 @@ export class FilmBgUrlPipe implements PipeTransform {
       return `${environment.tmdbImageBaseUrl}${size}${poster_path}`;
     }
   }
+  
 }

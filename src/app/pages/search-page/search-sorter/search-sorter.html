@@ -1,4 +1,6 @@
 <section class="searchSorter">
+
+    <!-- SORT BY ARTICLE -->
     <article class="searchSorter__sortBy">
         <span class="sortBy__span">Orden: </span>
         @if(screenSize.width() > 600){
@@ -26,6 +28,8 @@
         }
         
     </article>
+
+    <!-- ORDER INDICATOR -->
     <article class="searchSorter__orderIndicator">
         <button (click)="searchState.changeOrder()" class="sortBy__button">
             {{searchState.sortOptions().order === 'asc' ? 'A-Z' : 'Z-A'}}

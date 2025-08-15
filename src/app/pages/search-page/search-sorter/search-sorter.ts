@@ -11,8 +11,12 @@ import { ScreenSizeService } from 'app/services/screen-size-service/screen-size-
 })
 export class SearchSorter {
 
+  // ---------- Injections ----------
+
   searchState = inject(SearchStateService);
   screenSize = inject(ScreenSizeService);
+
+  // ---------- Methods ----------
 
   handleSortChange(event: Event){
     const selectElement = event.target as HTMLSelectElement;

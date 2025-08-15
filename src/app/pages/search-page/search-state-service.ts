@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { effect, inject, Injectable, OnInit, PLATFORM_ID, signal } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { Genre } from 'app/models/genre-list.model';
 import { FilmListItem } from 'app/models/popular-film.model';
 import { GenreService } from 'app/services/tmdb/genre-service';
@@ -17,6 +17,8 @@ export class SearchStateService {
   searchByFiltersService = inject(SearchByFiltersService);
   genreService = inject(GenreService);
   searchByNameService = inject(SearchByNameService);
+
+  // ---------- life cycle ----------
 
   constructor(){
     this.initialFilmList();
@@ -52,7 +54,6 @@ export class SearchStateService {
     this.searchByFiltersService
       .getFilmsByFilters({sort: this.sortOptions()})
       .subscribe((data) => {
-        console.log(data);
         this.filmList.set(data.results);
         this.loading.set(false);
       });
@@ -71,7 +72,6 @@ export class SearchStateService {
       .getFilmsByName(query, this.page())
       .subscribe({
         next: (data) => {
-          console.log(data);
           this.filmList.update((prev) => [...prev, ...data.results]);
           this.loading.set(false);
         },
@@ -82,7 +82,6 @@ export class SearchStateService {
       .getFilmsByFilters({query: this.setFiltersQuery(), page: this.page(), sort: this.sortOptions()})
       .subscribe({
         next: (data) => {
-          console.log(data);
           this.filmList.update((prev) => [...prev, ...data.results]);
           this.loading.set(false);
         },
@@ -263,7 +262,6 @@ export class SearchStateService {
 
   setOrderByYear() {
     if(!this.hasName()){
-      console.log('Hola');
       if(this.sortOptions().order === 'desc'){
         this.sortOptions.set({by: 'primary_release_date', order: 'asc'});
       }else if(this.sortOptions().order === 'asc'){

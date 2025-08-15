@@ -1,5 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject, OnInit, QueryList, signal, ViewChild, viewChild, ViewChildren } from '@angular/core';
-import { Genre } from 'app/models/film-details.model';
+import { Component, ElementRef, inject, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchStateService } from '../../search-state-service';
 import { Button } from "app/shared/ui/button/button";
@@ -12,18 +11,18 @@ import { SearchByFiltersService } from 'app/services/tmdb/search-by-filters-serv
   styleUrl: './search-by-filters.css',
 })
 export class SearchByFilters {
+
+  // ---------- Injections ----------
+
   searchByFiltersService = inject(SearchByFiltersService);
   genreService = inject(GenreService);
   searchStateService = inject(SearchStateService);
+
+  // ---------- Properties ----------
 
   @ViewChildren('genreCheckbox') genreCheckbox!: QueryList<ElementRef>;
 
   @ViewChild('yearInput') yearInput!: ElementRef<HTMLInputElement>;
 
 
-  // isGenreChecked(genreId: number): boolean {
-
-  //   console.log('Está marcado??', this.searchStateService.genreList().some(g => g.id === genreId))
-  //   return this.searchStateService.selectedGenreIds().some(g => g.id === genreId);
-  // }
 }

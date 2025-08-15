@@ -16,5 +16,4 @@ export class SearchPage {
 
   searchState = inject(SearchStateService);
 
-
 }

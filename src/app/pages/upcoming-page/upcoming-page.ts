@@ -12,10 +12,18 @@ import { FilmList } from "app/shared/components/film-list/film-list";
   providers: [UpcomingFilmsService]
 })
 export class UpcomingPage implements OnInit {
+
+  // ---------- Injections ----------
+
   upcomingFilmsService = inject(UpcomingFilmsService);
+
+  // ---------- Properties ----------
+
   upcomingFilmList = signal<FilmListItem[]>([]);
   page = signal<number>(1);
   loading = signal<boolean>(true);
+
+  // ---------- Life cycle ----------
 
   ngOnInit(): void {
     this.loading.set(true);
@@ -29,6 +37,8 @@ export class UpcomingPage implements OnInit {
       this.loading.set(false);
     });
   }
+
+  // ---------- Methods ----------
 
   getNextPage() {
     this.loading.set(true);

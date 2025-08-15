@@ -1,8 +1,9 @@
-<!-- @let genres = genreList(); -->
 @let genres = searchStateService.genreList();
 @let searchState = searchStateService;
 
 <form class="searchByFilters">
+    
+    <!-- GENRE FILTER -->
     <fieldset class="searchByFilters__genresFilter">
         <legend class="genresFilter__title">Por género: </legend>
         @for (genre of genres; track $index) {
@@ -20,6 +21,8 @@
             </label>
         }
     </fieldset>
+
+    <!-- YEAR FILTER -->
     <fieldset class="searchByFilters__yearFilter">
         <legend class="yearFilter__title">Por año: </legend>
             <input 
@@ -32,6 +35,7 @@
         
     </fieldset>
     
+    <!-- APPLY FILTER BUTTON -->
     <div class="buttonContainer">
         <app-button
             label="Buscar"
