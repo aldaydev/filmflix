@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/footer
+* Creación del component footer
+
 ### feat/now-playing
 * Creación del servicio now-playing-films-service
 * Creación del componente now-playing
