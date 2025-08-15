@@ -1,5 +1,8 @@
 # Filmflix
 
+### seo
+* Implementación de buenas prácticas de SEO
+
 ### refactor/cleanup
 * Añadiendo comentarios extra al código
 * Limpiando y refactorizando
