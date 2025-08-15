@@ -24,6 +24,9 @@ import { isPlatformBrowser } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilmCarousel {
+
+  // ---------- Properties ----------
+
   @ViewChild('innerContainer') innerContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLAnchorElement>;
 
@@ -39,10 +42,14 @@ export class FilmCarousel {
 
   titleToShow = signal<string>("");
 
+  // ---------- Host Listeners ----------
+
   @HostListener('window:resize')
   onResize() {
     this.calculateScroll();
   }
+
+  // ---------- Life Cycle ----------
 
   constructor() {
     effect(() => {
@@ -51,6 +58,8 @@ export class FilmCarousel {
       }
     })
   }
+
+  // ---------- Methods ----------
 
   scrollToStart() {
     if (this.innerContainer) {

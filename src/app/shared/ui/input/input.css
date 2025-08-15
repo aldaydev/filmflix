@@ -1,8 +1,12 @@
+/* ---------- HOST ---------- */
+
 :host{
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
+/* ---------- lABEL (CONTAINER) ---------- */
 
 .customInput__label{
     width: 100%;
@@ -87,6 +91,8 @@
     color: var(--theme-text-trans);
     font-weight: 600;
 }
+
+/* ---------- RESPONSIVE ---------- */
 
 @media screen and (max-width: 800px) {
     .customInput__labelText{

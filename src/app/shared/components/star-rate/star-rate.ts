@@ -9,7 +9,12 @@ import { ThemeService } from 'app/services/theme-service/theme-service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StarRate {
+
+  // ---------- Injections ----------
+
   themeService = inject(ThemeService);
+
+  // ---------- Properties ----------
 
   starPercentage = input<number>(0);
 }

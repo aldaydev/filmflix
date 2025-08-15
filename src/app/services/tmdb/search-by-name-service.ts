@@ -7,10 +7,18 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class SearchByNameService {
+
+    // ---------- Injections ----------
+
     private http = inject(HttpClient);
+
+    // ---------- Properties ----------
+
     private url: string = `${environment.tmdbBaseUrl}/search/movie?language=es-ES&include_adult=false`;
 
-        getFilmsByName(query?: string, page?: number ): Observable<FilmListResponse> {
+    // ---------- Methods ----------
+    
+    getFilmsByName(query?: string, page?: number ): Observable<FilmListResponse> {
         const currentPate = !page ? '&page=1' : `&page=${page}`;
         const finalUrl = `${this.url}${query}${currentPate}`;
         console.log(finalUrl);

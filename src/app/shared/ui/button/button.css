@@ -1,7 +1,11 @@
+/* ---------- HOST ---------- */
+
 :host{
     display: flex;
     justify-content: center;
 }
+
+/* ---------- BUTTON ---------- */
 
 .btn {
     width: 100%;

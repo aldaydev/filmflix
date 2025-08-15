@@ -7,8 +7,16 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class NowPlayingFilmsService {
+
+  // ---------- Injections ----------
+
   private http = inject(HttpClient);
+
+  // ---------- Properties ----------
+
   private url: string = `${environment.tmdbBaseUrl}/movie/now_playing?language=es-ES`;
+
+  // ---------- Methods ----------
 
   getUpcomingFilms(page?: number): Observable<UpcomingFilms> {
     const pageQuery = page !== undefined ? `&page=${page}` : '';

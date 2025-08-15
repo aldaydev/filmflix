@@ -13,9 +13,13 @@ import { FilmListItem } from 'app/models/popular-film.model';
 })
 export class FilmList {
 
+  // ---------- Properties ----------
+
   filmList = input<FilmListItem[]>([]);
   loading = input<boolean>(true);
   nextPage = output<void>();
+
+  // ---------- Methods ----------
 
   onScroll() {
     this.nextPage.emit();

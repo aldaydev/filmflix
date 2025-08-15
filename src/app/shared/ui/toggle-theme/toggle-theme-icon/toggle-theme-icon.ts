@@ -8,9 +8,13 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, computed, input, sig
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToggleThemeIcon implements AfterViewInit {
-  // protected iconToShow = computed(() => this.theme() === 'dark' ? 'moon' : 'sun');
+
+  // ---------- Properties ----------
+
   theme = input('dark');
   firstRender = signal(true);
+
+  // ---------- Life cycle ----------
 
   ngAfterViewInit(): void {
     setTimeout(() => {

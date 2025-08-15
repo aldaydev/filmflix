@@ -2,6 +2,7 @@
 
 <div class="filmCarousel__outerContainer" [class.onStart]="onStart()" [class.onEnd]="onEnd()">
 
+    <!-- CAROUSEL LEFT BUTTON -->
     <div 
         class="filmCarousel__buttonContainer filmCarousel__buttonContainer--left" 
         [class]="onStart() ? 'hide' : 'show'"
@@ -14,6 +15,7 @@
         </button>
     </div>
 
+    <!-- CAROUSEL RIGHT BUTTON -->
     <div class="filmCarousel__buttonContainer filmCarousel__buttonContainer--right" [class]="onEnd() ? 'hide' : 'show'">
         <button  
             class="filmCarousel__slideButton filmCarousel__slideButton--right"
@@ -23,6 +25,7 @@
         </button>
     </div>
 
+    <!-- CAROUSEL INNER CONTENT -->
     <div #innerContainer class="filmCarousel__innerContainer">
 
         <div class="filmCarousel__posterListContainer" >
@@ -49,6 +52,8 @@
             }
         </div>
     </div>
+
+    <!-- CAROUSEL NAME SHOW -->
     @if(titleToShow()){
         <div class="filmCarousel__filmTitleContainer">
             <span class="filmCarousel__filmTitle">{{titleToShow()}}</span>

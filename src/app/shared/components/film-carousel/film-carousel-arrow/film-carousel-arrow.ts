@@ -9,6 +9,12 @@ import { ThemeService } from 'app/services/theme-service/theme-service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilmCarouselArrow {
+
+  // ---------- Injections ----------
+
   themeService = inject(ThemeService);
+
+  // ---------- Properties ----------
+
   position = input('left');
 }

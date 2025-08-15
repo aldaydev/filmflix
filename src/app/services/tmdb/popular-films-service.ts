@@ -9,9 +9,17 @@ import { firstValueFrom, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PopularFilmsService {
+
+  // ---------- Injections ----------
+
   private http = inject(HttpClient);
+
+  // ---------- Properties ----------
+
   private url: string = `${environment.tmdbBaseUrl}/movie/popular?language=es-ES&page=1`;
   popularFilms = signal<FilmListResponse | null>(null);
+
+  // ---------- Methods ----------
 
   getPopularFilms(): Observable<FilmListResponse> {
     return this.http.get<FilmListResponse>(this.url, {

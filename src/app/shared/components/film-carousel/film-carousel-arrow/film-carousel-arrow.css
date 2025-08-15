@@ -7,9 +7,3 @@
     fill: var(--theme-text);
     transition: fill .5s ease-in-out;
 }
-
-/* svg {
-  border: 1px solid red;
-  display: flex;
-  justify-content: center;
-} */

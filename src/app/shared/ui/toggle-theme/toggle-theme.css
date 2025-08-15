@@ -9,8 +9,6 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    /* border: 2px solid var(--theme-text);
-    border-radius: 10px; */
     padding: 5px;
 }
 

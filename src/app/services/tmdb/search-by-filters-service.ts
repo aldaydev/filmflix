@@ -7,8 +7,16 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class SearchByFiltersService {
+
+  // ---------- Injections ----------
+
   private http = inject(HttpClient);
+
+  // ---------- Properties ----------
+
   private url: string = `${environment.tmdbBaseUrl}/discover/movie?language=es-ES`;
+
+  // ---------- Methods ----------
 
   getFilmsByFilters({query, page, sort} : {query?: string, page?: number, sort?: {by: string, order: string}
     }

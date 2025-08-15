@@ -1,11 +1,16 @@
 @defer (when !loading()) {
 <a class="filmCard" [routerLink]="['/film', id()]">
+
+    <!-- CARD IMAGE -->
     <img [src]="image()" [alt]="'Poster de ' + title()" class="filmCard__image">
 
+    <!-- CARD DATA -->
     <div class="filmCard__info">
 
+        <!-- CARD TITLE -->
         <h3 class="filmCard__title">{{title()}}</h3>
 
+        <!-- CARD GENRES -->
         <div class="filmCard__genres">
             @for (genre of genres().slice(0, 4); track $index) {
             <span class="filmCard__genre">{{genre.name}}</span>
@@ -16,8 +21,10 @@
             }
         </div>
 
-
+        <!-- CARD DATE -->
         <h4 class="filmCard__date">{{date()}}</h4>
+
+        <!-- CARD STARS -->
         <div class="filmCard_starsContainer">
             <app-five-stars-rate [vote_average]="vote_average() | roundRate" />
         </div>

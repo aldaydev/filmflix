@@ -2,11 +2,7 @@
 
 ### refactor/cleanup
 * Añadiendo comentarios extra al código
-* Comments Tempaltes:
-
-// ---------- Properties ----------
-<!-- CONTENT -->
-/* ---------- HOST ---------- */
+* Limpiando y refactorizando
 
 ### feat/footer
 * Creación del component footer

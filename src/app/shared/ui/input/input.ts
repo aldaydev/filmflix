@@ -9,7 +9,12 @@ import { ThemeService } from 'app/services/theme-service/theme-service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Input {
+
+  // ---------- Injections ----------
+
   themeService = inject(ThemeService);
+
+  // ---------- Properties ----------
 
   type = input<'text'>('text');
   label = input<string>('');
@@ -18,4 +23,5 @@ export class Input {
   disabled = input<boolean>(false);
   value = input<string>('');
   inputEvent = output<any>();
+  
 }

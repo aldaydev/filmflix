@@ -6,8 +6,12 @@ import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 })
 export class ScreenSizeService {
   
+  // ---------- Properties ----------
+
   width = signal<number>(0);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
+  // ---------- Life cycle ----------
 
   constructor() {
     if(this.isBrowser){

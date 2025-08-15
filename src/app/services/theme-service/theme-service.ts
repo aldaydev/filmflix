@@ -5,9 +5,14 @@ import { effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class ThemeService {
+
+  // ---------- Properties ----------
+
   private preferedUserTheme : boolean = false;
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   public theme = signal<'dark' | 'light'>('dark');
+
+  // ---------- Life cycle ----------
 
   constructor(){
     if(this.isBrowser){
@@ -19,8 +24,6 @@ export class ThemeService {
       }else{
         document.documentElement.classList.remove('light');
       }
-      // const isLight = document.documentElement.classList.contains('light');
-      // this.theme.set(isLight ? 'light' : 'dark');
 
       effect(() => {
         const mode = this.theme();
@@ -28,6 +31,8 @@ export class ThemeService {
       })
     }
   }
+
+  // ---------- Methods ----------
 
   toggleTheme(){
     this.theme.set(this.theme() === 'dark' ? 'light' : 'dark');
