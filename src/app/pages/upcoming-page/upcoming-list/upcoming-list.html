@@ -1,12 +1,13 @@
+
 <section class="searchList"
     infiniteScroll
     [scrollWindow]="true"
     [infiniteScrollDistance]="2"
     [infiniteScrollThrottle]="300"
-    (scrolled)="onScroll()"
+    (scrolled)="getNextPage.emit()"
 >
-    @if (searchState.filmList().length > 0) {
-        @for (film of searchState.filmList(); track trackByFilmId($index, film)) {
+    @if (filmList().length > 0) {
+        @for (film of filmList(); track trackByFilmId($index, film)) {
             <app-film-card
                 [title]="film.title"
                 [image]="film.poster_path | posterUrl"
@@ -20,7 +21,7 @@
 </section>
 
 
-@if(searchState.filmList().length === 0) {
+@if(filmList().length === 0) {
     <div class="searchList__noResultContainer">
         <span class="searchList__noResultText">No se han encontrado resultados</span>
     </div>

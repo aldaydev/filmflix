@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class UpcomingFilmsService {
   private http = inject(HttpClient);
-  private url: string = `${environment}/movie/upcoming`;
+  private url: string = `${environment.tmdbBaseUrl}/movie/upcoming?language=es-ES`;
 
-  getUpcomingFilms() : Observable<UpcomingFilms> {
-    return this.http.get<UpcomingFilms>(this.url, {headers: tmdbHeaders});
+  getUpcomingFilms(page?: number) : Observable<UpcomingFilms> {
+    const pageQuery = page !== undefined ? `&page=${page}` : "";
+    const finalUrl = `${this.url}${pageQuery}`
+    return this.http.get<UpcomingFilms>(finalUrl, {headers: tmdbHeaders});
   }
 }
