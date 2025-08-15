@@ -1,13 +1,13 @@
 <header class="header" [appHeaderThemeBg]="{isOpen: isOpen(), isCollapsed: isCollapsed()}">
 
-    <!-- Header Brand -->
+    <!-- HEADER BRAND -->
     <a routerLink="/" class="header__brandText">
         FILMFLIX
     </a>
 
-    <!-- Header Content -->
+    <!-- HEADER CONTENT -->
     <section class="header__menu">
-        <!-- Header Navbar -->
+        <!-- HEADER NAVBAR -->
         <nav #navbar class="headerMenu__nav">
             <ul 
                 class="headerMenu__navList" 
@@ -49,10 +49,10 @@
             
         </nav>
 
-        <!-- Header Theme Toggle -->
+        <!-- HEADER THEME TOGGLE -->
         <app-toggle-theme/>
 
-        <!-- Header Nav Toggle -->
+        <!-- HEADER NAV TOGGLE -->
         @if (isCollapsed()) {
             <button 
                 class="headerMenu__navToggle" 

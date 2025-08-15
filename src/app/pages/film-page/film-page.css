@@ -1,3 +1,5 @@
+/* ---------- HOST ---------- */
+
 :host{
     display: flex;
     flex-direction: column;
@@ -29,6 +31,8 @@
     z-index: 0;
 }
 
+/* ---------- FILM DATA SECTION ---------- */
+
 .filmPage__marginContainer{
     padding: 0 var(--res-padding);
 }
@@ -51,7 +55,6 @@
 }
 
 .filmData__title{
-    /* font-size: 2.3rem; */
     margin-bottom: 10px;
 }
 
@@ -112,7 +115,6 @@
     margin-top: 10px;
     display: flex;
     font-weight: 600;
-    /* justify-content: center; */
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 10px;
@@ -133,6 +135,8 @@
     width: fit-content;
 }
 
+/* ---------- SIMILAR FILMS SECTION ---------- */
+
 .filmPage__similarFilms{
     position: relative;
     z-index: 50;
@@ -143,6 +147,18 @@
     padding: 0 var(--res-padding);
     margin-bottom: 15px;
 }
+
+.similarFilms__none{
+    margin: 0 var(--res-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    border: 1px solid var(--theme-text);
+    font-size: 1.2rem;
+}
+
+/* ---------- MORE ACTIONS SECTION ---------- */
 
 .filmPage__moreActions{
     position: relative;
@@ -162,15 +178,7 @@
     row-gap: 10px;
 }
 
-.similarFilms__none{
-    margin: 0 var(--res-padding);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100px;
-    border: 1px solid var(--theme-text);
-    font-size: 1.2rem;
-}
+/* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 600px) {
     .filmData__genre{

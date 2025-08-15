@@ -1,3 +1,5 @@
+/* ---------- HOME HERO CONTAINER ---------- */
+
 .home__homeHero{
     height: 85dvh;
     width: 100%;
@@ -26,6 +28,8 @@
     z-index: 10;
     transition: background .5s ease-in-out;
 }
+
+/* ---------- HOME HERO WELCOME ---------- */
 
 .homeHero__welcome{
     padding: 70px var(--res-padding);
@@ -77,15 +81,14 @@
     width: 100%;
     max-width: 700px;
     margin-top: 30px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
     display: grid;
     grid-template-rows: 1fr 1fr;
     column-gap: 10px;
     row-gap: 10px;
     margin-bottom: 30px;
 }
+
+/* ---------- HOME HERO SEPARATOR ---------- */
 
 .homeHero__heroSeparator{
     max-width: 100%;
@@ -98,33 +101,20 @@
     height: 70px;
     width: 100%;
     background-color: var(--theme-bg);
-    /* background: linear-gradient(to bottom, var(--theme-bg-trans) 0%, var(--theme-bg) 50%); */
+
     position: absolute;
     bottom: -10px;
 
-    /* clip-path: ellipse(100% 100% at 50% 100%); */
     border-top: solid .2rem red;
     border-top-left-radius: 70% 100%;
     border-top-right-radius: 70% 100%;
-    /* transform: rotate(90deg); */
+
     z-index: 60;
 
     transition: background-color .3s ease-in-out;
 }
 
-/* .heroSeparator__figure--front{
-    height: 80px;
-    width: 100%;
-    background-color: #E50915;
-
-    position: absolute;
-    bottom: -7px;
-
-    border-top-left-radius: 121% 210px;
-    border-top-right-radius: 121% 210px;
-    z-index: 50;
-} */
-
+/* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 600px) {
     .homeHero__search{

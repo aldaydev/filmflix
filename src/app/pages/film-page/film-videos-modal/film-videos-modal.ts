@@ -1,8 +1,6 @@
-import { ChangeDetectionStrategy, Component, effect, inject, input, OnInit, output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, input, output, signal } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { VideoResult } from 'app/models/film-details.model';
-import { ThemeService } from 'app/services/theme-service/theme-service';
-import { single } from 'rxjs';
 
 @Component({
   selector: 'app-film-videos-modal',
@@ -13,15 +11,20 @@ import { single } from 'rxjs';
 })
 export class FilmVideosModal {
 
+  // ---------- Injections ----------
+
+  sanitizer = inject(DomSanitizer);
+
+  // ---------- Properties ----------
+
   isOpen = input(false);
   closeModal = output<void>();
 
   videoData = input<VideoResult | null >(null);
   safeUrl = signal<SafeResourceUrl | null>(null);
 
-  sanitizer = inject(DomSanitizer);
+  // ---------- Life Cycle ----------
 
-  
   constructor() {
     effect(() => {
       const video = this.videoData();
@@ -36,6 +39,8 @@ export class FilmVideosModal {
       }
     });
   }
+
+  // ---------- Methods ----------
 
   handleClose(){
     this.closeModal.emit();

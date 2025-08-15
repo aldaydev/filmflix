@@ -1,7 +1,12 @@
+
+/* ---------- HOST ---------- */
+
 :host{
     max-width: 100%;
     width: 100dvw;
 }
+
+/* ---------- CONTENT ---------- */
 
 .homeCarousel__container{
     margin-top: 70px;

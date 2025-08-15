@@ -5,8 +5,8 @@
 * Comments Tempaltes:
 
 // ---------- Properties ----------
-<!-- Footer content -->
-/* ---------- FOOTER SEPARATOR ---------- */
+<!-- CONTENT -->
+/* ---------- HOST ---------- */
 
 ### feat/footer
 * Creación del component footer

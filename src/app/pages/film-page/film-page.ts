@@ -47,6 +47,8 @@ export class FilmPage implements OnInit {
 
   videosModalOpened = signal(false);
 
+  // ---------- Host Bindings ----------
+
   @HostBinding('style.backgroundImage') get hostBackground(): string {
     const url = this.bgImage();
     return url ? `url("${encodeURI(url)}")` : '';

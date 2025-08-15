@@ -1,7 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject, PLATFORM_ID, QueryList, signal, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FaqExpander } from "./faq-expander/faq-expander";
-import { isPlatformBrowser } from '@angular/common';
-import { single } from 'rxjs';
 import { faqData } from './faq-data';
 
 @Component({
@@ -13,7 +11,11 @@ import { faqData } from './faq-data';
 })
 export class HomeFaq {
 
+  // ---------- Properties ----------
+
   faqs = signal(faqData);
+
+  // ---------- Methods ----------
 
   toggle(index: number){
     console.log('asdsadsad');

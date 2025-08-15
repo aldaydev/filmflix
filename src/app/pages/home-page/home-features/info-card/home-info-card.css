@@ -1,9 +1,10 @@
+/* ---------- CARD OUTER CONTAINER ---------- */
+
 .infoCard__outerContainer{
     
     padding: 40px 20px 40px 20px;
     position: relative;
 
-    /* margin: 45px 0; */
     height: 100%;
 
     display: flex;
@@ -19,7 +20,6 @@
 
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.349);
     filter: drop-shadow(0 0 4px var(--theme-text-trans));
-
 }
 
 .infoCard__outerContainer:hover {
@@ -41,10 +41,9 @@
     transition: opacity .3s ease-out;
 }
 
-
+/* ---------- CARD TEXT CONTAINER ---------- */
 
 .infoCard__textContainer{
-    /* padding: 20px 15px 15px 20px; */
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -56,6 +55,8 @@
     line-height: 1.2;
 }
 
+/* ---------- CARD ICON CONTAINER ---------- */
+
 .infoCard__iconContainer{
     position: absolute;
     top: -20px;
@@ -66,6 +67,8 @@
 .infoCard__icon{
     width: 45px;
 }
+
+/* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 1360px) {
     .infoCard__outerContainer{

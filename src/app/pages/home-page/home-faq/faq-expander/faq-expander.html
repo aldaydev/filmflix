@@ -1,6 +1,7 @@
 
 <li class="faqExpansor__outerContainer">
 
+    <!-- EXPANSOR BUTTON/TITLE -->
     <button 
         class="faqExpansor__titleContainer" 
         (click)="onClick()"
@@ -12,18 +13,15 @@
         </svg>
     </button>
     
+    <!-- EXPANDIBLE CONTENT -->
     <div 
         class="faqExpansor__descriptionContainer" 
         #expandableItem
         [style.height]="isOpen ? expandableHeight() + 'px' : '0'"
         
     >
-        <p class="faqExpansor__description" [innerHTML]="description()"></p>
+        <div class="faqExpansor__description" [innerHTML]="description()"></div>
     </div>
 
 </li>
-
-<!-- [style.height]="expandableHeight() + 'px'"
-        [style.overflow]="!isOpen ? 'visible' : 'hidden'"
-        [style.transition]="'height 0.3s ease, padding-top .3s ease'" -->
 

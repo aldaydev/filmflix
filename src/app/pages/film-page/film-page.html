@@ -4,51 +4,53 @@
 
 <div class="filmPage__marginContainer">
 
-<section class="filmPage__filmData">
+    <!-- FILM DATA SECTION -->
+    <section class="filmPage__filmData">
 
-    <hgroup class="filmData__titles">
-        <h1 class="filmData__title">{{film.title}}</h1>
-        @if(film.tagline){
-            <h2 class="filmData__subtitle">{{film.tagline}}</h2>
-        }
-    </hgroup>
-
-
-    <article class="filmData__infoContainer">
-        <div class="filmData__rateContainer">
-            <app-five-stars-rate [vote_average]="film.vote_average | roundRate" />
-            <h3 class="filmData__rateText">{{film.vote_average | roundRate}}</h3>
-        </div>
-
-        <div class="filmData__timesContainer">
-            <h4 class="filmData__duration">Duración: {{film.runtime}} min</h4>
-            <p class="filmData__release">Estreno: {{film.release_date.slice(0, 7)}}</p>
-        </div>
-
-        
-        <p class="filmData__overview">{{!film.overview ? 'Actualmente no existe una sinópsis para esta película.' : film.overview}}</p>
-
-        <ul class="filmData__genresContainer">
-            @for (genre of film.genres; track $index) {
-            <li class="filmData__genre">{{genre.name}}</li>
+        <hgroup class="filmData__titles">
+            <h1 class="filmData__title">{{film.title}}</h1>
+            @if(film.tagline){
+                <h2 class="filmData__subtitle">{{film.tagline}}</h2>
             }
-        </ul>
+        </hgroup>
 
-    </article>
 
-    @if(film.videos.results.length > 0){
-    <article class="filmData__linksContainer">
-        <app-button 
-            size="big" label="VER VÍDEOS" 
-            (handleClick)="openVideosModal()"
-            [icon]="{src: 'assets/icons/watch_icon_white.svg', alt: 'videos'}" 
-        />
-    </article>
-    }
+        <article class="filmData__infoContainer">
+            <div class="filmData__rateContainer">
+                <app-five-stars-rate [vote_average]="film.vote_average | roundRate" />
+                <h3 class="filmData__rateText">{{film.vote_average | roundRate}}</h3>
+            </div>
 
-</section>
+            <div class="filmData__timesContainer">
+                <h4 class="filmData__duration">Duración: {{film.runtime}} min</h4>
+                <p class="filmData__release">Estreno: {{film.release_date.slice(0, 7)}}</p>
+            </div>
+
+            
+            <p class="filmData__overview">{{!film.overview ? 'Actualmente no existe una sinópsis para esta película.' : film.overview}}</p>
+
+            <ul class="filmData__genresContainer">
+                @for (genre of film.genres; track $index) {
+                <li class="filmData__genre">{{genre.name}}</li>
+                }
+            </ul>
+
+        </article>
+
+        @if(film.videos.results.length > 0){
+        <article class="filmData__linksContainer">
+            <app-button 
+                size="big" label="VER VÍDEOS" 
+                (handleClick)="openVideosModal()"
+                [icon]="{src: 'assets/icons/watch_icon_white.svg', alt: 'videos'}" 
+            />
+        </article>
+        }
+
+    </section>
 
 </div>
+<!-- SIMILAR FILMS SECTION -->
 <section class="filmPage__similarFilms">
     <h2 class="similarFilms__title">
         Películas similares
@@ -63,6 +65,7 @@
     
 </section>
 
+<!-- MORE ACTIONS SECTION -->
 <section class="filmPage__moreActions">
     <h2 class="moreActions__title">
         ¿Buscas algo concreto?

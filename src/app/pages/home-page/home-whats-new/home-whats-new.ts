@@ -11,8 +11,12 @@ import { Button } from "app/shared/ui/button/button";
 })
 export class HomeWhatsNew {
 
+  // ---------- Injections ----------
+
   router = inject(Router);
 
+  // ---------- Methods ----------
+  
   goToUpcoming(){
     console.log('Debería navegar');
     this.router.navigateByUrl('/upcoming');

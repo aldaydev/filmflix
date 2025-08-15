@@ -12,8 +12,16 @@ import { map } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeCarousel {
+
+  // ---------- Injections ----------
+  
   popularFilmService = inject(PopularFilmsService);
+
+  // ---------- Properties ----------
+
   popularFilmList = signal<CarouselFilmData[] | null>(null);
+
+  // ---------- Life cycle ----------
 
   ngOnInit(): void {
     this.popularFilmService.getPopularFilms()

@@ -1,7 +1,11 @@
+/* ---------- HOST ---------- */
+
 :host{
     max-width: 100%;
     width: 100dvw;
 }
+
+/* ---------- CONTAINER ---------- */
 
 .homeFeatures__container{
     padding: 0 var(--res-padding);
@@ -9,11 +13,15 @@
     padding-bottom: 35px;
 }
 
+/* ---------- FEATURES TITLE ---------- */
+
 .homeFeatures__title{
     font-size: 1.7rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
+
+/* ---------- FEATURES CARDS ---------- */
 
 .homeFeatures__cardsContainer{
     margin-top: 40px;
@@ -21,6 +29,7 @@
     row-gap: 50px;
 }
 
+/* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 800px) {
 

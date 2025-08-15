@@ -18,7 +18,7 @@ export interface ProductionCountry {
 export interface SpokenLanguage {
     iso_639_1: string;
     name: string;
-    english_name?: string; // en algunas respuestas aparece este campo
+    english_name?: string; // No siempre aparece
 }
 
 export interface Collection {
@@ -32,11 +32,11 @@ export interface VideoResult {
     iso_639_1: string;
     iso_3166_1: string;
     name: string;
-    key: string; // Youtube video key
-    published_at: string; // fecha en string ISO
-    site: string; // Ej: "YouTube"
-    size: number; // calidad (por ejemplo 480, 720)
-    type: string; // Ej: "Trailer", "Teaser", "Clip"
+    key: string; // Youtube video key (Usado para el iframe)
+    published_at: string; 
+    site: string; 
+    size: number; 
+    type: string;
     official: boolean;
     id: string;
 }

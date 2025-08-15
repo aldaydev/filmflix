@@ -9,6 +9,8 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class homeInfoCard {
 
+  // ---------- Inputs ----------
+
   title = input('');
   text = input('');
   iconPath = input('');

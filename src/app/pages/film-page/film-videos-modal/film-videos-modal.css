@@ -1,3 +1,5 @@
+/* ---------- HOST ---------- */
+
 :host{
     display: block;
     width: 100%;
@@ -15,6 +17,8 @@
     z-index: 50;
 }
 
+/* ---------- MODAL CONTAINER ---------- */
+
 .modalContainer{
 
     margin-top: 20px;
@@ -26,6 +30,8 @@
     align-items: center;
     row-gap: 20px;
 }
+
+/* ---------- CLOSE BUTTON ---------- */
 
 .closeButton__container{
     width: 100%;
@@ -48,6 +54,8 @@
 .closeButton path{
     fill: var(--theme-text);
 }
+
+/* ---------- VIDEO CONTAINER ---------- */
 
 .videoContainer{
     width: 100%;
