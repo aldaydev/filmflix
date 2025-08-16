@@ -19,6 +19,7 @@
                 [size]="screenSize.width() > 500 ? 'big' : 'small'"
                 [value]="searchState.selectedName()"
                 (inputEvent)="searchState.setSelectedName($event)"
+                (keydown.enter)="searchByNameFromHero()"
             />
             <app-button 
                 [fill]="'solid'" 
