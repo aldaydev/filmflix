@@ -2,6 +2,9 @@
 
 ### feat/e2e-tests
 * Configuración de cypress para pruebas e2e
+* Primer tests para ver que funciona correctamente
+* Integración con Angular CLI
+    - ng add @cypress/schematic
 
 ### feat/film-return
 * Creación de botón "volver" en páginas de películas

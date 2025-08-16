@@ -1,7 +1,13 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# Environment
+
 src/environments/environment.ts
 src/environments/environment.prod.ts
+
+# Cypress
+cypress/videos
+cypress/screenshots
 
 # Compiled output
 /dist
