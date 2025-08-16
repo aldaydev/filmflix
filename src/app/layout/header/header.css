@@ -97,14 +97,14 @@ header.bgSolid{
 
     overflow: hidden;
     opacity: 0;
-
-}
+}   
 
 .headerMenu__navList{
     display: flex;
     flex-direction: column;
     row-gap: 35px;
     padding: 50px 0;
+    
 }
 
 .headerMenu__navLink{
@@ -228,6 +228,8 @@ header.bgSolid{
         align-items: center;
         justify-content: center;
         opacity: 1;
+
+        order: -1;
     }
 
     .headerMenu__navList{
@@ -235,7 +237,7 @@ header.bgSolid{
         align-items: center;
         row-gap: 0;
         column-gap: 35px;
-        padding: 0;
+        padding: 0 10px;
     }
 
     .headerMenu__navLink,

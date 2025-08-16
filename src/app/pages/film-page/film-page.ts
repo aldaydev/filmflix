@@ -28,6 +28,7 @@ import { FilmBgUrlPipe } from 'app/pipes/bg-url-pipe';
   templateUrl: './film-page.html',
   styleUrl: './film-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers:[FilmBgUrlPipe]
 })
 export class FilmPage implements OnInit {
 
