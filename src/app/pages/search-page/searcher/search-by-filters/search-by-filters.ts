@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, inject, input, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { GenreService } from 'app/services/tmdb/genre-service';
 import { SearchStateService } from '../../search-state-service';
 import { Button } from "app/shared/ui/button/button";
@@ -19,6 +19,8 @@ export class SearchByFilters {
   searchStateService = inject(SearchStateService);
 
   // ---------- Properties ----------
+
+  isOpen = input<boolean>(false);
 
   @ViewChildren('genreCheckbox') genreCheckbox!: QueryList<ElementRef>;
 

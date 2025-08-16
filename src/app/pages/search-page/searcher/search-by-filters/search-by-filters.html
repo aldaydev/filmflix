@@ -1,7 +1,7 @@
 @let genres = searchStateService.genreList();
 @let searchState = searchStateService;
 
-<form class="searchByFilters">
+<article class="searchByFilters">
     
     <!-- GENRE FILTER -->
     <fieldset class="searchByFilters__genresFilter">
@@ -16,6 +16,7 @@
                     [id]="genre.id"
                     #genreCheckbox
                     (change)="searchState.setSelectedGenres(genre.id)"
+                    [tabindex]="isOpen() ? 0 : -1"
                 />
                 <span class="genresFilter__genreName">{{genre.name}}</span>
             </label>
@@ -31,6 +32,8 @@
                 [value]="searchState.selectedYear()"
                 (input)="searchState.setSelectedYear($event)"
                 placeholder="Año"
+                (keydown.enter)="searchState.searchByfilters()"
+                [tabindex]="isOpen() ? 0 : -1"
             >
         
     </fieldset>
@@ -40,9 +43,10 @@
         <app-button
             label="Buscar"
             (handleClick)="searchState.searchByfilters()"
+            [tabindex]="isOpen() ? 0 : -1"
         />
     </div>
     
-</form>
+</article>
 
 

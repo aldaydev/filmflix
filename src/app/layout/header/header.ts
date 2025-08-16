@@ -17,6 +17,7 @@ export class Header implements AfterViewInit, OnInit {
 
   // ---------- Injections ----------
 
+  elRef = inject(ElementRef);
   private router = inject(Router);
   screenSize = inject(ScreenSizeService);
   private sub: Subscription = new Subscription;
@@ -114,6 +115,23 @@ export class Header implements AfterViewInit, OnInit {
       if(this.isCollapsed()){
         this.closeNav();
       }
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    const target = event.target as HTMLElement;
+
+    if (!target.closest('.header')) {
+      this.closeNav();
+    }
+  }
+
+  @HostListener('document:focusin', ['$event'])
+  onFocusIn(event: FocusEvent) {
+    const target = event.target as HTMLElement;
+    if (!this.elRef.nativeElement.contains(target)) {
+      this.closeNav();
     }
   }
 

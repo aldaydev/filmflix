@@ -1,13 +1,16 @@
-<form class="searchByName">
+<article class="searchByName" >
     <app-input
         size="small"
         placeholder="Busca por nombre"
         [value]="searchState.selectedName()"
         (inputEvent)="searchState.setSelectedName($event)"
+        (keydown.enter)="searchState.searchByName()"
+        [tabindex]="isOpen() ? 0 : -1"
     />
     <app-button
         size="small"
         label="Buscar"
         (handleClick)="searchState.searchByName()"
+        [tabindex]="isOpen() ? 0 : -1"
     />
-</form>
+</article>

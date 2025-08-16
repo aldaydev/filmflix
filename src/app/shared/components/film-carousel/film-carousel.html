@@ -10,7 +10,9 @@
         <button 
             class="filmCarousel__slideButton filmCarousel__slideButton--left"
             (click)="slideRight()"
-        >
+            [attr.aria-hidden]="onStart()"
+            [tabIndex]="onStart() ? -1 : 0"
+>   
             <app-film-carousel-arrow [position]="'left'" />
         </button>
     </div>
@@ -20,6 +22,8 @@
         <button  
             class="filmCarousel__slideButton filmCarousel__slideButton--right"
             (click)="slideLeft()"
+            [attr.aria-hidden]="onEnd()"
+            [tabIndex]="onEnd() ? -1 : 0"
         >
             <app-film-carousel-arrow [position]="'right'" />
         </button>

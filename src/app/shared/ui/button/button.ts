@@ -29,5 +29,6 @@ export class Button {
   disabled = input<boolean>(false)
   handleClick = output<void>();
   icon = input<ButtonIcon | null>();
+  tabindex = input<0 | -1>(0)
   
 }

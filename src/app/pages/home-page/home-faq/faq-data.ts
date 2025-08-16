@@ -2,7 +2,7 @@ export const faqData = [
     {
         id: 0,
         title: "Creada por AldayDev",
-        description: "Me llamo Rafa Alday y soy desarrollador web. He creado mi marca personal como {AldayDev} con la intención mostrar al mundo mis habilidades en este campo. Te invito a visitar mi portfolio en <a href='https://alday.dev' target='_blank' rel='noreferrer noopener' class='inlineLink'>alday.dev</a> donde podrás encontrar todos mis proyectos.",
+        description: "Me llamo Rafa Alday y soy desarrollador web. He creado mi marca personal como {AldayDev} con la intención mostrar al mundo mis habilidades en este campo. Te invito a visitar mi portfolio en alday.dev donde podrás encontrar todos mis proyectos.",
         isOpen: false
     },
     {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Input } from "app/shared/ui/input/input";
 import { Button } from "app/shared/ui/button/button";
 import { SearchStateService } from '../../search-state-service';
@@ -12,4 +12,6 @@ import { SearchStateService } from '../../search-state-service';
 })
 export class SearchByTitle {
   searchState = inject(SearchStateService);
+
+  isOpen = input<boolean>(false);
 }

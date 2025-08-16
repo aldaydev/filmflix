@@ -47,11 +47,27 @@
     background-color: transparent;
 }
 
-.genresFilter__genreCheckbox{
+/* .genresFilter__genreCheckbox{
     position: absolute;
     top: 0;
     left: 0;
     visibility: hidden;
+} */
+
+.genresFilter__genreCheckbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.genresFilter__genreCheckbox:focus + span{
+    background-color: var(--color-primary);
 }
 
 .genresFilter__genreName{

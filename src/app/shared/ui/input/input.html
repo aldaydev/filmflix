@@ -6,6 +6,7 @@
         class="customInput"
         [value]="value()"
         (input)="inputEvent.emit($event)"
+        [tabindex]="tabindex()"
     >
     <span class="customInput__labelText">
         {{label()}}
