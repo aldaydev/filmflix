@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { FilmListItem } from 'app/models/popular-film.model';
 import { UpcomingFilmsService } from 'app/services/tmdb/upcoming-films-service';
 import { FilmList } from "app/shared/components/film-list/film-list";
@@ -16,6 +17,8 @@ export class UpcomingPage implements OnInit {
   // ---------- Injections ----------
 
   upcomingFilmsService = inject(UpcomingFilmsService);
+  private meta = inject(Meta);
+  private title = inject(Title);
 
   // ---------- Properties ----------
 
@@ -26,6 +29,7 @@ export class UpcomingPage implements OnInit {
   // ---------- Life cycle ----------
 
   ngOnInit(): void {
+    this.setMetaTags();
     this.loading.set(true);
     this.upcomingFilmsService.getUpcomingFilms().subscribe(data => {
       const now = new Date();
@@ -50,6 +54,61 @@ export class UpcomingPage implements OnInit {
       this.upcomingFilmList.update(prev => [...prev, ...data.results]);
       this.loading.set(false);
     });
+  }
+
+  private setMetaTags() {
+
+    // Common tags
+    this.title.setTitle('FILMFLIX - Estrenos');
+    this.meta.updateTag({ 
+      name: 'description', 
+      content: 'Próximos estrenos. FILMFLIX by AldayDev'
+    });
+    this.meta.updateTag({ 
+      name: 'keywords', 
+      content: 'películas, cine, estrenos, cartelera, aldaydev' 
+    });
+
+    // Open Graph tags
+    this.meta.updateTag({ 
+      property: 'og:title', 
+      content: 'FILMFLIX - Estrenos' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:description', 
+      content: 'Próximos estrenos. FILMFLIX by AldayDev' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:image', 
+      content: 'https://filmflix.alday.dev/assets/captures/captures/filmflix_capture_upcoming_1200px.webp' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:url', 
+      content: 'https://filmflix.alday.dev/upcoming' 
+    });
+
+    // Twitter tags
+    this.meta.updateTag({ 
+      name: 'twitter:card', 
+      content: 'summary_large_image' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:title', 
+      content: 'FILMFLIX - Estrenos' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:description', 
+      content: 'Próximos estrenos. FILMFLIX by AldayDev' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:image', 
+      content: 'https://filmflix.alday.dev/assets/captures/captures/filmflix_capture_upcoming_1200px.webp' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:url', 
+      content: 'https://filmflix.alday.dev/upcoming' 
+    });
+
   }
 
 }

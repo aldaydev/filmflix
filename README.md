@@ -2,6 +2,7 @@
 
 ### seo
 * Implementación de buenas prácticas de SEO
+* MetaTags en home, search, upcoming, now-playing y film
 
 ### refactor/cleanup
 * Añadiendo comentarios extra al código

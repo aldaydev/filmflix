@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { FilmListItem } from 'app/models/popular-film.model';
 import { NowPlayingFilmsService } from 'app/services/tmdb/now-playing-films-service';
 import { FilmList } from "app/shared/components/film-list/film-list";
@@ -15,6 +16,9 @@ export class NowPlayingPage implements OnInit{
 
   // ---------- Injections ----------
 
+  private meta = inject(Meta);
+  private title = inject(Title);
+
   nowPlayingService = inject(NowPlayingFilmsService);
 
   // ---------- Properties ----------
@@ -26,6 +30,7 @@ export class NowPlayingPage implements OnInit{
   // ---------- Life cycle ----------
 
   ngOnInit(): void {
+    this.setMetaTags();
     this.loading.set(true);
     this.nowPlayingService.getUpcomingFilms().subscribe(data => {
       this.nowPlayingFilmList.set(data.results);
@@ -45,6 +50,61 @@ export class NowPlayingPage implements OnInit{
       this.nowPlayingFilmList.update(prev => [...prev, ...data.results]);
       this.loading.set(false);
     });
+  }
+
+  private setMetaTags() {
+
+    // Common tags
+    this.title.setTitle('FILMFLIX - Cartelera');
+    this.meta.updateTag({ 
+      name: 'description', 
+      content: 'Películas en cartelera. FILMFLIX by AldayDev' 
+    });
+    this.meta.updateTag({ 
+      name: 'keywords', 
+      content: 'películas, cine, estrenos, cartelera, aldaydev' 
+    });
+
+    // Open Graph tags
+    this.meta.updateTag({ 
+      property: 'og:title', 
+      content: 'FILMFLIX - Cartelera' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:description', 
+      content: 'Películas en cartelera. FILMFLIX by AldayDev'
+    });
+    this.meta.updateTag({ 
+      property: 'og:image', 
+      content: 'https://filmflix.alday.dev/assets/captures/captures/filmflix_capture_now-playing_1200px.webp' 
+    });
+    this.meta.updateTag({ 
+      property: 'og:url', 
+      content: 'https://filmflix.alday.dev/now-playing' 
+    });
+
+    // Twitter tags
+    this.meta.updateTag({ 
+      name: 'twitter:card', 
+      content: 'summary_large_image' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:title', 
+      content: 'FILMFLIX - Cartelera' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:description', 
+      content: 'Películas en cartelera. FILMFLIX by AldayDev'
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:image', 
+      content: 'https://filmflix.alday.dev/assets/captures/captures/filmflix_capture_now-playing_1200px.webp' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:url', 
+      content: 'https://filmflix.alday.dev/now-playing' 
+    });
+
   }
 
 }

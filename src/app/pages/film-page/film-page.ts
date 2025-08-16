@@ -19,6 +19,8 @@ import { Subscription } from 'rxjs';
 import { Input } from "app/shared/ui/input/input";
 import { FilmVideosModal } from "./film-videos-modal/film-videos-modal";
 import { SearchStateService } from '../search-page/search-state-service';
+import { Meta, Title } from '@angular/platform-browser';
+import { FilmBgUrlPipe } from 'app/pipes/bg-url-pipe';
 
 @Component({
   selector: 'app-film-page',
@@ -30,6 +32,10 @@ import { SearchStateService } from '../search-page/search-state-service';
 export class FilmPage implements OnInit {
 
   // ---------- Injections ----------
+
+  private meta = inject(Meta);
+  private title = inject(Title);
+  private filmBgUrlPipe = inject(FilmBgUrlPipe);
 
   router = inject(Router);
   searchState = inject(SearchStateService);
@@ -63,6 +69,7 @@ export class FilmPage implements OnInit {
 
       if (paramId) {
         this.filmService.getFilmById(Number(paramId)).subscribe(data => {
+          this.setMetaTags(data);
           this.filmDetails.set(data);
           const bgImage = this.getBgUrl(data.backdrop_path);
           this.bgImage.set(bgImage);
@@ -105,6 +112,63 @@ export class FilmPage implements OnInit {
   searchByNameFromFilm(){
     this.searchState.searchByName();
     this.router.navigate(['search']);
+  }
+
+  private setMetaTags(data : FilmDetails) {
+
+    const imageUrl = this.filmBgUrlPipe.transform(data.backdrop_path, 'w1280');
+
+    // Common tags
+    this.title.setTitle(`FILMFLIX - ${data.title}`);
+    this.meta.updateTag({ 
+      name: 'description', 
+      content: `Todo sobre "${data.title}" en FILMFLIX` 
+    });
+    this.meta.updateTag({ 
+      name: 'keywords', 
+      content: `${data.title}, películas, cine, estrenos, cartelera, aldaydev`
+    });
+
+    // Open Graph tags
+    this.meta.updateTag({ 
+      property: 'og:title', 
+      content: `FILMFLIX - ${data.title}`
+    });
+    this.meta.updateTag({ 
+      property: 'og:description', 
+      content: `Todo sobre "${data.title}" en FILMFLIX` 
+    });
+    this.meta.updateTag({ 
+      property: 'og:image', 
+      content: imageUrl 
+    });
+    this.meta.updateTag({ 
+      property: 'og:url', 
+      content: `https://filmflix.alday.dev/${data.id}`
+    });
+
+    // Twitter tags
+    this.meta.updateTag({ 
+      name: 'twitter:card', 
+      content: 'summary_large_image' 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:title', 
+      content: `FILMFLIX - ${data.title}` 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:description', 
+      content: `Todo sobre "${data.title}" en FILMFLIX` 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:image', 
+      content: imageUrl 
+    });
+    this.meta.updateTag({ 
+      name: 'twitter:url', 
+      content: `https://filmflix.alday.dev/${data.id}` 
+    });
+
   }
 
 }
