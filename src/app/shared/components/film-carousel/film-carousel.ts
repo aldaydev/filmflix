@@ -34,6 +34,7 @@ export class FilmCarousel {
 
   filmList = input<CarouselFilmData[] | null>(null);
   hasNumber = input<boolean>(false);
+  tabindex = input<boolean>(true);
 
   onStart = signal(true);
   onEnd = signal(false);

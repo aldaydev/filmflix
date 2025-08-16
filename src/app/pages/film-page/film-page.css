@@ -139,7 +139,7 @@
 
 .filmPage__similarFilms{
     position: relative;
-    z-index: 50;
+    z-index: 0;
     padding-top: 40px;
 }
 
@@ -162,7 +162,7 @@
 
 .filmPage__moreActions{
     position: relative;
-    z-index: 50;
+    z-index: 40;
     padding: 30px var(--res-padding);
 }
 

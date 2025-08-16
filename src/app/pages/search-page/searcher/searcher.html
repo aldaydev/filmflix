@@ -44,7 +44,7 @@
     </button>
 
     <!-- SEARCHER OPTIONS -->
-    <section class="searcher__options">
+    <section class="searcher__options" [attr.aria-hidden]="!isOpen()">
         <app-search-by-title [isOpen]="isOpen()"/>
         <app-search-by-filters [isOpen]="isOpen()"/>
     </section>

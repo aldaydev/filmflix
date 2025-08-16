@@ -43,9 +43,18 @@
                 size="big" label="VER VÍDEOS" 
                 (handleClick)="openVideosModal()"
                 [icon]="{src: 'assets/icons/watch_icon_white.svg', alt: 'videos'}" 
+                [tabindex]="videosModalOpened() ? -1 : 0"
             />
         </article>
         }
+
+        @if (videosModalOpened() && film.videos.results.length > 0) {
+        <app-film-videos-modal 
+            [isOpen]="videosModalOpened()"
+            (closeModal)="closeVideosModal()"
+            [videoData]="film.videos.results[0]"
+        />
+    }
 
     </section>
 
@@ -54,10 +63,11 @@
 <section class="filmPage__similarFilms">
     <h2 class="similarFilms__title">
         Películas similares
-    </h2>
+    </h2>       
     @if(film.similar.results.length > 0){
         <app-film-carousel
             [filmList]="similarFilms()"
+            [tabindex]="videosModalOpened() ? false : true"
         />
     }@else {
         <span class="similarFilms__none">No tenemos películas similares que recomendarte</span>
@@ -71,27 +81,24 @@
         ¿Buscas algo concreto?
     </h2>
 
-    <form class="moreActions__searchForm">
+    <article class="moreActions__searchForm">
         <app-input
             [placeholder]="'¿Qué película quieres buscar?'"
             size="small"
             [value]="searchState.selectedName()"
             (inputEvent)="searchState.setSelectedName($event)"
+            (keydown.enter)="searchByNameFromFilm()"
+            [tabindex]="videosModalOpened() ? -1 : 0"
         />
         <app-button
             label="Buscar"
             [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"
             (click)="searchByNameFromFilm()"
+            [tabindex]="videosModalOpened() ? -1 : 0"
         />
-    </form>
+    </article>
 
-    @if (videosModalOpened() && film.videos.results.length > 0) {
-        <app-film-videos-modal 
-            [isOpen]="videosModalOpened()"
-            (closeModal)="closeVideosModal()"
-            [videoData]="film.videos.results[0]"
-        />
-    }
+   
     
 </section>
 }
