@@ -2,6 +2,7 @@
 
 ### feat/a11y
 * Trabajando accesibilidad en el header
+* Trabajando accesibilidad necesaria en cada una de las páginas
 
 ### seo
 * Implementación de buenas prácticas de SEO
