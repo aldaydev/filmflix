@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/film-return
+* Creación de botón "volver" en páginas de películas
+
 ### feat/a11y
 * Trabajando accesibilidad en el header
 * Trabajando accesibilidad necesaria en cada una de las páginas
