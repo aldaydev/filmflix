@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/a11y
+* Trabajando accesibilidad en el header
+
 ### seo
 * Implementación de buenas prácticas de SEO
 * MetaTags en home, search, upcoming, now-playing y film
