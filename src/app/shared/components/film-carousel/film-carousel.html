@@ -39,6 +39,7 @@
                     <a 
                         class="filmCarousel__posterContainer" #posterContainer
                         [routerLink]="['/film', film.id]"
+                        [state]="{ from: router.url }"
                         (mouseenter)="showTitle(film.title)"
                         (mouseleave)="hideTitle()"
                         [tabindex]="tabindex() ? 0 : -1"

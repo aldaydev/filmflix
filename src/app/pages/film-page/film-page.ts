@@ -21,6 +21,8 @@ import { FilmVideosModal } from "./film-videos-modal/film-videos-modal";
 import { SearchStateService } from '../search-page/search-state-service';
 import { Meta, Title } from '@angular/platform-browser';
 import { FilmBgUrlPipe } from 'app/pipes/bg-url-pipe';
+import { ThemeService } from 'app/services/theme-service/theme-service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-film-page',
@@ -38,10 +40,13 @@ export class FilmPage implements OnInit {
   private title = inject(Title);
   private filmBgUrlPipe = inject(FilmBgUrlPipe);
 
-  router = inject(Router);
+  
   searchState = inject(SearchStateService);
+  themeService = inject(ThemeService);
 
   private routeSub!: Subscription;
+  router = inject(Router);
+  location = inject(Location);
 
   // ---------- Properties ----------
 
@@ -113,6 +118,16 @@ export class FilmPage implements OnInit {
   searchByNameFromFilm(){
     this.searchState.searchByName();
     this.router.navigate(['search']);
+  }
+
+  goBack() {
+    const state = window.history.state;
+
+    if (state && state.from) {
+      this.router.navigateByUrl(state.from);
+    } else {
+      this.router.navigate(['/search']);
+    }
   }
 
   private setMetaTags(data : FilmDetails) {

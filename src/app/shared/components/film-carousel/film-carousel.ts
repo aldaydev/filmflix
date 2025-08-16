@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { PosterUrlPipe } from 'app/pipes/poster-url-pipe';
 import { FilmCarouselArrow } from './film-carousel-arrow/film-carousel-arrow';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CarouselFilmData } from 'app/models/film-carousel.model';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -24,6 +24,8 @@ import { isPlatformBrowser } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilmCarousel {
+
+  router = inject(Router);
 
   // ---------- Properties ----------
 

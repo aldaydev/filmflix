@@ -7,13 +7,19 @@
     <!-- FILM DATA SECTION -->
     <section class="filmPage__filmData">
 
-        <hgroup class="filmData__titles">
-            <h1 class="filmData__title">{{film.title}}</h1>
-            @if(film.tagline){
-                <h2 class="filmData__subtitle">{{film.tagline}}</h2>
-            }
-        </hgroup>
-
+        <header class="filmData__header">
+            <hgroup class="filmData__titles">
+                <h1 class="filmData__title">{{film.title}}</h1>
+                @if(film.tagline){
+                    <h2 class="filmData__subtitle">{{film.tagline}}</h2>
+                }
+            </hgroup>
+            
+            <button class="filmData__returnButton" (click)="goBack()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" [class.dark]="themeService.theme() === 'dark'" fill="#ffffff"><path d="m320.62-93.85-56.77-56.77L593.23-480 263.85-809.38l56.77-56.77L706.77-480 320.62-93.85Z"/></svg>
+                
+            </button>
+        </header>
 
         <article class="filmData__infoContainer">
             <div class="filmData__rateContainer">

@@ -18,7 +18,6 @@ export class HomeFaq {
   // ---------- Methods ----------
 
   toggle(index: number){
-    console.log('asdsadsad');
     if(this.faqs()[index].isOpen){
         this.faqs()[index].isOpen = false;
     }else {

@@ -46,6 +46,15 @@
     z-index: 50;
 }
 
+.searcher__expander:focus{
+    outline:     none;
+}
+
+.searchFilms__searcher:has(.searcher__expander:focus){
+    border: none;
+    outline: 3px solid var(--color-primary) ; 
+}
+
 .searcher__expander svg{
     transform: rotate(45deg);
     transition: transform .3s ease-in-out;

@@ -37,6 +37,9 @@
     scale: 1.02;
 }
 
+.genresFilter__genreContainer:has(.genresFilter__genreCheckbox:focus) {
+    outline: 2px solid var(--theme-bg);
+}
 
 .genresFilter__genreContainer:has(.genresFilter__genreCheckbox:checked) {
     background-color: var(--color-primary);
@@ -46,13 +49,6 @@
 .genresFilter__genreContainer:not(:has(.genresFilter__genreCheckbox:checked)){
     background-color: transparent;
 }
-
-/* .genresFilter__genreCheckbox{
-    position: absolute;
-    top: 0;
-    left: 0;
-    visibility: hidden;
-} */
 
 .genresFilter__genreCheckbox {
   position: absolute;
@@ -66,9 +62,9 @@
   border: 0;
 }
 
-.genresFilter__genreCheckbox:focus + span{
-    background-color: var(--color-primary);
-}
+/* .genresFilter__genreCheckbox:focus + span{
+    border: 2px solid var(--theme-bg);
+} */
 
 .genresFilter__genreName{
     font-weight: 400;

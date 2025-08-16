@@ -31,9 +31,6 @@ export class HeaderThemeBg {
         this.themeService.theme();
         this.onWindowScroll();
 
-        console.log('ISOPEN FROM HEADER', this.appHeaderThemeBg().isOpen)
-        console.log('ISCOLLAPSED FROM HEADER', this.appHeaderThemeBg().isCollapsed)
-
         if(this.appHeaderThemeBg().isOpen ){
           if(this.appHeaderThemeBg().isCollapsed){
             this.renderer.addClass(this.el.nativeElement, 'bgSolid');

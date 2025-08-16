@@ -43,15 +43,49 @@
     position: relative;
     z-index: 50;
     width: 100%;
-    max-width: 800px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    position: relative;
+}
+
+.filmData__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filmData__returnButton{
+    background-color: var(--theme-text);
+    height: fit-content;
+    padding: 10px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: scale .3s ease-in-out;
+}
+
+.filmData__returnButton:hover{
+    scale: 1.05;
+}
+
+.filmData__returnButton svg{
+    transform: rotate(180deg);
+}
+
+.filmData__returnButton svg.dark{
+    fill: var(--theme-bg);
 }
 
 .filmData__titles{
     margin-bottom: 25px;
+    max-width: 800px;
 }
 
 .filmData__title{
@@ -64,6 +98,7 @@
 }
 
 .filmData__infoContainer{
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     row-gap: 10px;

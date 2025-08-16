@@ -1,5 +1,5 @@
 @defer (when !loading()) {
-<a class="filmCard" [routerLink]="['/film', id()]">
+<a class="filmCard" [routerLink]="['/film', id()]" [state]="{ from: router.url }">
 
     <!-- CARD IMAGE -->
     <img [src]="image()" [alt]="'Poster de ' + title()" class="filmCard__image">

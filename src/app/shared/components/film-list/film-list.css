@@ -30,6 +30,41 @@
     font-size: 1.2rem;
 }
 
+.goToTopButton{
+    position: fixed;
+    bottom: 80px;
+    right: 0;
+
+    background-color: var(--theme-text);
+    border: none;
+    
+    border-radius: 20px 0 0 20px;
+
+    transition: background .3s ease-in-out, width .3s ease-in-out, padding .3s ease-in-out;
+    
+    overflow: hidden;
+    width: 0;
+    padding: 12px 0 12px 0;
+
+    cursor: pointer;
+}
+
+.goToTopButton.show{
+    overflow: visible;
+    width: 41px;
+    padding: 12px 5px 12px 12px;
+}
+
+.goToTopButton svg{
+    transform: rotate(-90deg);
+
+    transition: fill .3s ease-in-out;
+}
+
+.goToTopButton svg.dark{
+    fill: var(--theme-bg);
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media screen and (min-width: 780px) {

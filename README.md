@@ -2,6 +2,7 @@
 
 ### feat/film-return
 * Creación de botón "volver" en páginas de películas
+* Creación de botón "goToTop" en listados de películas
 
 ### feat/a11y
 * Trabajando accesibilidad en el header

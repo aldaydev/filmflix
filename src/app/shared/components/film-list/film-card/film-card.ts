@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Genre } from 'app/models/genre-list.model';
 import { SearchStateService } from 'app/pages/search-page/search-state-service';
 import { FiveStarsRate } from '../../five-stars-rate/five-stars-rate';
@@ -18,6 +18,7 @@ export class FilmCard {
   // ---------- Injections ----------
 
   searchState = inject(SearchStateService);
+  router = inject(Router);
 
   // ---------- Properties ----------
 

@@ -62,6 +62,14 @@ export class Searcher implements AfterViewInit{
     }
   }
 
+  @HostListener('document:focusin', ['$event'])
+  onFocusIn(event: FocusEvent) {
+    const target = event.target as HTMLElement;
+    if (!this.elRef.nativeElement.contains(target)) {
+      this.closeSearchExpander();
+    }
+  }
+
   // --------- Life cycle ---------
 
   ngAfterViewInit() {
@@ -81,6 +89,11 @@ export class Searcher implements AfterViewInit{
       this.searchExpanderHeight.set(this.searcherExpander.nativeElement.scrollHeight);
       this.isOpen.set(true);
     }
+  }
+
+  closeSearchExpander(){
+    this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+    this.isOpen.set(false);
   }
 
 }
