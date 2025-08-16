@@ -1,10 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
-import { effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
+import { DOCUMENT, effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
+
+  private document = inject(DOCUMENT);
 
   // ---------- Properties ----------
 
@@ -28,6 +30,7 @@ export class ThemeService {
       effect(() => {
         const mode = this.theme();
         document.documentElement.classList.toggle('light', mode === 'light');
+        this.setThemeColor(mode === 'light' ? '#ffffff' : '#000000');
       })
     }
   }
@@ -37,4 +40,13 @@ export class ThemeService {
   toggleTheme(){
     this.theme.set(this.theme() === 'dark' ? 'light' : 'dark');
   }
+
+  // Método para actualizar el theme en meta tags
+  private setThemeColor(color: string) {
+    let themeMeta = this.document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    if (themeMeta) {
+      themeMeta.setAttribute('content', color);
+    }
+  }
+
 }

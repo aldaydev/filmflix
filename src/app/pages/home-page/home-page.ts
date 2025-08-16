@@ -13,5 +13,5 @@ import { HomeFaq } from "./home-faq/home-faq";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePage {
-
+  
 }

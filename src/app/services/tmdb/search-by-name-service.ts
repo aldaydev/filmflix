@@ -21,7 +21,6 @@ export class SearchByNameService {
     getFilmsByName(query?: string, page?: number ): Observable<FilmListResponse> {
         const currentPate = !page ? '&page=1' : `&page=${page}`;
         const finalUrl = `${this.url}${query}${currentPate}`;
-        console.log(finalUrl);
         return this.http.get<FilmListResponse>(finalUrl, { headers: tmdbHeaders });
     }
 }

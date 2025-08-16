@@ -24,7 +24,6 @@ export class SearchByFiltersService {
     const sortBy = sort ? `&sort_by=${sort.by}.${sort.order}` : "";
     const currentPage = !page ? '&page=1' : `&page=${page}`;
     const finalUrl = `${this.url}${query}${currentPage}${sortBy}`;
-    console.log(finalUrl);
     return this.http.get<FilmListResponse>(finalUrl, {headers: tmdbHeaders})
   }
 
