@@ -9,7 +9,10 @@
     "test": "ng test",
     "serve:ssr:filmflix": "node dist/filmflix/server/server.mjs",
     "server": "nodemon --watch dist/filmflix/server --exec \"node dist/filmflix/server/server.mjs\"",
-    "dev": "ng build && npm run serve:ssr:filmflix"
+    "dev": "ng build && npm run serve:ssr:filmflix",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "prettier": {
     "overrides": [
