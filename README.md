@@ -1,5 +1,8 @@
 # Filmflix
 
+### feat/e2e-tests
+* Configuración de cypress para pruebas e2e
+
 ### feat/film-return
 * Creación de botón "volver" en páginas de películas
 * Creación de botón "goToTop" en listados de películas
