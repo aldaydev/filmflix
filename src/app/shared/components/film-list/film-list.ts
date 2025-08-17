@@ -4,10 +4,11 @@ import { FilmCard } from './film-card/film-card';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 import { FilmListItem } from 'app/models/popular-film.model';
 import { ThemeService } from 'app/services/theme-service/theme-service';
+import { Spinner } from "../spinner/spinner";
 
 @Component({
   selector: 'app-film-list',
-  imports: [PosterUrlPipe, FilmCard, InfiniteScrollDirective],
+  imports: [PosterUrlPipe, FilmCard, InfiniteScrollDirective, Spinner],
   templateUrl: './film-list.html',
   styleUrl: './film-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush

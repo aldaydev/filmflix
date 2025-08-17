@@ -18,12 +18,17 @@
 }
 
 .searchList__noResultContainer{
-    border: 1px solid var(--theme-text);
+    /* border: 1px solid var(--theme-text); */
     width: 100%;
     min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 50px;
+}
+
+.searchList__noResultContainer app-spinner{
+    max-width: 120px;
 }
 
 .searchList__noResultText{

@@ -5,8 +5,11 @@
 * Primer tests para ver que funciona correctamente
 * Integración con Angular CLI
     - ng add @cypress/schematic
-* Pruebas e2e para home (`/`)
+* Pruebas e2e para home-page
 * Pruebas e2e para search => searcher component
+* Pruebas e2e para search => search sorter component
+* Pruebas e2e para search => search scroll (infinite)
+* Pruebas e2e para film-page
 
 ### feat/film-return
 * Creación de botón "volver" en páginas de películas
