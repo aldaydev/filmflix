@@ -8,7 +8,7 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 
 ## Tecnilogías utilizadas para el backend:
 
-### 🚀 LENGUAJES  
+### 💻 LENGUAJES  
 ![TYPESCRIPT](https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
 ### 🛠️ ENTORNO DE DESARROLLO  
@@ -23,6 +23,9 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 
 ### 🧪 TESTING  
 ![CYPRESS](https://img.shields.io/badge/CYPRESS-17202C?style=for-the-badge&logo=cypress&logoColor=white)
+
+### 🚀 DESPLIEGUE  
+![FIREBASE](https://img.shields.io/badge/FIREBASE-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
 ----------------------------------------------
 
