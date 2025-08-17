@@ -31,6 +31,9 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 
 A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido trabajando. 
 
+### feat/404
+* Creación de NotFoundPage + estilos + rutas
+
 ### feat/e2e-tests
 * Configuración de cypress para pruebas e2e
 * Primer tests para ver que funciona correctamente
