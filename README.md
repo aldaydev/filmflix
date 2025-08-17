@@ -6,6 +6,7 @@
 * Integración con Angular CLI
     - ng add @cypress/schematic
 * Pruebas e2e para home (`/`)
+* Pruebas e2e para search => searcher component
 
 ### feat/film-return
 * Creación de botón "volver" en páginas de películas
