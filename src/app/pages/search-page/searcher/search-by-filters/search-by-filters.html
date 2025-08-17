@@ -34,6 +34,7 @@
                 placeholder="Año"
                 (keydown.enter)="searchState.searchByfilters()"
                 [tabindex]="isOpen() ? 0 : -1"
+                id="search-page_search-by-year-input"
             >
         
     </fieldset>
@@ -44,6 +45,7 @@
             label="Buscar"
             (handleClick)="searchState.searchByfilters()"
             [tabindex]="isOpen() ? 0 : -1"
+            id="search-page_search-by-filters-button"
         />
     </div>
     

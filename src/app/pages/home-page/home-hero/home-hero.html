@@ -20,6 +20,7 @@
                 [value]="searchState.selectedName()"
                 (inputEvent)="searchState.setSelectedName($event)"
                 (keydown.enter)="searchByNameFromHero()"
+                id="home-page_search-input"
             />
             <app-button 
                 [fill]="'solid'" 
@@ -28,6 +29,7 @@
                 [label]="'Buscar'"
                 [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"
                 (click)="searchByNameFromHero()"
+                id="home-page_search-button"
             />
         </article>
     </section>

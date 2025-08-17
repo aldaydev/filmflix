@@ -24,5 +24,6 @@ export class Input {
   value = input<string>('');
   inputEvent = output<any>();
   tabindex = input<0 | -1>(0);
+  id = input.required<string>();
   
 }

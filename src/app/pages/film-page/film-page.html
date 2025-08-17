@@ -50,6 +50,7 @@
                 (handleClick)="openVideosModal()"
                 [icon]="{src: 'assets/icons/watch_icon_white.svg', alt: 'videos'}" 
                 [tabindex]="videosModalOpened() ? -1 : 0"
+                id="film-page_watch-videos-button"
             />
         </article>
         }
@@ -95,12 +96,14 @@
             (inputEvent)="searchState.setSelectedName($event)"
             (keydown.enter)="searchByNameFromFilm()"
             [tabindex]="videosModalOpened() ? -1 : 0"
+            id="film-page_search-input"
         />
         <app-button
             label="Buscar"
             [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"
             (click)="searchByNameFromFilm()"
             [tabindex]="videosModalOpened() ? -1 : 0"
+            id="film-page_search-button"
         />
     </article>
 

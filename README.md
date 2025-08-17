@@ -5,6 +5,7 @@
 * Primer tests para ver que funciona correctamente
 * Integración con Angular CLI
     - ng add @cypress/schematic
+* Pruebas e2e para home (`/`)
 
 ### feat/film-return
 * Creación de botón "volver" en páginas de películas

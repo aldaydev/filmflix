@@ -6,11 +6,13 @@
         (inputEvent)="searchState.setSelectedName($event)"
         (keydown.enter)="searchState.searchByName()"
         [tabindex]="isOpen() ? 0 : -1"
+        id="search-page_search-by-title-input"
     />
     <app-button
         size="small"
         label="Buscar"
         (handleClick)="searchState.searchByName()"
         [tabindex]="isOpen() ? 0 : -1"
+        id="search-page_search-by-title-button"
     />
 </article>
