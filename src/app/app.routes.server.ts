@@ -8,12 +8,12 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: '',
-    renderMode: RenderMode.Prerender
+    renderMode: RenderMode.Server
   },
   {
     path: 'film/:id',
-    renderMode: RenderMode.Prerender,
-    getPrerenderParams
+    renderMode: RenderMode.Server,
+    // getPrerenderParams
   },
   {
     path: 'search',
@@ -21,11 +21,11 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: 'upcoming',
-    renderMode: RenderMode.Prerender
+    renderMode: RenderMode.Server
   },
   {
     path: 'now-playing',
-    renderMode: RenderMode.Prerender
+    renderMode: RenderMode.Server
   },
 
 ];
