@@ -33,6 +33,8 @@ A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido tr
 
 ### fix/searcher
 * Arreglando el componente searcher en móviles
+* Fix del foco fuera del searcher
+* Fix del "resume"
 
 ### fix/services
 * Creando llamadas a TMDB desde el servidor
