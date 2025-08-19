@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { FilmListItem } from 'app/models/popular-film.model';
+import { UpcomingFilms } from 'app/models/upcoming-film.model';
 import { UpcomingFilmsService } from 'app/services/tmdb/upcoming-films-service';
 import { FilmList } from "app/shared/components/film-list/film-list";
 
@@ -32,17 +33,49 @@ export class UpcomingPage implements OnInit {
     this.setMetaTags();
     this.loading.set(true);
     this.upcomingFilmsService.getUpcomingFilms().subscribe(data => {
-      const now = new Date();
-      const onlyUpcoming = data.results.filter(film => {
-        const release = new Date(film.release_date);
-        return now.getFullYear() <= release.getFullYear();
-      })
+      // const now = new Date();
+      // const currentYear = now.getFullYear();
+      // const currentMonth = now.getMonth(); // 0 = enero, 11 = diciembre
+      // const currentDay = now.getDay();
+
+      // const onlyUpcoming = data.results.filter(film => {
+      //   const release = new Date(film.release_date);
+      //   const releaseYear = release.getFullYear();
+      //   const releaseMonth = release.getMonth();
+      //   const releaseDay = release.getDay();
+
+      //   // Solo películas del mismo año y mes actual o posteriores
+      //   return releaseYear > currentYear || 
+      //   (releaseYear === currentYear && (releaseMonth >= currentMonth || (releaseMonth === currentMonth && releaseDay >= currentDay)
+      //   ));
+      // });
+      const onlyUpcoming = this.filterOnlyUpcomingFilms(data);
+
+      console.log('Página 1 - filtrados', onlyUpcoming, 'son:', onlyUpcoming.length);
+
       this.upcomingFilmList.set(onlyUpcoming);
+
+      if(this.upcomingFilmList().length < 20){
+        this.getNextPage();
+      }
       this.loading.set(false);
     });
   }
 
   // ---------- Methods ----------
+
+  filterOnlyUpcomingFilms(filmList: UpcomingFilms) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Ignora la hora, minutos y segundos
+
+    const onlyUpcoming = filmList.results.filter(film => {
+      const release = new Date(film.release_date);
+      release.setHours(0, 0, 0, 0); // Ignora la hora
+      return release >= today;
+    });
+
+    return onlyUpcoming;
+  }
 
   getNextPage() {
     this.loading.set(true);
@@ -51,7 +84,11 @@ export class UpcomingPage implements OnInit {
     const newPage = this.page();
 
     this.upcomingFilmsService.getUpcomingFilms(newPage).subscribe(data => {
-      this.upcomingFilmList.update(prev => [...prev, ...data.results]);
+      const onlyUpcoming = this.filterOnlyUpcomingFilms(data);
+      this.upcomingFilmList.update(prev => [...prev, ...onlyUpcoming]);
+      if(this.upcomingFilmList().length < 20){
+        this.getNextPage();
+      }
       this.loading.set(false);
     });
   }

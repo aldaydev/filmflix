@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { tmdbHeaders } from 'app/core/tmdb-headers';
 import { FilmListResponse } from 'app/models/popular-film.model';
-import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
@@ -14,13 +12,14 @@ export class SearchByNameService {
 
     // ---------- Properties ----------
 
-    private url: string = `${environment.tmdbBaseUrl}/search/movie?language=es-ES&include_adult=false`;
+    private url: string = '/api/search-films-by-name';
 
     // ---------- Methods ----------
     
     getFilmsByName(query?: string, page?: number ): Observable<FilmListResponse> {
-        const currentPate = !page ? '&page=1' : `&page=${page}`;
-        const finalUrl = `${this.url}${query}${currentPate}`;
-        return this.http.get<FilmListResponse>(finalUrl, { headers: tmdbHeaders });
+        const currentPage = !page ? 'page=1' : `page=${page}`;
+        const finalUrl = `${this.url}?${currentPage}${query}`;
+
+        return this.http.get<FilmListResponse>(finalUrl);
     }
 }

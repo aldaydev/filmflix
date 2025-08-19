@@ -120,22 +120,23 @@ app.get('/api/now-playing-films', async (req, res) => {
   }
 });
 
-interface FilmQuery {
+// ---------- SEARCH FILMS BY FILTERS  ----------
+
+interface FilmsByFilterQuery {
   with_genres?: string;
   primary_release_year? : string;
   page?: string;
   sort_by?: string;
 }
 
-// ---------- GET SEARCH FILMS  ----------
-app.get('/api/search-films', async (req, res) => {
+app.get('/api/search-films-by-filters', async (req, res) => {
 
   const { 
     with_genres = '', 
     primary_release_year = '',
     page, 
     sort_by = '' 
-  } = req.query as unknown as FilmQuery;
+  } = req.query as unknown as FilmsByFilterQuery;
 
   const withGenres = with_genres ? `&with_genres=${with_genres}` : '';
   const primaryReleaseYear = primary_release_year ? `&primary_release_year=${primary_release_year}` : '';
@@ -144,6 +145,64 @@ app.get('/api/search-films', async (req, res) => {
 
 
   const url = `${process.env.TMDB_BASE_URL}/discover/movie?language=es-ES${finalQuery}`
+
+  try {
+    const response = await fetch(url, {
+      headers: tmdbHeaders
+    });
+
+    if (!response.ok) {
+      throw new Error(`TMDB API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Se ha producdo un error al cargar las películas');
+  }
+});
+
+// ---------- SEARCH FILMS BY NAME  ----------
+
+interface FilmsByNameQuery {
+  page?: string;
+  query?: string;
+}
+
+app.get('/api/search-films-by-name', async (req, res) => {
+
+  const { 
+    page, 
+    query = '' 
+  } = req.query as unknown as FilmsByNameQuery;
+
+  const finalQuery = `&page=${page}&query=${query}`;
+
+  const url = `${process.env.TMDB_BASE_URL}/search/movie?language=es-ES&include_adult=false${finalQuery}`;
+
+  try {
+    const response = await fetch(url, {
+      headers: tmdbHeaders
+    });
+
+    if (!response.ok) {
+      throw new Error(`TMDB API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Se ha producdo un error al cargar las películas');
+  }
+});
+
+// ---------- GET UPCOMING FILMS  ----------
+app.get('/api/upcoming-films', async (req, res) => {
+
+  const page = req.query['page'] || 1;
+  const url = `${process.env.TMDB_BASE_URL}/movie/upcoming?language=es-ES&page=${page}`
 
   try {
     const response = await fetch(url, {
