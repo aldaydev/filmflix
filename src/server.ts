@@ -9,6 +9,10 @@ import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
@@ -23,6 +27,29 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
+
+const tmdbHeaders = {
+  Authorization: `Bearer ${process.env.TMDB_TOKEN}`,
+  'Content-Type': 'application/json;charset=utf-8'
+}
+
+app.get('/api/popular-films', async (_req, res) => {
+  try {
+    const response = await fetch(`${process.env.TMDB_BASE_URL}/movie/popular?language=es-ES&page=1`, {
+      headers: tmdbHeaders
+    });
+
+    if (!response.ok) {
+      throw new Error(`TMDB API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Se ha producdo un error al cargar las películas');
+  }
+});
 
 /**
  * Serve static files from /browser

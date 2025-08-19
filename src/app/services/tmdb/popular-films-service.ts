@@ -16,15 +16,13 @@ export class PopularFilmsService {
 
   // ---------- Properties ----------
 
-  private url: string = `${environment.tmdbBaseUrl}/movie/popular?language=es-ES&page=1`;
+  private url: string = '/api/popular-films';
   popularFilms = signal<FilmListResponse | null>(null);
 
   // ---------- Methods ----------
 
   getPopularFilms(): Observable<FilmListResponse> {
-    return this.http.get<FilmListResponse>(this.url, {
-      headers: tmdbHeaders,
-    });
+    return this.http.get<FilmListResponse>(this.url);
   }
 
   async getPopularIds(): Promise<string[]> {
