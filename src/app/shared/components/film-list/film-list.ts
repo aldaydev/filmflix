@@ -8,7 +8,7 @@ import { Spinner } from "../spinner/spinner";
 
 @Component({
   selector: 'app-film-list',
-  imports: [PosterUrlPipe, FilmCard, InfiniteScrollDirective, Spinner],
+  imports: [PosterUrlPipe, FilmCard, InfiniteScrollDirective],
   templateUrl: './film-list.html',
   styleUrl: './film-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -47,8 +47,8 @@ export class FilmList {
     this.nextPage.emit();
   }
 
-  trackByFilmId(index: number, film: any): number {
-    return film.id;
+  trackByFilmId(_index: number, film: any): string {
+    return `${film.id}-${Math.random()}`;
   }
 
   goToTop(){

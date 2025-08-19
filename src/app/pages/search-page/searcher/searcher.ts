@@ -29,16 +29,18 @@ export class Searcher implements AfterViewInit{
 
   // ---------- Viewers ----------
 
-  @ViewChild('searcherExpander') searcherExpander!: ElementRef<HTMLButtonElement>;
+  @ViewChild('searcherExpander') searcherExpander!: ElementRef<HTMLElement>;
   searchExpanderHeight = signal(50);
   private searchExpanderInitialHeight: number = 50;
+
+  @ViewChild('searcherExpanderButton') searcherExpanderButton!: ElementRef<HTMLButtonElement>;
 
   // --------- Host Listeners ---------
 
   constructor() {
     effect(() => {
       this.searchStateService.filmList();
-      if(this.isBrowser){
+      if(this.isBrowser && this.searcherExpander){
         this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
         this.closeSearchExpander();
       }
@@ -73,13 +75,13 @@ export class Searcher implements AfterViewInit{
   }
 
 
-  @HostListener('window:scroll')
-  onSroll() {
-    if(this.isBrowser){
-      this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-      this.closeSearchExpander();
-    }
-  }
+  // @HostListener('window:scroll')
+  // onSroll() {
+  //   if(this.isBrowser){
+  //     this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+  //     this.closeSearchExpander();
+  //   }
+  // }
 
   @HostListener('document:focusin', ['$event'])
   onFocusIn(event: FocusEvent) {
@@ -111,6 +113,7 @@ export class Searcher implements AfterViewInit{
   }
 
   closeSearchExpander(){
+    this.searcherExpanderButton.nativeElement.focus();
     this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
     this.isOpen.set(false);
   }

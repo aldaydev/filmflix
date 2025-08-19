@@ -6,7 +6,7 @@
     (scrolled)="onScroll()"
 >
     @if (filmList().length > 0) {
-        @for (film of filmList(); track trackByFilmId($index, film)) {
+        @for (film of filmList(); track film.id) {
             <app-film-card
                 [title]="film.title"
                 [image]="film.poster_path | posterUrl"
