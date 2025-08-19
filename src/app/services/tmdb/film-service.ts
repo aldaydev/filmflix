@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { tmdbHeaders } from 'app/core/tmdb-headers';
 import { FilmDetails } from 'app/models/film-details.model';
 import { Observable } from 'rxjs';
 

@@ -23,6 +23,8 @@ export class Searcher implements AfterViewInit{
 
   // ---------- Properties ----------
 
+  private lastWidth = this.isBrowser ? window.innerWidth : 0;
+
   isOpen = signal(false);
 
   // ---------- Viewers ----------
@@ -38,7 +40,7 @@ export class Searcher implements AfterViewInit{
       this.searchStateService.filmList();
       if(this.isBrowser){
         this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-        this.isOpen.set(false);
+        this.closeSearchExpander();
       }
     })
     
@@ -49,7 +51,7 @@ export class Searcher implements AfterViewInit{
     if(this.isBrowser){
       if (!this.elRef.nativeElement.contains(event.target)) {
         this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-        this.isOpen.set(false);
+        this.closeSearchExpander();
       }
     }
   }
@@ -57,8 +59,25 @@ export class Searcher implements AfterViewInit{
   @HostListener('window:resize')
   onResize() {
     if(this.isBrowser){
+
+      const currentWidth = window.innerWidth;
+
+      if (currentWidth !== this.lastWidth) {
+        this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+        this.closeSearchExpander();
+      }
+
+      this.lastWidth = currentWidth;
+      
+    }
+  }
+
+
+  @HostListener('window:scroll')
+  onSroll() {
+    if(this.isBrowser){
       this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-      this.isOpen.set(false);
+      this.closeSearchExpander();
     }
   }
 

@@ -47,7 +47,13 @@
 }
 
 .searcher__expander:focus{
-    outline:     none;
+    outline: none;
+}
+
+.searcher__expander svg,
+.searcher__expander .searcher__resume,
+.searcher__expander .searcher__info{
+    pointer-events: none;
 }
 
 .searchFilms__searcher:has(.searcher__expander:focus){
