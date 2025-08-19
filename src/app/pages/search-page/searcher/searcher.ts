@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, effect, ElementRef, HostListener, inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, effect, ElementRef, HostListener, inject, PLATFORM_ID, signal, untracked, ViewChild } from '@angular/core';
 import { SearchByTitle } from "./search-by-title/search-by-title";
 import { isPlatformBrowser } from '@angular/common';
 import { SearchByFilters } from "./search-by-filters/search-by-filters";
@@ -40,21 +40,37 @@ export class Searcher implements AfterViewInit{
   constructor() {
     effect(() => {
       this.searchStateService.filmList();
-      if(this.isBrowser && this.searcherExpander){
-        this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-        this.closeSearchExpander();
+      if(this.isBrowser){
+        if (this.isBrowser) {
+          untracked(() => this.resetByListUpdate());
+        }
       }
     })
-    
   }
+
+  resetByListUpdate(){
+    if(this.searcherExpander){
+      this.isOpen() && this.closeSearchExpander();
+    }
+  }
+
+
 
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent){
     if(this.isBrowser){
-      if (!this.elRef.nativeElement.contains(event.target)) {
+      if (!this.elRef.nativeElement.contains(event.target) && this.isOpen()) {
         this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
         this.closeSearchExpander();
       }
+    }
+  }
+
+  @HostListener('document:focusin', ['$event'])
+  onFocusIn(event: FocusEvent) {
+    const target = event.target as HTMLElement;
+    if (!this.elRef.nativeElement.contains(target) && this.isOpen()) {
+      this.closeSearchExpander();
     }
   }
 
@@ -75,21 +91,15 @@ export class Searcher implements AfterViewInit{
   }
 
 
-  // @HostListener('window:scroll')
-  // onSroll() {
-  //   if(this.isBrowser){
-  //     this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-  //     this.closeSearchExpander();
-  //   }
-  // }
-
-  @HostListener('document:focusin', ['$event'])
-  onFocusIn(event: FocusEvent) {
-    const target = event.target as HTMLElement;
-    if (!this.elRef.nativeElement.contains(target)) {
+  @HostListener('window:scroll')
+  onSroll() {
+    if(this.isBrowser){
+      if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+      this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
       this.closeSearchExpander();
     }
   }
+
 
   // --------- Life cycle ---------
 
@@ -113,9 +123,11 @@ export class Searcher implements AfterViewInit{
   }
 
   closeSearchExpander(){
-    this.searcherExpanderButton.nativeElement.focus();
-    this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
-    this.isOpen.set(false);
+    if(this.isOpen()){
+      this.searcherExpanderButton.nativeElement.focus();
+      this.searchExpanderHeight.set(this.searchExpanderInitialHeight);
+      this.isOpen.set(false);
+    }
   }
 
 }

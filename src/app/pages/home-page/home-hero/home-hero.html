@@ -16,7 +16,7 @@
         <article class="homeHero__search">
             <app-input
                 [label]="'¿Qué película quieres buscar?'"
-                [size]="screenSize.width() > 500 ? 'big' : 'small'"
+                [size]="screenSize.width()! > 500 ? 'big' : 'small'"
                 [value]="searchState.selectedName()"
                 (inputEvent)="searchState.setSelectedName($event)"
                 (keydown.enter)="searchByNameFromHero()"
@@ -24,7 +24,7 @@
             />
             <app-button 
                 [fill]="'solid'" 
-                [size]="screenSize.width() > 500 ? 'big' : 'small'"
+                [size]="screenSize.width()! > 500 ? 'big' : 'small'"
                 [color]="'primary'" 
                 [label]="'Buscar'"
                 [icon]="{ src: 'assets/icons/search_icon_white.svg', alt: 'search' }"

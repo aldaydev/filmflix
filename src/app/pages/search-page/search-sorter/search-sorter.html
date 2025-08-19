@@ -3,18 +3,35 @@
     <!-- SORT BY ARTICLE -->
     <article class="searchSorter__sortBy">
         <span class="sortBy__span">Orden: </span>
-        @if(screenSize.width() > 600){
-            <button (click)="searchState.setOrderByRate()" class="sortBy__button">
-                Votos
-            </button>
-            <button (click)="searchState.setOrderByYear()" class="sortBy__button">
-                Año
-            </button>
-            <button (click)="searchState.setOrderByPopularity()" class="sortBy__button">
+        @if(screenSize.width()){
+            @if(screenSize.width()! > 600){
+
+            <button 
+                (click)="searchState.setOrderByPopularity()" 
+                class="sortBy__button"
+                [class.selected]="searchState.sortOptions().by === 'popularity'"
+            >
                 Popularidad
             </button>
+            
+            <button 
+                (click)="searchState.setOrderByYear()" 
+                class="sortBy__button"
+                [class.selected]="searchState.sortOptions().by === 'primary_release_date'"
+            >
+                Fecha
+            </button>
+            
+            <button 
+                (click)="searchState.setOrderByRate()" 
+                class="sortBy__button"
+                [class.selected]="searchState.sortOptions().by === 'vote_average'"
+            >
+                Votos
+            </button>
         }@else {
-            <select (change)="handleSortChange($event)" class="sortBy__select">
+            <select 
+                (change)="handleSortChange($event)" class="sortBy__select">
                 <option value="popularity" class="sortBy__option">
                     Popularidad
                 </option>
@@ -26,6 +43,8 @@
                 </option>
             </select>
         }
+        }
+        
         
     </article>
 

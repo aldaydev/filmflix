@@ -78,7 +78,7 @@
 }
 
 .searcher__resume{
-    max-width: 70%;
+    max-width: 55%;
     color: var(--theme-bg);
     font-weight: 600;
     font-size: 1.1rem;

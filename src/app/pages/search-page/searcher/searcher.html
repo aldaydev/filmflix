@@ -1,7 +1,7 @@
-@let hasGenres = searchStateService.hasGenres();
+<!-- @let hasGenres = searchStateService.hasGenres();
 @let hasYear = searchStateService.hasYear();
 @let hasOptions = searchStateService.hasOptions();
-@let hasName = searchStateService.hasName();
+@let hasName = searchStateService.hasName(); -->
 
 <header 
     class="searchFilms__searcher" 
@@ -17,19 +17,18 @@
     >   
         <!-- SEARCHER SEARCH INFO -->
         <div class="searcher__info">
-            @if(hasOptions){
+            @if(searchStateService.hasOptions()){
                 <span class="searcher__indicator"></span>
 
-                @let genres = searchStateService.genreIdsToText();
-                @if(hasGenres && genres){
-                    <span class="searcher__resume">{{'Género: ' + genres }}</span>
+                @if(searchStateService.hasGenres() && searchStateService.genreIdsToText()){
+                    <span class="searcher__resume">{{'Género: ' + searchStateService.genreIdsToText() }}</span>
                 }
                 
-                @if(hasYear && searchStateService.selectedYear()){
+                @if(searchStateService.hasYear() && searchStateService.selectedYear()){
                     <span class="searcher__resume">{{'Año: ' + searchStateService.selectedYear()}}</span>
                 }
 
-                @if(hasName && searchStateService.selectedName()){
+                @if(searchStateService.hasName() && searchStateService.selectedName()){
                     <span class="searcher__resume">{{'Nombre: ' + searchStateService.selectedName()}}</span>
                 }
                 

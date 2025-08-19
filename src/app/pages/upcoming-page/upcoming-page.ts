@@ -33,26 +33,7 @@ export class UpcomingPage implements OnInit {
     this.setMetaTags();
     this.loading.set(true);
     this.upcomingFilmsService.getUpcomingFilms().subscribe(data => {
-      // const now = new Date();
-      // const currentYear = now.getFullYear();
-      // const currentMonth = now.getMonth(); // 0 = enero, 11 = diciembre
-      // const currentDay = now.getDay();
-
-      // const onlyUpcoming = data.results.filter(film => {
-      //   const release = new Date(film.release_date);
-      //   const releaseYear = release.getFullYear();
-      //   const releaseMonth = release.getMonth();
-      //   const releaseDay = release.getDay();
-
-      //   // Solo películas del mismo año y mes actual o posteriores
-      //   return releaseYear > currentYear || 
-      //   (releaseYear === currentYear && (releaseMonth >= currentMonth || (releaseMonth === currentMonth && releaseDay >= currentDay)
-      //   ));
-      // });
       const onlyUpcoming = this.filterOnlyUpcomingFilms(data);
-
-      console.log('Página 1 - filtrados', onlyUpcoming, 'son:', onlyUpcoming.length);
-
       this.upcomingFilmList.set(onlyUpcoming);
 
       if(this.upcomingFilmList().length < 20){

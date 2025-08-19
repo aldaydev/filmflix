@@ -8,7 +8,7 @@ export class ScreenSizeService {
   
   // ---------- Properties ----------
 
-  width = signal<number>(0);
+  width = signal<number | null>(null);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   // ---------- Life cycle ----------

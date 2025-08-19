@@ -157,6 +157,16 @@ export class SearchStateService {
     } else {
       this.selectedGenreIds.set([...genreIds, genreId]);
     }
+
+    this.hasOptions.set(true);
+    this.selectedName.set('');
+    this.hasName.set(false);
+    if(this.selectedGenreIds().length === 0){
+      this.hasGenres.set(false);
+    }else{
+      this.hasGenres.set(true);
+    }
+    
   }
 
   setSelectedYear(event: Event) {
@@ -164,12 +174,32 @@ export class SearchStateService {
     const value = input.value.slice(0, 4);
     this.selectedYear.set(value);
     input.value = value;
+
+    this.hasOptions.set(true);
+    this.selectedName.set('');
+    this.hasName.set(false);
+    if(this.selectedYear() === "0"){
+      this.hasYear.set(false);
+    }else{
+      this.hasYear.set(true);
+    }
   }
 
   setSelectedName(event: Event) {
     const input = event.target as HTMLInputElement;
     this.selectedName.set(input.value);
     input.value = input.value;
+
+    this.hasOptions.set(true);
+    this.hasGenres.set(false);
+    this.selectedGenreIds.set([]);
+    this.selectedYear.set("");
+    this.hasYear.set(false);
+    if(this.selectedName()=== ""){
+      this.hasName.set(false);
+    }else{
+      this.hasName.set(true);
+    }
   }
 
   // Query setters
@@ -213,7 +243,7 @@ export class SearchStateService {
 
   genreIdsToText() : string{
     const genreArr : string[] = [];
-    const textGenders = this.selectedGenreIds().map((genreId) =>
+    this.selectedGenreIds().map((genreId) =>
             this.genreList()
               .find((genreObj) => genreObj.id === genreId)
           )
