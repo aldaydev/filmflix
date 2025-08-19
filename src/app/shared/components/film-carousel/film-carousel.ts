@@ -32,6 +32,9 @@ export class FilmCarousel {
   @ViewChild('innerContainer') innerContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('posterContainer') posterContainer!: ElementRef<HTMLAnchorElement>;
 
+  @ViewChild('slideButtonRight') slideButtonRight!: ElementRef<HTMLButtonElement>;
+  @ViewChild('slideButtonLeft') slideButtonLeft!: ElementRef<HTMLButtonElement>;
+
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   filmList = input<CarouselFilmData[] | null>(null);
@@ -111,13 +114,13 @@ export class FilmCarousel {
         }
         if (el.scrollLeft + 1 >= maxScrollLeft) {
           this.onEnd.set(true);
+          this.slideButtonLeft.nativeElement.focus();
         }
       }, 100);
     });
   }
 
   slideRight() {
-
     if(this.scroll === 0) this.calculateScroll();
 
     const el = this.innerContainer.nativeElement;
@@ -135,6 +138,7 @@ export class FilmCarousel {
       timeout = setTimeout(() => {
         if (el.scrollLeft === 0) {
           this.onStart.set(true);
+          this.slideButtonRight.nativeElement.focus();
         }
         if (el.scrollLeft < maxScrollLeft) {
           this.onEnd.set(false);
