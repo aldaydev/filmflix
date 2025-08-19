@@ -52,7 +52,7 @@ export class HomePage implements OnInit{
     });
     this.meta.updateTag({ 
       property: 'og:image', 
-      content: 'https://filmflix.alday.dev/assets/captures/captures/filmflix_capture_1200px.webp' 
+      content: 'https://filmflix.alday.dev/assets/captures/filmflix_capture_1200px.webp' 
     });
     this.meta.updateTag({ 
       property: 'og:url', 
@@ -74,7 +74,7 @@ export class HomePage implements OnInit{
     });
     this.meta.updateTag({ 
       name: 'twitter:image', 
-      content: 'https://filmflix.alday.dev/assets/captures/captures/filmflix_capture_1200px.webp' 
+      content: 'https://filmflix.alday.dev/assets/captures/filmflix_capture_1200px.webp' 
     });
     this.meta.updateTag({ 
       name: 'twitter:url', 
