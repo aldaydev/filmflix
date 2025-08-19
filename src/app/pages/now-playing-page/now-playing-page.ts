@@ -32,7 +32,7 @@ export class NowPlayingPage implements OnInit{
   ngOnInit(): void {
     this.setMetaTags();
     this.loading.set(true);
-    this.nowPlayingService.getUpcomingFilms().subscribe(data => {
+    this.nowPlayingService.getNowPlayingFilms().subscribe(data => {
       this.nowPlayingFilmList.set(data.results);
       this.loading.set(false);
     })
@@ -46,7 +46,7 @@ export class NowPlayingPage implements OnInit{
 
     const newPage = this.page();
 
-    this.nowPlayingService.getUpcomingFilms(newPage).subscribe(data => {
+    this.nowPlayingService.getNowPlayingFilms(newPage).subscribe(data => {
       this.nowPlayingFilmList.update(prev => [...prev, ...data.results]);
       this.loading.set(false);
     });

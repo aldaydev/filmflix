@@ -14,17 +14,29 @@ export class SearchByFiltersService {
 
   // ---------- Properties ----------
 
-  private url: string = `${environment.tmdbBaseUrl}/discover/movie?language=es-ES`;
+  private url: string = '/api/search-films';
 
   // ---------- Methods ----------
 
   getFilmsByFilters({query, page, sort} : {query?: string, page?: number, sort?: {by: string, order: string}
     }
   ) : Observable<FilmListResponse>{
+
     const sortBy = sort ? `&sort_by=${sort.by}.${sort.order}` : "";
-    const currentPage = !page ? '&page=1' : `&page=${page}`;
-    const finalUrl = `${this.url}${query}${currentPage}${sortBy}`;
-    return this.http.get<FilmListResponse>(finalUrl, {headers: tmdbHeaders})
+    const currentPage = !page ? 'page=1' : `page=${page}`;
+    const currentQuery = query ? query : '';
+    const finalUrl = `${this.url}?${currentPage}${sortBy}${currentQuery}`;
+
+    return this.http.get<FilmListResponse>(finalUrl);
   }
+
+  // getFilmsByFilters({query, page, sort} : {query?: string, page?: number, sort?: {by: string, order: string}
+  //   }
+  // ) : Observable<FilmListResponse>{
+  //   const sortBy = sort ? `&sort_by=${sort.by}.${sort.order}` : "";
+  //   const currentPage = !page ? '&page=1' : `&page=${page}`;
+  //   const finalUrl = `${this.url}${query}${currentPage}${sortBy}`;
+  //   return this.http.get<FilmListResponse>(finalUrl);
+  // }
 
 }

@@ -71,11 +71,96 @@ app.get('/api/film/:id', async (req, res) => {
     res.status(200).json(data);
   } catch (error) {
     console.error(error);
+    res.status(500).send('Se ha producdo un error al cargar la película');
+  }
+});
+
+// ---------- GET GENRES  ----------
+app.get('/api/genres', async (req, res) => {
+
+  const url = `${process.env.TMDB_BASE_URL}/genre/movie/list?language=es`
+
+  try {
+    const response = await fetch(url, {
+      headers: tmdbHeaders
+    });
+
+    if (!response.ok) {
+      throw new Error(`TMDB API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Se ha producdo un error al cargar los géneros');
+  }
+});
+
+// ---------- GET NOW PLAYING FILMS  ----------
+app.get('/api/now-playing-films', async (req, res) => {
+
+  const page = req.query['page'] || 1;
+  const url = `${process.env.TMDB_BASE_URL}/movie/now_playing?language=es-ES&page=${page}`
+
+  try {
+    const response = await fetch(url, {
+      headers: tmdbHeaders
+    });
+
+    if (!response.ok) {
+      throw new Error(`TMDB API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
     res.status(500).send('Se ha producdo un error al cargar las películas');
   }
 });
 
+interface FilmQuery {
+  with_genres?: string;
+  primary_release_year? : string;
+  page?: string;
+  sort_by?: string;
+}
 
+// ---------- GET SEARCH FILMS  ----------
+app.get('/api/search-films', async (req, res) => {
+
+  const { 
+    with_genres = '', 
+    primary_release_year = '',
+    page, 
+    sort_by = '' 
+  } = req.query as unknown as FilmQuery;
+
+  const withGenres = with_genres ? `&with_genres=${with_genres}` : '';
+  const primaryReleaseYear = primary_release_year ? `&primary_release_year=${primary_release_year}` : '';
+
+  const finalQuery = `&page=${page}${withGenres}${primaryReleaseYear}&sort_by=${sort_by}`
+
+
+  const url = `${process.env.TMDB_BASE_URL}/discover/movie?language=es-ES${finalQuery}`
+
+  try {
+    const response = await fetch(url, {
+      headers: tmdbHeaders
+    });
+
+    if (!response.ok) {
+      throw new Error(`TMDB API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Se ha producdo un error al cargar las películas');
+  }
+});
 
 /**
  * Serve static files from /browser

@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { tmdbHeaders } from 'app/core/tmdb-headers';
 import { FilmListItem, FilmListResponse } from 'app/models/popular-film.model';
-import { environment } from 'environments/environment';
 import { firstValueFrom, Observable } from 'rxjs';
 
 @Injectable({
