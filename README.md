@@ -31,17 +31,15 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 
 A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido trabajando. 
 
+### fix/searcher
+* Arreglando el componente searcher en móviles
+
 ### fix/services
 * Creando llamadas a TMDB desde el servidor
     - popular-films-service
     - film-service
     - genre-service
     - now-playing-service
-    - search-by-filters-service
-    - search-by-name-service
-    - upcoming-films-service
-* Fix en upcoming-page => Ahora solo devuelve películas después del día actual
-
 
 ### fix/seo
 * Arreglando las imagenes OG
