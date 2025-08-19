@@ -33,7 +33,8 @@ A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido tr
 
 ### fix/services
 * Creando llamadas a TMDB desde el servidor
-    - Popular films
+    - popular-films-service
+    - film-service
 
 ### fix/seo
 * Arreglando las imagenes OG

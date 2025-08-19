@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { tmdbHeaders } from 'app/core/tmdb-headers';
 import { FilmDetails } from 'app/models/film-details.model';
-import { environment } from 'environments/environment';
+// import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,13 +16,12 @@ export class FilmService {
 
   // ---------- Properties ----------
 
-  private url: string = `${environment.tmdbBaseUrl}/movie/`;
-  private urlQueryParams = '?language=es-ES&append_to_response=videos,similar';
+  private url: string = '/api/film';
 
   // ---------- Methods ----------
 
   getFilmById (filmId: number): Observable<FilmDetails> {
-    const url = `${this.url}/${filmId}${this.urlQueryParams}`;
+    const url = `${this.url}/${filmId}`;
     return this.http.get<FilmDetails>(url, { headers: tmdbHeaders })
   }
 

@@ -33,6 +33,7 @@ const tmdbHeaders = {
   'Content-Type': 'application/json;charset=utf-8'
 }
 
+// ---------- GET POPULAR FILMS  ----------
 app.get('/api/popular-films', async (_req, res) => {
   try {
     const response = await fetch(`${process.env.TMDB_BASE_URL}/movie/popular?language=es-ES&page=1`, {
@@ -50,6 +51,31 @@ app.get('/api/popular-films', async (_req, res) => {
     res.status(500).send('Se ha producdo un error al cargar las películas');
   }
 });
+
+// ---------- GET FILM BY ID  ----------
+app.get('/api/film/:id', async (req, res) => {
+
+  const filmId = req.params.id;
+  const url = `${process.env.TMDB_BASE_URL}/movie/${filmId}?language=es-ES&append_to_response=videos,similar`
+
+  try {
+    const response = await fetch(url, {
+      headers: tmdbHeaders
+    });
+
+    if (!response.ok) {
+      throw new Error(`TMDB API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Se ha producdo un error al cargar las películas');
+  }
+});
+
+
 
 /**
  * Serve static files from /browser
