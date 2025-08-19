@@ -31,6 +31,9 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 
 A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido trabajando. 
 
+### fix/seo
+* Arreglando las imagenes OG
+
 ### docker
 * Configuración de Docker (dockerfile)
 
