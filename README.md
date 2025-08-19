@@ -31,6 +31,9 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 
 A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido trabajando. 
 
+### fix/carousel
+* Fix del focus en los selectores
+
 ### fix/searcher
 * Arreglando el componente searcher en móviles
 * Fix del foco fuera del searcher
