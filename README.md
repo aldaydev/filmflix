@@ -37,6 +37,11 @@ A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido tr
     - film-service
     - genre-service
     - now-playing-service
+    - search-by-filters-service
+    - search-by-name-service
+    - upcoming-films-service
+* Fix en upcoming-page => Ahora solo devuelve películas después del día actual
+
 
 ### fix/seo
 * Arreglando las imagenes OG
