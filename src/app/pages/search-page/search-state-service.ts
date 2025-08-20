@@ -62,7 +62,6 @@ export class SearchStateService {
   getNextPage() {
     if (this.loading()) return;
     
-    this.loading.set(true);
     this.page.set(this.page() + 1);
 
     if(this.selectedName() && this.hasName()){
@@ -86,9 +85,7 @@ export class SearchStateService {
             const uniqueNewFilms = data.results.filter(newFilm => !prev.some(film => film.id === newFilm.id));
             return [...prev, ...uniqueNewFilms];
           });
-          this.loading.set(false);
-        },
-        error: (err) => this.loading.set(false)
+        }
       });
     }
 

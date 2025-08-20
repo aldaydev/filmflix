@@ -1,3 +1,4 @@
+
 <section class="searchList"
     infiniteScroll
     [scrollWindow]="true"
@@ -5,7 +6,7 @@
     [infiniteScrollThrottle]="300"
     (scrolled)="onScroll()"
 >
-    @if (filmList().length > 0) {
+    @if (filmList().length > 0 && !loading()) {
         @for (film of filmList(); track film.id) {
             <app-film-card
                 [title]="film.title"
@@ -25,8 +26,14 @@
 </button>
 
 
-@if(filmList().length === 0 || loading()) {
+@if(filmList().length === 0) {
     <div class="searchList__noResultContainer">
+        <h3>No se han encontrado resultados</h3>
+    </div>
+}
+
+@if(loading()) {
+    <div class="searchList__loadingContainer">
         <app-spinner/>
     </div>
 }

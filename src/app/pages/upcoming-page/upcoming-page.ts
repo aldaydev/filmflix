@@ -59,7 +59,6 @@ export class UpcomingPage implements OnInit {
   }
 
   getNextPage() {
-    this.loading.set(true);
     this.page.update(prev => prev + 1);
 
     const newPage = this.page();
@@ -73,7 +72,6 @@ export class UpcomingPage implements OnInit {
       if(this.upcomingFilmList().length < 20){
         this.getNextPage();
       }
-      this.loading.set(false);
     });
   }
 

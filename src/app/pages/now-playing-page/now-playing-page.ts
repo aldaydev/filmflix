@@ -41,7 +41,6 @@ export class NowPlayingPage implements OnInit{
   // ---------- Methods ----------
 
   getNextPage() {
-    this.loading.set(true);
     this.page.update(prev => prev + 1);
 
     const newPage = this.page();
@@ -51,7 +50,6 @@ export class NowPlayingPage implements OnInit{
         const uniqueNewFilms = data.results.filter(newFilm => !prev.some(film => film.id === newFilm.id));
         return [...prev, ...uniqueNewFilms];
       });
-      this.loading.set(false);
     });
   }
 
