@@ -31,9 +31,11 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 
 A partir de aquí podrás ver mis anotaciones sobre cada "rama" en la que ido trabajando. 
 
+### refactor/cleanup-20250820
+Última limpieza antes de desplegar
+
 ### fix/load
 Trabajando defer y lazy loading
-
 
 ### fix/carousel
 * Fix del focus en los selectores de avance y retroceso
