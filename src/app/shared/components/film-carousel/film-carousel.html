@@ -50,6 +50,7 @@
                             [src]="film.poster_path | posterUrl"
                             [alt]="'Poster de ' + film.title"
                             class="filmCarousel__posterImg"
+                            loading="lazy"
                         />
                         @if(hasNumber()){
                             <span class="filmCarousel__filmRate" [attr.data-content]="number">{{number}}</span>

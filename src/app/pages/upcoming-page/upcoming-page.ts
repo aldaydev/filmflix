@@ -66,7 +66,10 @@ export class UpcomingPage implements OnInit {
 
     this.upcomingFilmsService.getUpcomingFilms(newPage).subscribe(data => {
       const onlyUpcoming = this.filterOnlyUpcomingFilms(data);
-      this.upcomingFilmList.update(prev => [...prev, ...onlyUpcoming]);
+      this.upcomingFilmList.update(prev => {
+        const uniqueNewFilms = onlyUpcoming.filter(newFilm => !prev.some(film => film.id === newFilm.id));
+        return [...prev, ...uniqueNewFilms]
+      });
       if(this.upcomingFilmList().length < 20){
         this.getNextPage();
       }

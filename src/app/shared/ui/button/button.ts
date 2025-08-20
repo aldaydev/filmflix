@@ -23,7 +23,7 @@ export class Button {
 
   fill = input<'solid' | 'outline'>('solid');
   type = input<string | null>("button")
-  size = input<'small' | 'big'>('small');
+  size = input<'small' | 'big' | null>(null);
   color = input<'primary' | 'secondary' | 'none'>('primary');
   label = input<string> ('botón');
   disabled = input<boolean>(false)

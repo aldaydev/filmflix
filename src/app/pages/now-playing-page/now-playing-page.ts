@@ -47,7 +47,10 @@ export class NowPlayingPage implements OnInit{
     const newPage = this.page();
 
     this.nowPlayingService.getNowPlayingFilms(newPage).subscribe(data => {
-      this.nowPlayingFilmList.update(prev => [...prev, ...data.results]);
+      this.nowPlayingFilmList.update(prev => {
+        const uniqueNewFilms = data.results.filter(newFilm => !prev.some(film => film.id === newFilm.id));
+        return [...prev, ...uniqueNewFilms];
+      });
       this.loading.set(false);
     });
   }

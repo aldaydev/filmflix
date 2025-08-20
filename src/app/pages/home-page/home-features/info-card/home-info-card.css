@@ -48,6 +48,7 @@
     flex-direction: column;
     row-gap: 15px;
 
+    text-wrap: pretty;
     color: white;
 }
 

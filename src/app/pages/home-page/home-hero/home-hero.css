@@ -57,6 +57,7 @@
 .welcome__title{
     margin-top: 15px;
     margin-bottom: 2.2rem;
+    animation: fadeInFromBottom .5s ease-in-out both;
 }
 
 .welcome__title span {
@@ -66,6 +67,7 @@
 
 .welcome__subtitle{
     margin-bottom: 1rem;
+    animation: fadeInFromBottom .5s .2s ease-in-out both;
 }
 
 .welcome__description{
@@ -74,6 +76,7 @@
     line-height: 1.2;
     margin-bottom: 1rem;
     text-wrap: pretty;
+    animation: fadeInFromBottom .5s .4s ease-in-out both;
 }
 
 
@@ -86,6 +89,7 @@
     column-gap: 10px;
     row-gap: 10px;
     margin-bottom: 30px;
+    animation: fadeInFromBottom .5s .6s ease-in-out both;
 }
 
 /* ---------- HOME HERO SEPARATOR ---------- */

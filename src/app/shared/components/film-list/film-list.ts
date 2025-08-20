@@ -8,7 +8,7 @@ import { Spinner } from "../spinner/spinner";
 
 @Component({
   selector: 'app-film-list',
-  imports: [PosterUrlPipe, FilmCard, InfiniteScrollDirective],
+  imports: [PosterUrlPipe, FilmCard, InfiniteScrollDirective, Spinner],
   templateUrl: './film-list.html',
   styleUrl: './film-list.css',
   changeDetection: ChangeDetectionStrategy.OnPush

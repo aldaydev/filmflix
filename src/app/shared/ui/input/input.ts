@@ -18,7 +18,7 @@ export class Input {
 
   type = input<'text'>('text');
   label = input<string>('');
-  size = input<'small' | 'big'>('big');
+  size = input<'small' | 'big' | null>(null);
   placeholder = input<string | null> ("");
   disabled = input<boolean>(false);
   value = input<string>('');

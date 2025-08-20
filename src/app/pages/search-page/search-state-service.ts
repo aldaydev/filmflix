@@ -84,8 +84,8 @@ export class SearchStateService {
         next: (data) => {
           this.filmList.update((prev) => {
             const uniqueNewFilms = data.results.filter(newFilm => !prev.some(film => film.id === newFilm.id));
-            return [...prev, ...uniqueNewFilms]}
-          );
+            return [...prev, ...uniqueNewFilms];
+          });
           this.loading.set(false);
         },
         error: (err) => this.loading.set(false)
