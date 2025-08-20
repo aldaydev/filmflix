@@ -25,7 +25,8 @@ Filmflixes una aplicación en la que puedes buscar películas por año o por var
 ![CYPRESS](https://img.shields.io/badge/CYPRESS-17202C?style=for-the-badge&logo=cypress&logoColor=white)
 
 ### 🚀 DESPLIEGUE  
-![FIREBASE](https://img.shields.io/badge/FIREBASE-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![DIGITALOCEAN](https://img.shields.io/badge/DIGITALOCEAN-0069FF?style=for-the-badge&logo=digitalocean&logoColor=white)
+
 
 ----------------------------------------------
 
